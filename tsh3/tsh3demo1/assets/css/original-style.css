@@ -1,0 +1,631 @@
+/* ==========================================================================
+   TRI STATE HONEY - EXACT AUTHENTIC REPLICA STYLESHEET
+   Accurately matching original font sizes, colors, gradients, borders, and textures
+   ========================================================================== */
+
+/* Top header phone banner */
+.tsh-exact-top-bar {
+  background: #f59e0b;
+  background-image: linear-gradient(180deg, #ffa800 0%, #ff8b00 100%);
+  color: #0000ff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-bottom: 1px solid #d97706;
+}
+
+.tsh-exact-top-bar a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+/* Header bar with honey bee logo & patterned texture */
+.tsh-exact-header {
+  background-color: #f7a300;
+  background-image: radial-gradient(#ffa700 15%, transparent 16%), radial-gradient(#e58800 15%, transparent 16%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-color: #f59e0b;
+  border-bottom: 2px solid #b45309;
+  padding: 8px 20px;
+}
+
+.tsh-exact-header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tsh-exact-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tsh-exact-brand img {
+  height: 55px;
+  width: auto;
+}
+
+.tsh-exact-brand-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.tsh-exact-header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.tsh-btn-call-ceo {
+  background: linear-gradient(180deg, #ff9600 0%, #e67300 100%);
+  color: #ffffff !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.tsh-exact-nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.tsh-exact-nav-links a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
+}
+
+/* SECTION 1: HERO WITH HONEY POURING BACKGROUND */
+.tsh-exact-hero {
+  position: relative;
+  background-image: url('../images/honey-pouring-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 20px 60px;
+  color: #ffffff;
+}
+
+.tsh-exact-hero-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.tsh-exact-hero-left {
+  max-width: 520px;
+}
+
+.tsh-exact-hero-headline {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  text-shadow: 7px 5px 6px rgba(0,0,0,0.45);
+  margin-bottom: 25px;
+}
+
+.tsh-exact-hero-bee {
+  max-width: 250px;
+  filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
+}
+
+.tsh-exact-hero-right {
+  text-align: center;
+  max-width: 420px;
+}
+
+.tsh-exact-hero-right h2 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+  margin-bottom: 15px;
+}
+
+.tsh-exact-triad {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.tsh-exact-triad li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tsh-exact-btn-yellow {
+  display: block;
+  width: 100%;
+  background: linear-gradient(180deg, #ffd000 0%, #ff9e00 100%);
+  color: #ffffff !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  margin-bottom: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tsh-exact-btn-green {
+  display: block;
+  width: 100%;
+  background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
+  color: #ffffff !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  text-align: center;
+  cursor: pointer;
+}
+
+/* SECTION 2: ATTENTION FOOD COMPANIES */
+.tsh-exact-attention {
+  background: #ffffff;
+  padding: 30px 20px 25px;
+  text-align: center;
+}
+
+.tsh-exact-attention h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #e60000;
+  margin-bottom: 12px;
+}
+
+.tsh-exact-attention p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #000000;
+  max-width: 950px;
+  margin: 0 auto 20px;
+  line-height: 1.4;
+}
+
+.tsh-exact-attention a {
+  color: #0000ff;
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.tsh-exact-subhead-tasty {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.tsh-exact-subhead-money {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #000000;
+}
+
+/* SECTION 3: PURPLE FLOWER BACKGROUND WITH BOTTLE SIZES */
+.tsh-exact-flower-section {
+  position: relative;
+  background-image: url('../images/purple-flowers-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 20px 60px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.tsh-exact-flower-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.tsh-exact-flower-p1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+
+.tsh-exact-flower-p2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+  margin-bottom: 25px;
+  line-height: 1.45;
+}
+
+.tsh-exact-private-label-text {
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+  margin-bottom: 30px;
+}
+
+/* Packaging line up */
+.tsh-exact-packaging-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.tsh-exact-pack-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tsh-exact-pack-col img {
+  height: 160px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+}
+
+.tsh-exact-pack-caption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+/* SECTION 4: DRIPPING HONEY SHAPE DIVIDER & GOLDEN GRADIENT */
+.tsh-exact-honey-gradient-section {
+  position: relative;
+  background-image: linear-gradient(180deg, #e68700 0%, #ffe984 100%);
+  padding: 80px 20px 50px;
+  text-align: center;
+}
+
+/* Dripping honey SVG shape divider on top */
+.tsh-drip-top-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.tsh-drip-top-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 55px;
+}
+
+.tsh-drip-top-divider path {
+  fill: #f59e0b;
+}
+
+.tsh-exact-gradient-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tsh-exact-gradient-p1, .tsh-exact-gradient-p2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Center CTA button */
+.tsh-center-cta-wrap {
+  text-align: center;
+  padding: 30px 20px 20px;
+  background: #ffffff;
+}
+
+.tsh-goods-best {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 15px;
+}
+
+/* SECTION 5: POPULAR PRODUCTS & DRUMS WAREHOUSE */
+.tsh-exact-products-section {
+  background: #ffffff;
+  padding: 20px 20px 40px;
+}
+
+.tsh-exact-products-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tsh-exact-products-header h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.tsh-exact-products-header h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.tsh-exact-products-header p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #333333;
+}
+
+.tsh-exact-two-cols {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.tsh-exact-prod-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tsh-exact-prod-list li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12.5px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 20px;
+}
+
+.tsh-exact-prod-list li::before {
+  content: "📦";
+  position: absolute;
+  left: 0;
+  font-size: 13px;
+}
+
+.tsh-exact-right-col {
+  text-align: center;
+}
+
+.tsh-exact-right-col h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  color: #b91c1c;
+  margin-bottom: 10px;
+}
+
+.tsh-exact-right-col .tsh-ask-p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Blue Barrels Image with thick black rounded border */
+.tsh-exact-barrels-img {
+  width: 100%;
+  max-width: 380px;
+  border: 8px solid #000000;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.tsh-exact-barrels-caption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #333333;
+  margin-top: 6px;
+  margin-bottom: 15px;
+}
+
+.tsh-exact-shipping-info {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: #333333;
+}
+
+.tsh-exact-shipping-info strong {
+  font-size: 11.5px;
+  color: #000000;
+}
+
+/* SECTION 6: CONTACT TRI STATE HONEY WITH BEE PATTERN */
+.tsh-exact-contact-section {
+  position: relative;
+  background-image: url('../images/bee-logo-right.png');
+  background-repeat: repeat;
+  background-size: 40px 40px;
+  background-color: #ffd700;
+  padding: 50px 20px 40px;
+  text-align: center;
+}
+
+.tsh-exact-contact-title {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ff8f00;
+  -webkit-text-stroke: 2px #000000;
+  text-shadow: 2px 2px 0 #000000;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+}
+
+.tsh-exact-bee-box {
+  display: inline-block;
+  background: #dddddd;
+  border-top: 5px solid #000000;
+  border-left: 5px solid #000000;
+  border-right: 5px solid #000000;
+  border-bottom: 2px solid #000000;
+  padding: 8px 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Orange rounded outline contact box */
+.tsh-exact-phone-card {
+  max-width: 250px;
+  margin: 0 auto;
+  background: #ffaa00;
+  background: linear-gradient(180deg, #ffb833 0%, #ff9e00 100%);
+  border: 4px solid #ff4500;
+  border-radius: 20px;
+  padding: 15px 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.tsh-exact-phone-card .call-now-line {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.tsh-exact-phone-card a.phone-num {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.tsh-exact-phone-card .press-zero {
+  font-size: 9.5px;
+  color: #000000;
+  margin: 8px 0;
+}
+
+.tsh-exact-phone-card .email-line {
+  font-size: 9.5px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.tsh-exact-phone-card .email-line a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.tsh-exact-phone-card .hq-box {
+  font-size: 9px;
+  color: #000000;
+  margin-top: 10px;
+  border-top: 1px dotted #cc6600;
+  padding-top: 6px;
+  line-height: 1.3;
+}
+
+/* Scroll to top round yellow button */
+.tsh-exact-scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: #ffcc00;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 100;
+}
+
+@media (max-width: 860px) {
+  .tsh-exact-hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tsh-exact-two-cols {
+    grid-template-columns: 1fr;
+  }
+  .tsh-exact-brand-text {
+    font-size: 20px;
+  }
+}
