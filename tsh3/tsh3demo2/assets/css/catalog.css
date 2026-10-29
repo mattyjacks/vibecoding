@@ -1,17 +1,18 @@
-/* Tri State Honey Full Catalog & Logistics Sections */
+/* Tri State Honey — $100k Full Catalog & Commodity Sourcing */
+
 .tsh-catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.75rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
 
 .tsh-catalog-card {
   background: #ffffff;
-  border-radius: var(--tsh-border-radius);
+  border-radius: var(--tsh-border-radius-lg);
   border: 1px solid var(--tsh-border-gray);
-  padding: 1.85rem;
-  transition: var(--tsh-transition);
+  padding: 2.25rem 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   box-shadow: var(--tsh-shadow-xs);
@@ -19,39 +20,53 @@
 }
 
 .tsh-catalog-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--tsh-gold-primary);
-  box-shadow: var(--tsh-shadow-lg);
+  transform: translateY(-8px);
+  border-color: rgba(194, 132, 26, 0.45);
+  box-shadow: 0 20px 40px -8px rgba(12, 15, 20, 0.1), 0 0 25px rgba(194, 132, 26, 0.12);
 }
 
 .tsh-catalog-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.5rem;
 }
 
 .tsh-catalog-icon {
-  font-size: 2.2rem;
-  line-height: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--tsh-border-radius-sm);
+  background: rgba(194, 132, 26, 0.1);
+  border: 1px solid rgba(194, 132, 26, 0.25);
+  color: var(--tsh-gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease;
+}
+
+.tsh-catalog-card:hover .tsh-catalog-icon {
+  transform: scale(1.1) rotate(2deg);
+  background: rgba(194, 132, 26, 0.16);
 }
 
 .tsh-catalog-badge {
+  font-family: var(--tsh-font-sans-heading);
   font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.25rem 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--tsh-border-radius-full);
-  background: var(--tsh-amber-glow);
-  color: #92400e;
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  background: rgba(194, 132, 26, 0.08);
+  color: #8c5b0d;
+  border: 1px solid rgba(194, 132, 26, 0.25);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .tsh-catalog-name {
   font-family: var(--tsh-font-heading);
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--tsh-deep-black);
   margin-bottom: 0.65rem;
   line-height: 1.3;
@@ -60,178 +75,113 @@
 .tsh-catalog-desc {
   font-size: 0.92rem;
   color: var(--tsh-slate-gray);
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
+  line-height: 1.65;
+  margin-bottom: 1.35rem;
   flex-grow: 1;
+  font-weight: 400;
 }
 
 .tsh-catalog-list {
   list-style: none;
-  border-top: 1px solid var(--tsh-border-gray);
-  padding-top: 1rem;
-  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--tsh-border-light);
+  padding-top: 1.15rem;
+  margin-bottom: 1.75rem;
 }
 
 .tsh-catalog-list li {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--tsh-dark-charcoal);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   position: relative;
   padding-left: 1.35rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .tsh-catalog-list li::before {
-  content: "✔";
+  content: "";
   position: absolute;
   left: 0;
-  color: #16a34a;
-  font-weight: bold;
-  font-size: 0.8rem;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tsh-gold-primary);
 }
 
-/* Custom Sourcing Callout Card */
+.tsh-catalog-card .tsh-btn {
+  width: 100%;
+}
+
+/* Custom Sourcing VIP Trade Banner */
 .tsh-sourcing-banner {
-  background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
-  color: #ffffff;
-  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, #101520 0%, #161e2e 60%, #1c263a 100%);
+  border: 1px solid rgba(194, 132, 26, 0.35);
   border-radius: var(--tsh-border-radius-xl);
-  margin-top: 4rem;
+  padding: 3.5rem 3rem;
+  margin-top: 4.5rem;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--tsh-shadow-xl);
+  box-shadow: var(--tsh-shadow-xl), 0 0 35px rgba(212, 168, 83, 0.12);
   position: relative;
   overflow: hidden;
 }
 
 .tsh-sourcing-banner::before {
-  content: "🌐";
+  content: "";
   position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 8rem;
-  opacity: 0.05;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(194, 132, 26, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .tsh-sourcing-banner h3 {
   font-family: var(--tsh-font-heading);
-  font-size: 2rem;
-  color: #fbbf24;
+  font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+  color: #ffffff;
   margin-bottom: 0.85rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .tsh-sourcing-banner p {
-  max-width: 720px;
-  margin: 0 auto 2rem;
-  color: #cbd5e1;
   font-size: 1.1rem;
-  line-height: 1.6;
+  color: #d1d5db;
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
 }
 
-/* Logistics & Ocean Freight Section */
-.tsh-logistics-section {
-  background: #ffffff;
-  padding: 6.5rem 0;
-  border-bottom: 1px solid var(--tsh-border-gray);
-}
-
-.tsh-logistics-card {
-  background: #ffffff;
-  border-radius: var(--tsh-border-radius-xl);
-  border: 1px solid var(--tsh-border-gray);
-  box-shadow: var(--tsh-shadow-lg);
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  margin-top: 3.5rem;
-}
-
-.tsh-logistics-media {
+/* Catalog Search Bar */
+.tsh-search-container {
+  max-width: 540px;
+  margin: 0 auto 3rem;
   position: relative;
-  min-height: 380px;
-  overflow: hidden;
 }
 
-.tsh-logistics-img {
+.tsh-search-input {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.tsh-logistics-card:hover .tsh-logistics-img {
-  transform: scale(1.03);
-}
-
-.tsh-logistics-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.25rem 1.5rem;
-  background: linear-gradient(180deg, transparent 0%, rgba(9, 13, 22, 0.9) 100%);
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tsh-logistics-content {
-  padding: 3rem 2.75rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.tsh-logistics-content h3 {
-  font-family: var(--tsh-font-heading);
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--tsh-deep-black);
-  margin-bottom: 1rem;
-  line-height: 1.25;
-}
-
-.tsh-logistics-tip {
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-  border-left: 4px solid var(--tsh-gold-dark);
-  padding: 1.25rem 1.5rem;
-  border-radius: 0 var(--tsh-border-radius-sm) var(--tsh-border-radius-sm) 0;
-  margin-top: 1.5rem;
-  font-size: 0.95rem;
-  color: #78350f;
-  line-height: 1.55;
-}
-
-/* Shipping Route Specs Pills */
-.tsh-logistics-badges {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.tsh-route-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  background: var(--tsh-amber-glow);
-  padding: 0.4rem 0.85rem;
+  padding: 0.95rem 1.25rem 0.95rem 3.15rem;
+  background: #ffffff;
+  border: 1.5px solid var(--tsh-border-gray);
   border-radius: var(--tsh-border-radius-full);
-  color: #92400e;
+  font-family: var(--tsh-font-primary);
+  font-size: 0.98rem;
+  color: var(--tsh-dark-charcoal);
+  box-shadow: var(--tsh-shadow-xs);
+  transition: var(--tsh-transition);
 }
 
-@media (max-width: 960px) {
-  .tsh-logistics-card {
-    grid-template-columns: 1fr;
-  }
-  .tsh-logistics-content {
-    padding: 2rem 1.5rem;
-  }
+.tsh-search-input:focus {
+  outline: none;
+  border-color: var(--tsh-gold-primary);
+  box-shadow: 0 0 0 4px rgba(194, 132, 26, 0.15), var(--tsh-shadow-sm);
+}
+
+.tsh-search-icon {
+  position: absolute;
+  left: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--tsh-gold-primary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
 }

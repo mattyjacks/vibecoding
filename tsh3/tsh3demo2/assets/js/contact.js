@@ -21,28 +21,28 @@
       const message = form.querySelector('[name="message"]').value.trim();
 
       if (!name || !email) {
-        showStatus('⚠️ Please provide both your full name and corporate email address.', 'error');
+        showStatus('Please provide both your full name and corporate email address.', 'error');
         return;
       }
 
       // Basic email validation regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        showStatus('⚠️ Please enter a valid work email address.', 'error');
+        showStatus('Please enter a valid work email address.', 'error');
         return;
       }
 
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>⏳</span> Processing Sample Request...';
+      submitBtn.innerHTML = 'Processing Sample Request...';
 
       // Send or simulate inquiry logging
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         showStatus(
-          `🍯 <strong>Thank you, ${name}!</strong> Your free sample request for <em>${product}</em> has been securely routed directly to CEO Ashley Dutta & our wholesale logistics team. We will review your application and email you at <strong>${email}</strong> with sample tracking details within 24 business hours!`,
+          `<strong>Thank you, ${name}!</strong> Your free sample request for <em>${product}</em> has been securely routed directly to CEO Ashley Dutta & our wholesale logistics team. We will review your application and email you at <strong>${email}</strong> with sample tracking details within 24 business hours!`,
           'success'
         );
         form.reset();

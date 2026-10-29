@@ -4,51 +4,110 @@
     <div class="mj-demo-banner-content">
       <span class="mj-demo-badge">Portfolio Demo</span>
       <div class="mj-demo-text">
-        Built as a demo site for a current client <a href="https://tristatehoney.com" target="_blank" rel="noopener noreferrer">Tristatehoney.com</a> by <a href="https://mattyjacks.com" target="_blank" rel="noopener noreferrer">MattyJacks.com</a> which does outsourcing, websites, and has free web games.
+        Built as a demo site for a current client <a href="https://tristatehoney.com" target="_blank" rel="noopener noreferrer">Tristatehoney.com</a> by <a href="https://mattyjacks.com" target="_blank" rel="noopener noreferrer">MattyJacks.com</a> which does outsourcing, websites, and web applications.
       </div>
     </div>
     <div class="mj-demo-actions">
       <a href="https://tristatehoney.com" target="_blank" rel="noopener noreferrer" class="mj-btn-giant mj-btn-tsh" title="Visit TriStateHoney">
-        Visit TriStateHoney 🍯
+        Visit TriStateHoney
       </a>
       <a href="https://mattyjacks.com" target="_blank" rel="noopener noreferrer" class="mj-btn-giant mj-btn-matty" title="Visit MattyJacks">
-        Visit MattyJacks 🚀
+        Visit MattyJacks
       </a>
     </div>
   </div>
 </aside>
 
-<!-- Tri State Honey Header Component -->
+<!-- Tri State Honey Top Announcement Bar -->
 <div class="tsh-top-announcement">
-  <span>🍯 <strong>Wholesale Pure Liquid Gold</strong> &bull; Direct Importers &bull; FDA Compliant &bull; Kosher & Halal</span>
-  <div>
-    <span>Need immediate assistance?</span>
-    <a href="tel:18568646639">📞 Call our CEO: (856) 86 HONEY / (856) 864-6639</a>
+  <div class="tsh-announcement-highlight">
+    <span class="tsh-announcement-pulse"></span>
+    <span><strong>Pure Liquid Gold Direct From Source</strong> &bull; FDA Registered &bull; Kosher & Halal &bull; HACCP Certified</span>
+  </div>
+  <div class="tsh-announcement-contact">
+    <span>Immediate Inquiries</span>
+    <a href="tel:18568646639">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: middle;">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      (856) 86 HONEY / (856) 864-6639
+    </a>
   </div>
 </div>
 
-<header class="tsh-header">
+<!-- Header Navigation -->
+<header class="tsh-header" id="mainHeader">
   <div class="container tsh-nav-wrapper">
     <a href="index.html" class="tsh-brand" title="Tri State Honey LLC">
-      <img src="assets/images/logo.png" alt="Tri State Honey Logo" class="tsh-brand-logo" width="52" height="52">
-      <div class="tsh-brand-title">Tri State <span>Honey</span></div>
+      <img src="assets/images/logo.png" alt="Tri State Honey Logo" class="tsh-brand-logo" width="48" height="48">
+      <div class="tsh-brand-text">
+        <div class="tsh-brand-title">Tri State <span>Honey</span></div>
+        <span class="tsh-brand-tagline">Direct Importers &bull; Est. 2009</span>
+      </div>
     </a>
 
     <button class="tsh-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      ☰
+      &#9776;
     </button>
 
-    <ul class="tsh-nav-menu">
-      <li><a href="#products" class="tsh-nav-link">🍯 Products</a></li>
-      <li><a href="#standards" class="tsh-nav-link">🛡️ Quality & Science</a></li>
-      <li><a href="#catalog" class="tsh-nav-link">📦 Full Catalog</a></li>
-      <li><a href="#logistics" class="tsh-nav-link">🚢 Shipping & Logistics</a></li>
-      <li><a href="#contact" class="tsh-nav-link">✉️ Contact Us</a></li>
-    </ul>
+    <nav>
+      <ul class="tsh-nav-menu">
+        <li>
+          <a href="#products" class="tsh-nav-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z"/>
+              <path d="M12 12l8-4.5M12 12v8M12 12L4 7.5"/>
+            </svg>
+            Honey Packaging
+          </a>
+        </li>
+        <li>
+          <a href="#standards" class="tsh-nav-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Quality & Science
+          </a>
+        </li>
+        <li>
+          <a href="#catalog" class="tsh-nav-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            Full Catalog
+          </a>
+        </li>
+        <li>
+          <a href="#logistics" class="tsh-nav-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.5 0 2.5 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+              <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.07"/>
+              <path d="M12 10V4"/>
+              <path d="m8 6 4-2 4 2"/>
+            </svg>
+            Ocean Logistics
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="tsh-nav-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            Contact & Samples
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <div class="tsh-nav-actions">
-      <a href="tel:18568646639" class="tsh-btn-phone">
-        <span>📞</span> (856) 86 HONEY
+      <a href="tel:18568646639" class="tsh-btn-phone" title="Call Tri State Honey">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        (856) 86 HONEY
       </a>
     </div>
   </div>

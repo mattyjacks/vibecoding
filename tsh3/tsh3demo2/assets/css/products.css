@@ -1,48 +1,51 @@
-/* Tri State Honey Packaging Cards & Interactive Filter System */
+/* Tri State Honey — $100k Products & Packaging Experience */
+
+/* Attention Food Companies VIP B2B Callout */
 .tsh-attention-box {
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fed7aa 100%);
-  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, #101520 0%, #161e2e 60%, #1c263a 100%);
+  border: 1px solid rgba(194, 132, 26, 0.45);
   border-radius: var(--tsh-border-radius-lg);
   padding: 2.25rem 2.75rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2.5rem;
-  box-shadow: 0 10px 25px -4px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 16px 36px -6px rgba(12, 15, 20, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
 }
 
 .tsh-attention-box::before {
-  content: "HONEY";
+  content: "";
   position: absolute;
-  right: -20px;
-  bottom: -20px;
-  font-family: var(--tsh-font-heading);
-  font-size: 6rem;
-  font-weight: 900;
-  color: rgba(245, 158, 11, 0.08);
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(194, 132, 26, 0.2) 0%, transparent 70%);
   pointer-events: none;
-  line-height: 1;
 }
 
 .tsh-attention-content h3 {
-  font-family: var(--tsh-font-heading);
-  font-size: 1.5rem;
-  color: #92400e;
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 1.25rem;
+  color: #dfba73;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-weight: 800;
+  gap: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .tsh-attention-content p {
-  color: #78350f;
+  color: #d1d5db;
   font-size: 1.05rem;
-  max-width: 780px;
-  line-height: 1.55;
+  max-width: 820px;
+  line-height: 1.65;
+  font-weight: 400;
 }
 
 /* Category Filter Tabs */
@@ -50,33 +53,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  gap: 0.65rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
 }
 
 .tsh-filter-btn {
   background: #ffffff;
-  border: 1.5px solid var(--tsh-border-gray);
+  border: 1px solid var(--tsh-border-gray);
   color: var(--tsh-slate-gray);
-  padding: 0.55rem 1.25rem;
+  padding: 0.65rem 1.45rem;
   border-radius: var(--tsh-border-radius-full);
-  font-weight: 700;
-  font-size: 0.92rem;
+  font-family: var(--tsh-font-sans-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: var(--tsh-transition);
+  box-shadow: var(--tsh-shadow-xs);
 }
 
 .tsh-filter-btn:hover {
   border-color: var(--tsh-gold-primary);
   color: var(--tsh-gold-dark);
+  background: var(--tsh-amber-subtle);
+  transform: translateY(-1px);
 }
 
 .tsh-filter-btn.active {
   background: var(--tsh-dark-charcoal);
   color: #ffffff;
   border-color: var(--tsh-dark-charcoal);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 4px 14px rgba(12, 15, 20, 0.2);
 }
 
 /* Products Modern Grid */
@@ -84,160 +91,172 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 .tsh-product-card {
   background: #ffffff;
   border-radius: var(--tsh-border-radius-lg);
   border: 1px solid var(--tsh-border-gray);
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 1.65rem;
   text-align: center;
-  transition: var(--tsh-transition);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  box-shadow: var(--tsh-shadow-xs);
+  box-shadow: var(--tsh-shadow-sm);
+  overflow: hidden;
 }
 
 .tsh-product-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--tsh-shadow-xl), 0 0 25px rgba(245, 158, 11, 0.15);
-  border-color: var(--tsh-gold-primary);
+  border-color: rgba(194, 132, 26, 0.4);
+  box-shadow: 0 20px 40px -8px rgba(12, 15, 20, 0.1), 0 0 25px rgba(194, 132, 26, 0.12);
 }
 
 .tsh-product-badge {
   position: absolute;
-  top: 1.15rem;
-  right: 1.15rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  background-color: var(--tsh-amber-glow);
-  color: #92400e;
-  padding: 0.25rem 0.65rem;
+  top: 14px;
+  right: 14px;
+  background: rgba(194, 132, 26, 0.1);
+  color: #8c5b0d;
+  border: 1px solid rgba(194, 132, 26, 0.25);
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
   border-radius: var(--tsh-border-radius-full);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  letter-spacing: 0.02em;
 }
 
+/* Pedestal for Product Images */
 .tsh-product-img-wrapper {
-  height: 220px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1rem 0 1.5rem;
-  padding: 1rem;
-  background: radial-gradient(circle, #fffbeb 0%, transparent 70%);
-  border-radius: var(--tsh-border-radius);
+  position: relative;
+  background: radial-gradient(ellipse at center, rgba(194, 132, 26, 0.09) 0%, transparent 68%);
 }
 
 .tsh-product-img {
-  max-height: 195px;
-  max-width: 100%;
+  max-height: 180px;
+  width: auto;
   object-fit: contain;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.08));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 8px 16px rgba(12, 15, 20, 0.1));
 }
 
 .tsh-product-card:hover .tsh-product-img {
   transform: scale(1.08) translateY(-4px);
-  filter: drop-shadow(0 14px 20px rgba(217, 119, 6, 0.2));
 }
 
 .tsh-product-name {
   font-family: var(--tsh-font-heading);
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.28rem;
+  font-weight: 700;
   color: var(--tsh-deep-black);
-  margin-bottom: 0.4rem;
-  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .tsh-product-sub {
   font-size: 0.88rem;
   color: var(--tsh-muted-gray);
+  line-height: 1.55;
   margin-bottom: 1.25rem;
-  line-height: 1.45;
-  flex-grow: 1;
+  font-weight: 400;
 }
 
 .tsh-product-meta {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-  color: var(--tsh-slate-gray);
-  margin-bottom: 1.25rem;
-  padding-top: 0.75rem;
-  border-top: 1px dashed var(--tsh-border-gray);
+  gap: 0.5rem;
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--tsh-gold-primary);
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(194, 132, 26, 0.06);
+  border-radius: var(--tsh-border-radius-sm);
+  border: 1px solid rgba(194, 132, 26, 0.15);
 }
 
-.tsh-product-action {
-  margin-top: auto;
-}
-
-.tsh-product-action .tsh-btn {
+.tsh-product-action button {
   width: 100%;
-  padding: 0.65rem 1rem;
-  font-size: 0.92rem;
-  border-radius: var(--tsh-border-radius-full);
+  font-size: 0.86rem;
+  padding: 0.75rem 1rem;
 }
 
-/* Private Label Callout Strip */
+/* Private Label Turnkey Strip */
 .tsh-privatelabel-strip {
-  margin-top: 4rem;
   background: #ffffff;
-  border-radius: var(--tsh-border-radius-lg);
+  border-radius: var(--tsh-border-radius-xl);
   border: 1px solid var(--tsh-border-gray);
-  padding: 2rem 2.5rem;
-  box-shadow: var(--tsh-shadow-sm);
+  padding: 3rem;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
+  box-shadow: var(--tsh-shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.tsh-privatelabel-strip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--tsh-gold-primary) 0%, var(--tsh-gold-light) 100%);
 }
 
 .tsh-privatelabel-steps {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+  margin-top: 1.75rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
 }
 
 .tsh-step-item {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 0.92rem;
-  font-weight: 700;
+  gap: 0.75rem;
+  font-family: var(--tsh-font-sans-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
   color: var(--tsh-dark-charcoal);
 }
 
 .tsh-step-num {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: var(--tsh-gold-primary);
+  background: linear-gradient(135deg, #c2841a 0%, #a06c14 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
   font-size: 0.85rem;
+  box-shadow: 0 3px 8px rgba(194, 132, 26, 0.3);
 }
 
 @media (max-width: 900px) {
   .tsh-attention-box {
     flex-direction: column;
-    text-align: center;
-    padding: 1.75rem;
+    align-items: flex-start;
   }
   .tsh-privatelabel-strip {
     grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .tsh-privatelabel-steps {
-    justify-content: center;
+    padding: 2.25rem;
   }
 }

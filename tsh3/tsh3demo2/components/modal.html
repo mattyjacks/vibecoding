@@ -2,33 +2,34 @@
 <div id="tshProductModal" class="tsh-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="tsh-modal-dialog">
     <button type="button" id="tshModalClose" class="tsh-modal-close" aria-label="Close dialog">&times;</button>
-    
-    <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
-      <div style="width: 140px; height: 160px; background: #fffbeb; border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 0.5rem; border: 1px solid #fde68a; flex-shrink: 0;">
-        <img id="modalImg" src="" alt="Product Package" style="max-height: 140px; max-width: 100%; object-fit: contain;">
+
+    <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+      <div style="width: 140px; height: 160px; background: var(--tsh-bg-light); border-radius: var(--tsh-border-radius-sm); display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid var(--tsh-border-gray); flex-shrink: 0;">
+        <img id="modalImg" src="" alt="Product Package" style="max-height: 135px; max-width: 100%; object-fit: contain;">
       </div>
 
-      <div style="flex: 1; min-width: 240px;">
-        <h3 id="modalTitle" style="font-family: var(--tsh-font-heading); font-size: 1.5rem; color: #0f172a; margin-bottom: 0.25rem;">Product Name</h3>
-        <p id="modalSubtitle" style="color: #d97706; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem;">Subtitle</p>
-        <p id="modalDesc" style="color: #475569; font-size: 0.92rem; line-height: 1.5;">Description</p>
+      <div style="flex: 1; min-width: 250px;">
+        <span id="modalCategoryBadge" class="badge-gold" style="margin-bottom: 0.5rem;">Packaging</span>
+        <h3 id="modalTitle" style="font-family: var(--tsh-font-heading); font-size: 1.65rem; color: var(--tsh-deep-black); margin-bottom: 0.35rem; font-weight: 700;">Product Name</h3>
+        <p id="modalSubtitle" style="color: var(--tsh-gold-primary); font-weight: 600; font-size: 0.92rem; margin-bottom: 0.65rem;">Subtitle</p>
+        <p id="modalDesc" style="color: var(--tsh-slate-gray); font-size: 0.94rem; line-height: 1.65; font-weight: 400;">Description</p>
       </div>
     </div>
 
-    <div style="margin-top: 1.75rem; border-top: 1px solid #e2e8f0; padding-top: 1.25rem;">
-      <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 0.5rem;">Key Advantages & Quality</h4>
-      <ul id="modalFeatures" style="list-style: none; font-size: 0.88rem; color: #334155; display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1.5rem;">
+    <div style="margin-top: 2rem; border-top: 1px solid var(--tsh-border-light); padding-top: 1.5rem;">
+      <h4 style="font-family: var(--tsh-font-sans-heading); font-size: 0.95rem; color: var(--tsh-deep-black); margin-bottom: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">Key Advantages &amp; Purity</h4>
+      <ul id="modalFeatures" style="list-style: none; font-size: 0.92rem; color: var(--tsh-slate-gray); display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; font-weight: 400;">
       </ul>
 
-      <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 0.5rem;">Technical Specifications</h4>
-      <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse; margin-bottom: 1.5rem;">
+      <h4 style="font-family: var(--tsh-font-sans-heading); font-size: 0.95rem; color: var(--tsh-deep-black); margin-bottom: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">Technical Specifications</h4>
+      <table class="tsh-modal-table">
         <tbody id="modalSpecs">
         </tbody>
       </table>
 
-      <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-        <a id="modalSampleCta" href="#contact" class="tsh-btn tsh-btn-primary" style="font-size: 0.95rem; padding: 0.65rem 1.25rem;">
-          Request Sample For This Size ➔
+      <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.75rem;">
+        <a id="modalSampleCta" href="#contact" class="tsh-btn tsh-btn-primary" style="font-size: 0.92rem; padding: 0.75rem 1.5rem;">
+          Request Sample For This Size &rarr;
         </a>
       </div>
     </div>

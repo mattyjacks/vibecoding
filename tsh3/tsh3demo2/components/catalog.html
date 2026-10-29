@@ -1,19 +1,35 @@
 <!-- Tri State Honey Extended Catalog Component -->
-<section id="catalog" class="tsh-section tsh-section-light">
+<section id="catalog" class="tsh-section">
   <div class="container">
-    <div class="tsh-section-header">
+    <div class="tsh-section-header tsh-reveal">
       <span class="tsh-section-tag">Beyond Honey &bull; Global Supply Network</span>
-      <h2 class="tsh-section-title">Popular ⭐ Products</h2>
+      <h2 class="tsh-section-title">Popular Products</h2>
       <p class="tsh-section-desc">
-        Our goods are more than great, they're the best! We sell more than just honey: this is a list of products that we sell often, but we can get you anything, because we believe in ourselves.
+        Our goods are more than great, they're the best. We sell more than just honey: this is a selection of products we distribute regularly, with custom global sourcing available for unique specifications.
       </p>
     </div>
 
-    <div class="tsh-catalog-grid">
+    <!-- Quick Search Bar for Catalog -->
+    <div class="tsh-search-container tsh-reveal">
+      <input type="text" id="catalogSearchInput" class="tsh-search-input" placeholder="Search commodities (spices, packaging, oils, chilies...)">
+      <span class="tsh-search-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </span>
+    </div>
+
+    <div class="tsh-catalog-grid" id="catalogGrid">
       <!-- Retail Honey -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="honey retail private label jar bottle">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🍯</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z"/>
+              <path d="M12 12l8-4.5M12 12v8M12 12L4 7.5"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Private Label</span>
         </div>
         <h3 class="tsh-catalog-name">Retail Honey (Private Labeled)</h3>
@@ -21,166 +37,217 @@
         <ul class="tsh-catalog-list">
           <li>¾ lb, 1 lb, 2 lb, 5 lb, and 10 lb sizes</li>
           <li>Glass jars or BPA-free squeeze bottles</li>
-          <li>Turnkey label application</li>
+          <li>Turnkey label printing and application</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Retail</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Retail Honey (Private Labeled)')">Inquire on Retail &rarr;</a>
       </article>
 
       <!-- Bulk Honey -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="honey bulk commercial pail tote nj usa stocked">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">📦</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Food Service</span>
         </div>
         <h3 class="tsh-catalog-name">Bulk Honey (USA Stocked)</h3>
         <p class="tsh-catalog-desc">Commercial bulk honey for food service and manufacturing. In stock in New Jersey for fast shipping.</p>
         <ul class="tsh-catalog-list">
-          <li>60 lb buckets & 3,000 lb pallets/totes</li>
+          <li>60 lb buckets &amp; 3,000 lb pallets/totes</li>
           <li>Stocked and packed in NJ, USA</li>
-          <li>Continuous lot consistency</li>
+          <li>Continuous lot-to-lot consistency</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Bulk</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Bulk Honey (USA Stocked)')">Inquire on Bulk &rarr;</a>
       </article>
 
       <!-- Hot Honey -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="hot honey spicy chili pizza sweet heat">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🔥</span>
-          <span class="tsh-catalog-badge">Trending Favorite</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </span>
+          <span class="tsh-catalog-badge">Trending Selection</span>
         </div>
         <h3 class="tsh-catalog-name">Hot Honey</h3>
-        <p class="tsh-catalog-desc">Pure honey and hot chili powder mixed together for the ultimate sweet-heat culinary kick.</p>
+        <p class="tsh-catalog-desc">Pure honey and hot chili pepper infusion formulated together for the ultimate sweet-heat culinary profile.</p>
         <ul class="tsh-catalog-list">
-          <li>Custom Scoville spice heat formulation</li>
+          <li>Custom Scoville heat formulations</li>
           <li>Retail squeeze bottles or bulk pails</li>
-          <li>Exceptional pizza & BBQ glaze</li>
+          <li>Exceptional pizza, wing &amp; BBQ glaze</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Hot Honey</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Hot Honey')">Inquire on Hot Honey &rarr;</a>
       </article>
 
       <!-- Whole Chili Peppers -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="chili peppers red spice agricultural crop">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🌶️</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8c0 4.5-3.5 8-8 8a6 6 0 0 1-5-2.7"/>
+              <path d="M10 3c-1.5 0-3 1-3 3 0 2 1 3 3 3s3-1 3-3c0-2-1.5-3-3-3Z"/>
+              <path d="m14 8 4-4"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Direct Import</span>
         </div>
         <h3 class="tsh-catalog-name">Whole Chili Peppers</h3>
-        <p class="tsh-catalog-desc">Directly harvested, carefully dried chili peppers packed with authentic heat and rich natural color.</p>
+        <p class="tsh-catalog-desc">Directly harvested, carefully sun-dried chili peppers packed with authentic heat and rich natural color.</p>
         <ul class="tsh-catalog-list">
-          <li>Export bags with moisture protection</li>
-          <li>Consistent heat & capsaicin content</li>
-          <li>Aflatoxin and pesticide tested</li>
+          <li>Export bags with moisture barrier</li>
+          <li>Consistent capsaicin and heat levels</li>
+          <li>Aflatoxin and pesticide laboratory tested</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Chilies</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Whole Chili Peppers')">Inquire on Chilies &rarr;</a>
       </article>
 
       <!-- High-Quality Spices -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="spices pepper turmeric cardamom cinnamon cumin coriander">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🧂</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <circle cx="19" cy="8" r="2"/>
+              <circle cx="5" cy="8" r="2"/>
+              <circle cx="12" cy="20" r="2"/>
+              <circle cx="19" cy="16" r="2"/>
+              <circle cx="5" cy="16" r="2"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Wholesale Spices</span>
         </div>
         <h3 class="tsh-catalog-name">High-Quality Spices</h3>
-        <p class="tsh-catalog-desc">A wide range of potent, aromatic spices sourced from premier agricultural origin regions.</p>
+        <p class="tsh-catalog-desc">A wide range of potent, aromatic spices sourced directly from premier agricultural origin regions.</p>
         <ul class="tsh-catalog-list">
           <li>Whole and ground custom mesh sizes</li>
-          <li>High essential oil content</li>
-          <li>Strict microbial & pathogen controls</li>
+          <li>High volatile essential oil content</li>
+          <li>Strict microbial &amp; pathogen controls</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Spices</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('High-Quality Spices')">Inquire on Spices &rarr;</a>
       </article>
 
       <!-- Essential Oils & Flavorings -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="essential oils extracts flavorings natural steam distilled">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🧪</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
+              <line x1="8.5" y1="2" x2="15.5" y2="2"/>
+              <path d="M8.5 14h7"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Extracts</span>
         </div>
-        <h3 class="tsh-catalog-name">Essential Oils & Flavorings</h3>
+        <h3 class="tsh-catalog-name">Essential Oils &amp; Flavorings</h3>
         <p class="tsh-catalog-desc">Food-grade essential oils and natural culinary flavor extracts for confectionery and beverages.</p>
         <ul class="tsh-catalog-list">
-          <li>Steam distilled botanical oils</li>
-          <li>GC-MS laboratory certified</li>
+          <li>Steam-distilled botanical oils</li>
+          <li>GC-MS laboratory certified profiles</li>
           <li>Drums and food-grade canisters</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Oils</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Essential Oils & Flavorings')">Inquire on Oils &rarr;</a>
       </article>
 
       <!-- Sweet and Sour Sauce -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="sweet sour sauce condiments glaze honey food service">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🥣</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/>
+              <line x1="8" y1="12" x2="16" y2="12"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Condiments</span>
         </div>
         <h3 class="tsh-catalog-name">Sweet and Sour Sauce</h3>
-        <p class="tsh-catalog-desc">Balanced commercial sauce formula crafted with genuine natural honey and corn syrup.</p>
+        <p class="tsh-catalog-desc">Balanced commercial sauce formula crafted with genuine natural honey and food-grade ingredients.</p>
         <ul class="tsh-catalog-list">
-          <li>Turnkey dipping and glaze sauce</li>
-          <li>Consistent viscosity and gloss</li>
+          <li>Turnkey dipping and culinary glaze sauce</li>
+          <li>Consistent viscosity, brix and gloss</li>
           <li>Food service jugs and drums</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Sauces</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Sweet and Sour Sauce')">Inquire on Sauces &rarr;</a>
       </article>
 
       <!-- Blended Oils -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="olive oil vegetable cooking oils blend fry high smoke">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🫒</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Cooking Oils</span>
         </div>
-        <h3 class="tsh-catalog-name">Olive Oil & Vegetable Oil Blend</h3>
+        <h3 class="tsh-catalog-name">Olive Oil &amp; Vegetable Oil Blend</h3>
         <p class="tsh-catalog-desc">High-performance culinary oil blend offering rich flavor with excellent cost economy and smoke point.</p>
         <ul class="tsh-catalog-list">
           <li>Custom ratios (e.g. 80/20, 90/10)</li>
-          <li>Ideal for high heat frying & dressing</li>
+          <li>Ideal for high heat frying &amp; dressing</li>
           <li>Totes, drums, and retail jugs</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Blends</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Olive Oil & Vegetable Oil Blend')">Inquire on Blends &rarr;</a>
       </article>
 
       <!-- AGI-Glasspac Bottles -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="bottles glass plastic packaging agi glasspac pet">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🏺</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2h6v4l2 3v13H7V9l2-3V2z"/>
+              <line x1="9" y1="6" x2="15" y2="6"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">AGI Partnership</span>
         </div>
-        <h3 class="tsh-catalog-name">Bulk Glass & Plastic Bottles</h3>
+        <h3 class="tsh-catalog-name">Bulk Glass &amp; Plastic Bottles</h3>
         <p class="tsh-catalog-desc">Through our partnership with AGI-Glasspac (India's largest bottle manufacturer), get advanced bottles at low prices.</p>
         <ul class="tsh-catalog-list">
-          <li>Custom emboss molds & shapes</li>
-          <li>Massive container savings</li>
-          <li>Complete closure & capping options</li>
+          <li>Custom emboss molds &amp; shapes</li>
+          <li>Massive full-container container savings</li>
+          <li>Complete closure, cork &amp; capping options</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Bottles</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Bulk Glass & Plastic Bottles')">Inquire on Bottles &rarr;</a>
       </article>
 
       <!-- Danish Cookies -->
-      <article class="tsh-catalog-card">
+      <article class="tsh-catalog-card tsh-reveal" data-keywords="danish cookies tin butter holiday bakery confectionery">
         <div class="tsh-catalog-icon-wrapper">
-          <span class="tsh-catalog-icon">🍪</span>
+          <span class="tsh-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="9" cy="9" r="1" fill="currentColor"/>
+              <circle cx="15" cy="9" r="1" fill="currentColor"/>
+              <circle cx="10" cy="14" r="1" fill="currentColor"/>
+              <circle cx="14" cy="14" r="1" fill="currentColor"/>
+            </svg>
+          </span>
           <span class="tsh-catalog-badge">Confectionery</span>
         </div>
         <h3 class="tsh-catalog-name">Danish Cookies in Tin Boxes</h3>
         <p class="tsh-catalog-desc">Rich Danish butter cookies packaged in classic embossed tin boxes, plus other fine cookie varieties.</p>
         <ul class="tsh-catalog-list">
-          <li>Authentic crisp butter recipe</li>
-          <li>Seasonal & custom tin branding</li>
+          <li>Authentic crisp real-butter recipe</li>
+          <li>Seasonal &amp; custom tin branding</li>
           <li>Pallet and container quantities</li>
         </ul>
-        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm">Inquire on Cookies</a>
+        <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm" onclick="prefillContactProduct('Danish Cookies in Tin Boxes')">Inquire on Cookies &rarr;</a>
       </article>
     </div>
 
-    <!-- Custom Request Banner -->
-    <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #ffffff; padding: 2.5rem; border-radius: var(--tsh-border-radius-lg); margin-top: 3.5rem; text-align: center;">
-      <h3 style="font-size: 1.75rem; font-family: var(--tsh-font-heading); color: #fbbf24; margin-bottom: 0.75rem;">
-        ❓ Want something not on the list? ❓
-      </h3>
-      <p style="max-width: 700px; margin: 0 auto 1.5rem; color: #cbd5e1; font-size: 1.05rem;">
-        Just ask! We have a massive network of distributors and exporters across many industries. We’re no strangers to unusual requests, so don’t be shy!
+    <!-- Custom Sourcing Request Banner -->
+    <div class="tsh-sourcing-banner tsh-reveal">
+      <h3>Looking for specific commodities or custom packing?</h3>
+      <p>
+        Direct inquiries welcome. We leverage an extensive global network of vetted food producers and exporters across multiple agricultural sectors.
       </p>
-      <a href="#contact" class="tsh-btn tsh-btn-primary">
-        Ask About Custom Sourcing ➔
+      <a href="#contact" class="tsh-btn tsh-btn-primary" onclick="prefillContactProduct('Custom Sourcing Request')">
+        Ask About Custom Sourcing &rarr;
       </a>
     </div>
 
