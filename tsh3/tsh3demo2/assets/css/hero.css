@@ -1,0 +1,287 @@
+/* Tri State Honey Modern Luxury Hero Showcase */
+.tsh-hero {
+  position: relative;
+  background: radial-gradient(circle at 15% 20%, rgba(254, 243, 199, 0.8) 0%, rgba(255, 251, 235, 0.5) 45%, #ffffff 90%);
+  padding: 5rem 0 4.5rem;
+  border-bottom: 1px solid var(--tsh-border-gray);
+  overflow: hidden;
+}
+
+.tsh-hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, rgba(251, 191, 36, 0.05) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.tsh-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: 20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.tsh-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tsh-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.15rem;
+  background-color: #ffffff;
+  color: var(--tsh-gold-dark);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--tsh-border-radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--tsh-shadow-xs);
+}
+
+.tsh-hero-badge-pill {
+  background: var(--tsh-amber-glow);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--tsh-border-radius-full);
+  font-size: 0.75rem;
+  color: #92400e;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tsh-hero-title {
+  font-family: var(--tsh-font-heading);
+  font-size: 3.85rem;
+  line-height: 1.1;
+  color: var(--tsh-deep-black);
+  margin-bottom: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.tsh-hero-title .highlight {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 60%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.tsh-hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: var(--tsh-slate-gray);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  max-width: 620px;
+}
+
+.tsh-triad-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.tsh-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #ffffff;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--tsh-border-radius);
+  border: 1px solid var(--tsh-border-gray);
+  box-shadow: var(--tsh-shadow-xs);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--tsh-dark-charcoal);
+  transition: var(--tsh-transition);
+}
+
+.tsh-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--tsh-shadow-sm);
+}
+
+.tsh-pill-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.tsh-pill.flavor .tsh-pill-icon { background: #fef3c7; color: #d97706; }
+.tsh-pill.safety .tsh-pill-icon { background: #dcfce7; color: #16a34a; }
+.tsh-pill.price .tsh-pill-icon { background: #e0f2fe; color: #0284c7; }
+
+.tsh-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+/* Hero Media & Floating Glass Cards */
+.tsh-hero-media {
+  position: relative;
+}
+
+.tsh-hero-media-wrapper {
+  position: relative;
+  border-radius: var(--tsh-border-radius-xl);
+  padding: 0.75rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(254, 243, 199, 0.5));
+  box-shadow: var(--tsh-shadow-xl), var(--tsh-shadow-honey-glow);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.tsh-hero-img-box {
+  overflow: hidden;
+  border-radius: var(--tsh-border-radius-lg);
+  position: relative;
+}
+
+.tsh-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tsh-hero-media-wrapper:hover .tsh-hero-img {
+  transform: scale(1.04);
+}
+
+/* Floating Glass Cards */
+.tsh-hero-float-deal {
+  position: absolute;
+  bottom: -22px;
+  left: -24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 1.35rem;
+  border-radius: var(--tsh-border-radius);
+  box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  z-index: 3;
+}
+
+.tsh-hero-float-origin {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--tsh-border-radius-full);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  z-index: 3;
+}
+
+/* Trust Bar Below Hero */
+.tsh-trust-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--tsh-border-gray);
+  padding: 1.5rem 0;
+}
+
+.tsh-trust-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.tsh-trust-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.tsh-trust-stat-num {
+  font-family: var(--tsh-font-heading);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--tsh-deep-black);
+  line-height: 1;
+}
+
+.tsh-trust-stat-num span {
+  color: var(--tsh-gold-dark);
+}
+
+.tsh-trust-stat-text {
+  font-size: 0.85rem;
+  color: var(--tsh-muted-gray);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .tsh-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  .tsh-hero-title {
+    font-size: 2.85rem;
+  }
+  .tsh-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tsh-triad-pills, .tsh-hero-ctas {
+    justify-content: center;
+  }
+  .tsh-hero-float-deal {
+    position: static;
+    margin: 1.5rem auto 0;
+    max-width: 380px;
+    justify-content: center;
+  }
+  .tsh-hero-float-origin {
+    position: static;
+    margin: 1rem auto 0;
+    display: inline-flex;
+  }
+  .tsh-trust-grid {
+    justify-content: center;
+    gap: 2rem;
+  }
+}

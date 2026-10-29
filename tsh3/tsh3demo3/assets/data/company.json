@@ -1,0 +1,76 @@
+{
+  "companyName": "Tri State Honey LLC",
+  "tagline": "World's Best Honey – Pure Liquid Gold",
+  "phone": "(856) 86 HONEY",
+  "phoneRaw": "+18568646639",
+  "phoneDisplay": "(856) 864-6639",
+  "phoneAlt": "Press 0 to call our CEO",
+  "ceo": "Ashley Dutta",
+  "emails": {
+    "sales": "Team@TriStateHoney.com",
+    "ceo": "Info@TriStateHoney.com"
+  },
+  "headquarters": {
+    "address1": "2 Lake View Ave, Suite 314D",
+    "city": "Piscataway",
+    "state": "NJ",
+    "zip": "08854",
+    "country": "USA"
+  },
+  "established": 2009,
+  "certifications": [
+    {
+      "name": "Kosher Certified",
+      "icon": "✡️",
+      "desc": "Produced under strict rabbinical dietary supervision"
+    },
+    {
+      "name": "Halal Certified",
+      "icon": "☪️",
+      "desc": "Conforming strictly to international Islamic food standards"
+    },
+    {
+      "name": "FDA Compliant",
+      "icon": "🏛️",
+      "desc": "Registered facility compliant with 21 CFR regulations"
+    },
+    {
+      "name": "HACCP Safe",
+      "icon": "🛡️",
+      "desc": "Rigorous Hazard Analysis Critical Control Point biological safety system"
+    },
+    {
+      "name": "Non-GMO & Organic",
+      "icon": "🌿",
+      "desc": "Pure wildcrafted and natural origins with zero genetic modification"
+    },
+    {
+      "name": "True Source Certified®",
+      "icon": "🍯",
+      "desc": "Traceable chain of custody verifying origin and ethical beekeeping"
+    }
+  ],
+  "testingStandards": [
+    {
+      "name": "C3 / C4 Sugar Analysis",
+      "detail": "Stable carbon isotope ratio analysis (SCIRA) detecting corn syrup, cane sugar, or foreign sweeteners."
+    },
+    {
+      "name": "Microscopic Pollen Test",
+      "detail": "Melissopalynology verifying genuine floral origin and geographical authenticity."
+    },
+    {
+      "name": "HRMS (High-Res Mass Spectrometry)",
+      "detail": "Molecular screen identifying trace adulterants, industrial contaminants, and non-target chemicals."
+    },
+    {
+      "name": "NMR (Nuclear Magnetic Resonance)",
+      "detail": "Spectral chemical profiling guaranteeing botanical identity, freshness, and absence of heavy metals like lead or mercury."
+    }
+  ],
+  "logistics": {
+    "shippingModes": "Direct ocean vessel shipping to port, followed by intermodal freight / overland trucking directly to customer loading docks.",
+    "containerAdvice": "Ordering 100% full shipping container loads (FCL) yields optimal freight savings per pound. We calculate exact mathematical weight and cube optimization across mixed pallets.",
+    "usaStock": "60 lb pails, retail bottles, and bulk containers stocked in New Jersey for immediate LTL and FTL dispatch."
+  }
+}

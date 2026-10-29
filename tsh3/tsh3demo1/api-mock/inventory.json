@@ -1,0 +1,11 @@
+{
+  "inventoryStatus": "active",
+  "warehouseLocation": "Piscataway, NJ, USA",
+  "liveStock": [
+    { "sku": "TSH-BEAR-1LB", "packaging": "1 lb Bear", "status": "In Stock", "leadTime": "Immediate / 1-2 days" },
+    { "sku": "TSH-BOT-2LB", "packaging": "2 lb Classic Bottle", "status": "In Stock", "leadTime": "Immediate / 1-2 days" },
+    { "sku": "TSH-BUCKET-60LB", "packaging": "60 lb Pail", "status": "In Stock (NJ USA)", "leadTime": "Same-day / Next-day dispatch" },
+    { "sku": "TSH-DRUM-660LB", "packaging": "660 lb Industrial Drum", "status": "In Stock (Port & Warehouse)", "leadTime": "3-5 business days" },
+    { "sku": "TSH-TOTE-3000LB", "packaging": "3,000 lb IBC Tote", "status": "FCL Available & Stocked", "leadTime": "Direct FCL or LTL" }
+  ]
+}

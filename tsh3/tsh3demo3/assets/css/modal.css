@@ -1,0 +1,158 @@
+/* Interactive Spec Modal Component */
+.tsh-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(9, 13, 22, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tsh-modal-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tsh-modal-dialog {
+  background: #ffffff;
+  border-radius: var(--tsh-radius-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.25rem;
+  position: relative;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--tsh-border-gray);
+}
+
+.tsh-modal-backdrop.is-active .tsh-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.tsh-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--tsh-bg-light);
+  border: 1px solid var(--tsh-border-gray);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--tsh-slate-gray);
+  transition: var(--tsh-transition);
+}
+
+.tsh-modal-close:hover {
+  background: var(--tsh-amber-glow);
+  color: var(--tsh-primary-dark);
+  border-color: var(--tsh-primary);
+}
+
+.modal-product-header {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.modal-product-img-box {
+  width: 150px;
+  height: 170px;
+  background: radial-gradient(circle, #fffbeb 0%, #fef3c7 100%);
+  border-radius: var(--tsh-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  flex-shrink: 0;
+}
+
+.modal-product-img-box img {
+  max-height: 140px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));
+}
+
+.modal-product-meta {
+  flex: 1;
+  min-width: 250px;
+}
+
+.modal-product-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--tsh-amber-100);
+  color: var(--tsh-primary-dark);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--tsh-radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.modal-features-list {
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--tsh-slate-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.modal-features-list li::before {
+  content: "✓";
+  color: var(--tsh-green);
+  font-weight: 800;
+}
+
+.modal-specs-table {
+  width: 100%;
+  font-size: 0.88rem;
+  border-collapse: collapse;
+  margin-bottom: 1.75rem;
+}
+
+.modal-specs-table tr {
+  border-bottom: 1px solid var(--tsh-border-gray);
+}
+
+.modal-specs-table td {
+  padding: 0.65rem 0.5rem;
+}
+
+.modal-specs-table td:first-child {
+  font-weight: 700;
+  color: var(--tsh-slate-dark);
+  width: 35%;
+}
+
+.modal-specs-table td:last-child {
+  color: var(--tsh-slate-gray);
+}

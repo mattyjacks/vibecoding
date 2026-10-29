@@ -1,0 +1,146 @@
+/* Tri State Honey Catalog & Logistics */
+.tsh-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tsh-catalog-card {
+  background: #ffffff;
+  border-radius: var(--tsh-border-radius);
+  border: 1px solid var(--tsh-border-gray);
+  padding: 1.75rem;
+  transition: var(--tsh-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.tsh-catalog-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--tsh-gold-primary);
+  box-shadow: var(--tsh-shadow-lg);
+}
+
+.tsh-catalog-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tsh-catalog-icon {
+  font-size: 2rem;
+}
+
+.tsh-catalog-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--tsh-border-radius-full);
+  background: var(--tsh-amber-glow);
+  color: var(--tsh-gold-dark);
+}
+
+.tsh-catalog-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--tsh-deep-black);
+  margin-bottom: 0.5rem;
+}
+
+.tsh-catalog-desc {
+  font-size: 0.92rem;
+  color: var(--tsh-slate-gray);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.tsh-catalog-list {
+  list-style: none;
+  border-top: 1px solid var(--tsh-border-gray);
+  padding-top: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.tsh-catalog-list li {
+  font-size: 0.85rem;
+  color: var(--tsh-dark-charcoal);
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.tsh-catalog-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--tsh-gold-dark);
+  font-weight: bold;
+}
+
+/* Warehouse & Logistics Box */
+.tsh-logistics-card {
+  background: #ffffff;
+  border-radius: var(--tsh-border-radius-lg);
+  border: 1px solid var(--tsh-border-gray);
+  box-shadow: var(--tsh-shadow-md);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3.5rem;
+}
+
+.tsh-logistics-media {
+  position: relative;
+  min-height: 320px;
+}
+
+.tsh-logistics-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tsh-logistics-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.85) 100%);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tsh-logistics-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tsh-logistics-content h3 {
+  font-family: var(--tsh-font-heading);
+  font-size: 1.75rem;
+  color: var(--tsh-deep-black);
+  margin-bottom: 1rem;
+}
+
+.tsh-logistics-tip {
+  background: var(--tsh-amber-glow);
+  border-left: 4px solid var(--tsh-gold-dark);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--tsh-border-radius-sm) var(--tsh-border-radius-sm) 0;
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  color: #78350f;
+}
+
+@media (max-width: 900px) {
+  .tsh-logistics-card {
+    grid-template-columns: 1fr;
+  }
+}

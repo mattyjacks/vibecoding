@@ -1,0 +1,217 @@
+:root {
+  /* Ultra-Premium Honey Palette */
+  --tsh-primary: #d97706;
+  --tsh-primary-hover: #b45309;
+  --tsh-primary-dark: #92400e;
+  --tsh-primary-light: #fbbf24;
+  --tsh-gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  --tsh-gold-shimmer: linear-gradient(110deg, #fef3c7 0%, #fde68a 30%, #f59e0b 60%, #b45309 100%);
+  --tsh-amber-glow: rgba(245, 158, 11, 0.15);
+  --tsh-amber-subtle: #fffbeb;
+  --tsh-amber-100: #fef3c7;
+  --tsh-amber-50: #fffdf7;
+
+  /* Sophisticated Neutrals */
+  --tsh-dark-charcoal: #0f172a;
+  --tsh-deep-black: #090d16;
+  --tsh-slate-dark: #1e293b;
+  --tsh-slate-gray: #334155;
+  --tsh-muted-gray: #64748b;
+  --tsh-border-gray: #e2e8f0;
+  --tsh-border-subtle: rgba(226, 232, 240, 0.8);
+  --tsh-bg-light: #f8fafc;
+  --tsh-pure-white: #ffffff;
+
+  /* Accent Badges & Highlights */
+  --tsh-green: #059669;
+  --tsh-green-bg: #ecfdf5;
+  --tsh-blue: #0284c7;
+  --tsh-blue-bg: #f0f9ff;
+  --tsh-red: #dc2626;
+  --tsh-red-bg: #fef2f2;
+
+  /* Typography */
+  --tsh-font-primary: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --tsh-font-heading: 'Cabinet Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --tsh-font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Smooth Modern Shadows */
+  --tsh-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --tsh-shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
+  --tsh-shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08);
+  --tsh-shadow-lg: 0 16px 32px -4px rgba(15, 23, 42, 0.1);
+  --tsh-shadow-xl: 0 24px 48px -12px rgba(15, 23, 42, 0.14);
+  --tsh-shadow-honey: 0 12px 30px -4px rgba(217, 119, 6, 0.28);
+  --tsh-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+
+  /* Layout & Sizing */
+  --tsh-container-width: 1240px;
+  --tsh-container-wide: 1380px;
+  --tsh-radius-sm: 8px;
+  --tsh-radius-md: 14px;
+  --tsh-radius-lg: 22px;
+  --tsh-radius-full: 9999px;
+  --tsh-transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --tsh-transition-slow: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--tsh-font-primary);
+  color: var(--tsh-slate-gray);
+  background-color: var(--tsh-bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--tsh-transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: var(--tsh-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-wide {
+  max-width: var(--tsh-container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Base Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tsh-primary);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--tsh-radius-full);
+  margin-bottom: 0.85rem;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.section-title {
+  font-family: var(--tsh-font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--tsh-dark-charcoal);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.125rem;
+  color: var(--tsh-muted-gray);
+  max-width: 720px;
+  line-height: 1.65;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button UI Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--tsh-radius-full);
+  cursor: pointer;
+  border: none;
+  transition: var(--tsh-transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--tsh-gold-gradient);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--tsh-dark-charcoal);
+  border: 1px solid var(--tsh-border-gray);
+  box-shadow: var(--tsh-shadow-xs);
+}
+
+.btn-secondary:hover {
+  background: var(--tsh-amber-subtle);
+  border-color: var(--tsh-primary-light);
+  color: var(--tsh-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: var(--tsh-dark-charcoal);
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: var(--tsh-shadow-md);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Micro-interaction bounce */
+.hover-lift {
+  transition: var(--tsh-transition);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}

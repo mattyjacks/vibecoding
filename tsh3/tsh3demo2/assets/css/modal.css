@@ -1,0 +1,121 @@
+/* Tri State Honey Interactive Modal & Utility Styles */
+.tsh-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(9, 13, 22, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tsh-modal-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tsh-modal-dialog {
+  background: #ffffff;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--tsh-border-radius-xl);
+  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.4), 0 0 40px rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 2.5rem;
+  position: relative;
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tsh-modal-backdrop.is-active .tsh-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.tsh-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #f1f5f9;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  cursor: pointer;
+  color: var(--tsh-slate-gray);
+  transition: var(--tsh-transition);
+}
+
+.tsh-modal-close:hover {
+  background: var(--tsh-red-light);
+  color: var(--tsh-red-accent);
+  transform: rotate(90deg);
+}
+
+.tsh-status-alert {
+  padding: 1.1rem 1.35rem;
+  border-radius: var(--tsh-border-radius-sm);
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  display: none;
+  line-height: 1.5;
+}
+
+.tsh-status-alert.success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.tsh-status-alert.error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+/* Custom Modal Specs Table */
+.tsh-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.tsh-modal-table tr {
+  border-bottom: 1px solid var(--tsh-border-gray);
+}
+
+.tsh-modal-table td {
+  padding: 0.65rem 0.5rem;
+}
+
+.tsh-modal-table td.label {
+  font-weight: 700;
+  color: var(--tsh-slate-gray);
+  width: 35%;
+}
+
+.tsh-modal-table td.value {
+  color: var(--tsh-deep-black);
+  font-weight: 600;
+}

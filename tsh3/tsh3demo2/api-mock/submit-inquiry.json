@@ -1,0 +1,11 @@
+{
+  "apiEndpoint": "/api-mock/submit-inquiry.json",
+  "status": "success",
+  "httpCode": 200,
+  "message": "Sample request accepted and forwarded to Tri State Honey sales desk.",
+  "timestamp": "2026-10-29T15:30:00Z",
+  "routing": {
+    "primary": "Team@TriStateHoney.com",
+    "executive": "Info@TriStateHoney.com"
+  }
+}

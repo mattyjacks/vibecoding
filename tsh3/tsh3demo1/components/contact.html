@@ -1,0 +1,107 @@
+<!-- Tri State Honey Contact Component -->
+<section id="contact" class="tsh-contact-section">
+  <div class="container">
+    <div class="tsh-contact-grid">
+      
+      <div class="tsh-contact-info-col">
+        <span style="color: var(--tsh-gold-primary); font-weight: 800; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Direct Executive & Wholesale Contact</span>
+        <h2>Contact Tri State Honey</h2>
+        <p class="tsh-contact-tagline">Let’s “bee” 🐝 in touch! Free samples are available!</p>
+
+        <div class="tsh-contact-methods">
+          <!-- Phone 1 -->
+          <div class="tsh-contact-method-item">
+            <div class="tsh-contact-icon">📞</div>
+            <div>
+              <h4>Call Now (Toll-Free & CEO Line):</h4>
+              <div><a href="tel:18568646639">(856) 86 HONEY</a> or <a href="tel:18568646639">(856) 864-6639</a></div>
+              <p style="font-size: 0.88rem; color: #fbbf24; margin-top: 0.35rem;">
+                👉 <strong>Press 0</strong> to call our <strong>CEO</strong> directly.
+              </p>
+            </div>
+          </div>
+
+          <!-- Email Sales -->
+          <div class="tsh-contact-method-item">
+            <div class="tsh-contact-icon">✉️</div>
+            <div>
+              <h4>Wholesale Sales Team:</h4>
+              <div><a href="mailto:Team@TriStateHoney.com">Team@TriStateHoney.com</a></div>
+              <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem;">For volume quotes, price sheets, and specification packets.</p>
+            </div>
+          </div>
+
+          <!-- Email CEO -->
+          <div class="tsh-contact-method-item">
+            <div class="tsh-contact-icon">👑</div>
+            <div>
+              <h4>Ashley Dutta (CEO):</h4>
+              <div><a href="mailto:Info@TriStateHoney.com">Info@TriStateHoney.com</a></div>
+              <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem;">Direct executive inquiries and corporate partnerships.</p>
+            </div>
+          </div>
+
+          <!-- Headquarters -->
+          <div class="tsh-contact-method-item">
+            <div class="tsh-contact-icon">🏢</div>
+            <div>
+              <h4>Corporate Headquarters:</h4>
+              <p style="color: #ffffff; font-weight: 600;">2 Lake View Ave, Suite 314D<br>Piscataway, NJ 08854 USA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Request Card -->
+      <div class="tsh-form-card">
+        <h3>Request Free Honey Samples</h3>
+        <p>Tell us what size container or products your business requires and we'll dispatch a sample kit.</p>
+
+        <form id="tshSampleForm">
+          <div class="tsh-form-group">
+            <label class="tsh-form-label" for="inquiryName">Your Full Name *</label>
+            <input type="text" id="inquiryName" name="fullName" class="tsh-form-control" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="tsh-form-group">
+            <label class="tsh-form-label" for="inquiryCompany">Company / Brand Name</label>
+            <input type="text" id="inquiryCompany" name="company" class="tsh-form-control" placeholder="e.g. Acme Food & Beverage Co.">
+          </div>
+
+          <div class="tsh-form-group">
+            <label class="tsh-form-label" for="inquiryEmail">Work Email Address *</label>
+            <input type="email" id="inquiryEmail" name="email" class="tsh-form-control" placeholder="john@company.com" required>
+          </div>
+
+          <div class="tsh-form-group">
+            <label class="tsh-form-label" for="inquiryProduct">Product or Package Size of Interest</label>
+            <select id="inquiryProduct" name="product" class="tsh-form-control">
+              <option value="1 lb Honey Bear">1 lb Bear Bottle</option>
+              <option value="2 lb Honey Bottle">2 lb Squeeze Bottle</option>
+              <option value="60 lb Honey Bucket">60 lb Bulk Pail / Bucket (USA Stock)</option>
+              <option value="660 lb Honey Drum">660 lb Industrial Drum</option>
+              <option value="3000 lb Honey Tote">3,000 lb IBC Pallet Tote</option>
+              <option value="Hot Honey">Hot Honey</option>
+              <option value="Spices / Chilies">Spices or Whole Chili Peppers</option>
+              <option value="Bottles / Packaging">AGI-Glasspac Bottles / Packaging</option>
+              <option value="Full Container Load">Full Container Load (Mixed Products)</option>
+              <option value="Custom Product Request">Other / Custom Sourcing Request</option>
+            </select>
+          </div>
+
+          <div class="tsh-form-group">
+            <label class="tsh-form-label" for="inquiryMessage">Delivery Address & Requirements</label>
+            <textarea id="inquiryMessage" name="message" class="tsh-form-control" rows="3" placeholder="Tell us about your estimated monthly volumes, delivery zip code, and sample preferences..."></textarea>
+          </div>
+
+          <button type="submit" class="tsh-btn tsh-btn-primary" style="width: 100%;">
+            Send Sample Request Now 🍯
+          </button>
+
+          <div id="tshFormStatus" class="tsh-status-alert"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

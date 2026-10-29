@@ -1,0 +1,93 @@
+/* Tri State Honey Interactive Modal & Utility Styling */
+.tsh-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.tsh-modal-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tsh-modal-dialog {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--tsh-border-radius-lg);
+  box-shadow: var(--tsh-shadow-xl);
+  border: 1px solid var(--tsh-border-gray);
+  padding: 2.25rem;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+}
+
+.tsh-modal-backdrop.is-active .tsh-modal-dialog {
+  transform: scale(1);
+}
+
+.tsh-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #f1f5f9;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--tsh-slate-gray);
+  transition: var(--tsh-transition);
+}
+
+.tsh-modal-close:hover {
+  background: var(--tsh-red-light);
+  color: var(--tsh-red-accent);
+}
+
+.tsh-status-alert {
+  padding: 1rem 1.25rem;
+  border-radius: var(--tsh-border-radius-sm);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  display: none;
+}
+
+.tsh-status-alert.success {
+  background-color: var(--tsh-green-light);
+  color: var(--tsh-green-accent);
+  border: 1px solid #86efac;
+  display: block;
+}
+
+.tsh-status-alert.error {
+  background-color: var(--tsh-red-light);
+  color: var(--tsh-red-accent);
+  border: 1px solid #fca5a5;
+  display: block;
+}
+
+.text-gold { color: var(--tsh-gold-primary); }
+.text-amber-dark { color: #92400e; }
+.bg-amber-light { background-color: var(--tsh-amber-glow); }
+.rounded-full { border-radius: 9999px; }
+.font-bold { font-weight: 700; }

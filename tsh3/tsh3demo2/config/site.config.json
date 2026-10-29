@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TSH_Config",
+  "version": "1.0.0",
+  "environment": "production",
+  "siteMetadata": {
+    "title": "Tri State Honey – World's Best Honey",
+    "description": "Pure liquid gold, sold at prices so incredibly low that it undercuts almost every competitor. Certified Kosher, Halal, HACCP safe, and FDA compliant.",
+    "canonicalUrl": "https://www.tristatehoney.com/",
+    "themeColor": "#f59e0b"
+  },
+  "security": {
+    "contentSecurityPolicy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com;",
+    "xContentTypeOptions": "nosniff",
+    "xFrameOptions": "SAMEORIGIN"
+  },
+  "performance": {
+    "lazyLoading": true,
+    "preconnectFonts": true,
+    "minifyAssets": true
+  }
+}

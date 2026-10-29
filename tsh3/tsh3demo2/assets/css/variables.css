@@ -1,0 +1,263 @@
+:root {
+  /* Brand Honey Colors & Golden Palette */
+  --tsh-gold-primary: #f59e0b;
+  --tsh-gold-dark: #d97706;
+  --tsh-gold-light: #fbbf24;
+  --tsh-gold-bright: #fde047;
+  --tsh-amber-glow: #fef3c7;
+  --tsh-amber-subtle: #fffdf5;
+  --tsh-amber-tint: #fff8e6;
+  
+  /* Rich Luxe Slate & Charcoal */
+  --tsh-dark-charcoal: #0f172a;
+  --tsh-deep-black: #090d16;
+  --tsh-slate-dark: #1e293b;
+  --tsh-slate-gray: #475569;
+  --tsh-muted-gray: #64748b;
+  --tsh-light-gray: #94a3b8;
+  --tsh-border-gray: #e2e8f0;
+  --tsh-border-light: #f1f5f9;
+  --tsh-bg-light: #fafaf9;
+  --tsh-pure-white: #ffffff;
+  
+  /* Accent Colors */
+  --tsh-red-accent: #dc2626;
+  --tsh-red-light: #fee2e2;
+  --tsh-green-accent: #10b981;
+  --tsh-green-light: #ecfdf5;
+  --tsh-blue-accent: #2563eb;
+  --tsh-blue-light: #eff6ff;
+
+  /* Typography */
+  --tsh-font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --tsh-font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --tsh-font-serif: 'Playfair Display', Georgia, serif;
+  --tsh-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Elevation Shadows & Soft Neomorphism */
+  --tsh-shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --tsh-shadow-sm: 0 2px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --tsh-shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
+  --tsh-shadow-lg: 0 14px 28px -4px rgba(15, 23, 42, 0.09), 0 4px 10px -4px rgba(15, 23, 42, 0.04);
+  --tsh-shadow-xl: 0 24px 38px -6px rgba(15, 23, 42, 0.12), 0 10px 18px -6px rgba(15, 23, 42, 0.06);
+  --tsh-shadow-honey: 0 14px 30px -4px rgba(245, 158, 11, 0.35);
+  --tsh-shadow-honey-glow: 0 0 35px rgba(245, 158, 11, 0.22);
+  --tsh-glass-bg: rgba(255, 255, 255, 0.85);
+  --tsh-glass-border: rgba(255, 255, 255, 0.4);
+
+  /* Layout */
+  --tsh-container-width: 1240px;
+  --tsh-container-wide: 1400px;
+  --tsh-border-radius-xs: 6px;
+  --tsh-border-radius-sm: 10px;
+  --tsh-border-radius: 16px;
+  --tsh-border-radius-lg: 24px;
+  --tsh-border-radius-xl: 32px;
+  --tsh-border-radius-full: 9999px;
+  --tsh-transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  --tsh-transition-bounce: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--tsh-font-primary);
+  color: var(--tsh-dark-charcoal);
+  background-color: var(--tsh-bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle honeycomb pattern overlay in background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--tsh-transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: var(--tsh-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-wide {
+  max-width: var(--tsh-container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Button & Pill Micro-interactions */
+.tsh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--tsh-border-radius-full);
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  transition: var(--tsh-transition);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.tsh-btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  box-shadow: var(--tsh-shadow-honey);
+}
+
+.tsh-btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(245, 158, 11, 0.4);
+}
+
+.tsh-btn-secondary {
+  background: #ffffff;
+  color: var(--tsh-dark-charcoal);
+  border: 1.5px solid var(--tsh-border-gray);
+  box-shadow: var(--tsh-shadow-xs);
+}
+
+.tsh-btn-secondary:hover {
+  background-color: var(--tsh-amber-subtle);
+  border-color: var(--tsh-gold-primary);
+  color: var(--tsh-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--tsh-shadow-sm);
+}
+
+.tsh-btn-ghost {
+  background: transparent;
+  color: var(--tsh-slate-gray);
+  border: 1.5px solid transparent;
+}
+
+.tsh-btn-ghost:hover {
+  color: var(--tsh-gold-dark);
+  background: var(--tsh-amber-glow);
+}
+
+.tsh-btn-sm {
+  font-size: 0.88rem;
+  padding: 0.55rem 1.15rem;
+}
+
+.tsh-btn-lg {
+  font-size: 1.1rem;
+  padding: 1.05rem 2.25rem;
+}
+
+/* Reusable Section Headers */
+.tsh-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.tsh-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.tsh-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tsh-gold-dark);
+  background: var(--tsh-amber-glow);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--tsh-border-radius-full);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.tsh-section-title {
+  font-family: var(--tsh-font-heading);
+  font-size: 2.65rem;
+  color: var(--tsh-deep-black);
+  margin-bottom: 1.15rem;
+  line-height: 1.22;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.tsh-section-desc {
+  font-size: 1.15rem;
+  color: var(--tsh-slate-gray);
+  line-height: 1.65;
+}
+
+/* Quick Utility Badges */
+.badge-gold {
+  background: var(--tsh-amber-glow);
+  color: #92400e;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--tsh-border-radius-full);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}

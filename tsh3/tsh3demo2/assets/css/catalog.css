@@ -1,0 +1,237 @@
+/* Tri State Honey Full Catalog & Logistics Sections */
+.tsh-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+.tsh-catalog-card {
+  background: #ffffff;
+  border-radius: var(--tsh-border-radius);
+  border: 1px solid var(--tsh-border-gray);
+  padding: 1.85rem;
+  transition: var(--tsh-transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--tsh-shadow-xs);
+  position: relative;
+}
+
+.tsh-catalog-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--tsh-gold-primary);
+  box-shadow: var(--tsh-shadow-lg);
+}
+
+.tsh-catalog-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+}
+
+.tsh-catalog-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.tsh-catalog-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--tsh-border-radius-full);
+  background: var(--tsh-amber-glow);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tsh-catalog-name {
+  font-family: var(--tsh-font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--tsh-deep-black);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.tsh-catalog-desc {
+  font-size: 0.92rem;
+  color: var(--tsh-slate-gray);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.tsh-catalog-list {
+  list-style: none;
+  border-top: 1px solid var(--tsh-border-gray);
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tsh-catalog-list li {
+  font-size: 0.85rem;
+  color: var(--tsh-dark-charcoal);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.35rem;
+  line-height: 1.4;
+}
+
+.tsh-catalog-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Custom Sourcing Callout Card */
+.tsh-sourcing-banner {
+  background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: var(--tsh-border-radius-xl);
+  margin-top: 4rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--tsh-shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.tsh-sourcing-banner::before {
+  content: "🌐";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 8rem;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.tsh-sourcing-banner h3 {
+  font-family: var(--tsh-font-heading);
+  font-size: 2rem;
+  color: #fbbf24;
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+}
+
+.tsh-sourcing-banner p {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Logistics & Ocean Freight Section */
+.tsh-logistics-section {
+  background: #ffffff;
+  padding: 6.5rem 0;
+  border-bottom: 1px solid var(--tsh-border-gray);
+}
+
+.tsh-logistics-card {
+  background: #ffffff;
+  border-radius: var(--tsh-border-radius-xl);
+  border: 1px solid var(--tsh-border-gray);
+  box-shadow: var(--tsh-shadow-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  margin-top: 3.5rem;
+}
+
+.tsh-logistics-media {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.tsh-logistics-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tsh-logistics-card:hover .tsh-logistics-img {
+  transform: scale(1.03);
+}
+
+.tsh-logistics-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(9, 13, 22, 0.9) 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tsh-logistics-content {
+  padding: 3rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tsh-logistics-content h3 {
+  font-family: var(--tsh-font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--tsh-deep-black);
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.tsh-logistics-tip {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-left: 4px solid var(--tsh-gold-dark);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--tsh-border-radius-sm) var(--tsh-border-radius-sm) 0;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #78350f;
+  line-height: 1.55;
+}
+
+/* Shipping Route Specs Pills */
+.tsh-logistics-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.tsh-route-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--tsh-amber-glow);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--tsh-border-radius-full);
+  color: #92400e;
+}
+
+@media (max-width: 960px) {
+  .tsh-logistics-card {
+    grid-template-columns: 1fr;
+  }
+  .tsh-logistics-content {
+    padding: 2rem 1.5rem;
+  }
+}
