@@ -1,70 +1,84 @@
-/* Tri State Honey — $100k Luxury Design System & Variables */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Tri State Honey — $500k Masterpiece Design System & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Delicious+Handrawn&family=Lobster&family=Zeyada&display=swap');
 
 :root {
-  /* Brand — Burnished Gold & Earth Tones (Preserved & Elevated) */
-  --tsh-gold-primary: #c2841a;
-  --tsh-gold-dark: #a06c14;
-  --tsh-gold-light: #d4a853;
-  --tsh-gold-bright: #dbb96c;
-  --tsh-gold-metallic: linear-gradient(135deg, #dfba73 0%, #c2841a 50%, #9e6811 100%);
-  --tsh-amber-glow: #f5edd6;
-  --tsh-amber-subtle: #faf7f2;
-  --tsh-amber-tint: #f8f3ea;
+  /* $500k Obsidian & Liquid Gold Color Architecture */
+  --tsh-canvas: #06080d;
+  --tsh-canvas-subtle: #0b0f17;
+  --tsh-canvas-card: rgba(14, 18, 28, 0.75);
+  --tsh-canvas-card-hover: rgba(20, 26, 40, 0.85);
+  --tsh-canvas-elevated: #121724;
 
-  /* Rich Charcoal & Deep Luxe Neutrals */
-  --tsh-dark-charcoal: #0c0f14;
-  --tsh-deep-black: #080a0f;
-  --tsh-slate-dark: #141822;
-  --tsh-slate-surface: #1a202c;
-  --tsh-slate-gray: #4a4d55;
-  --tsh-muted-gray: #6b7280;
-  --tsh-light-gray: #9ca3af;
-  --tsh-border-gray: #e5e0d8;
-  --tsh-border-light: #eee9e0;
-  --tsh-border-gold: rgba(194, 132, 26, 0.28);
-  --tsh-bg-light: #faf7f2;
-  --tsh-pure-white: #ffffff;
+  /* Pure Liquid Gold Chromatic Scale */
+  --tsh-gold-50: #fef9ee;
+  --tsh-gold-100: #fdf0d2;
+  --tsh-gold-200: #fbe0a6;
+  --tsh-gold-300: #f8cb70;
+  --tsh-gold-400: #f5b038;
+  --tsh-gold-500: #c2841a;
+  --tsh-gold-600: #a06c14;
+  --tsh-gold-700: #7c510e;
+  --tsh-gold-800: #59390a;
+  --tsh-gold-glow: rgba(245, 176, 56, 0.35);
+  --tsh-gold-radial: radial-gradient(circle, rgba(245, 176, 56, 0.25) 0%, rgba(194, 132, 26, 0.05) 50%, transparent 75%);
+  --tsh-gold-gradient: linear-gradient(135deg, #fce49e 0%, #e2a838 50%, #9e6811 100%);
+  --tsh-gold-metallic: linear-gradient(110deg, #ffd978 0%, #c2841a 45%, #fff1b8 70%, #8e5c09 100%);
+  --tsh-amber-liquid: #ffaa1d;
 
-  /* Accent Colors — Refined & Muted */
-  --tsh-red-accent: #b84233;
-  --tsh-red-light: #f9eeec;
-  --tsh-green-accent: #2e7d52;
-  --tsh-green-light: #eef7f2;
-  --tsh-blue-accent: #31589c;
-  --tsh-blue-light: #eef3fa;
+  /* Glassmorphism & High-Precision Borders */
+  --tsh-glass-bg: rgba(14, 18, 28, 0.65);
+  --tsh-glass-border: rgba(245, 176, 56, 0.22);
+  --tsh-glass-border-hover: rgba(245, 176, 56, 0.6);
+  --tsh-border-dark: rgba(255, 255, 255, 0.08);
+  --tsh-border-subtle: rgba(255, 255, 255, 0.05);
 
-  /* Typography — Editorial Masterclass Pairing */
-  --tsh-font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
-  --tsh-font-heading: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  --tsh-font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --tsh-font-sans-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  --tsh-font-serif: 'Playfair Display', Georgia, serif;
-  --tsh-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Typography Colors */
+  --tsh-text-primary: #ffffff;
+  --tsh-text-secondary: #cbd5e1;
+  --tsh-text-muted: #8492a6;
+  --tsh-text-gold: #f8cb70;
 
-  /* Elevation & Shadows — Multi-layered Depth */
-  --tsh-shadow-xs: 0 1px 2px 0 rgba(12, 15, 20, 0.04);
-  --tsh-shadow-sm: 0 2px 6px -1px rgba(12, 15, 20, 0.05), 0 1px 3px -1px rgba(12, 15, 20, 0.03);
-  --tsh-shadow-md: 0 6px 16px -2px rgba(12, 15, 20, 0.07), 0 2px 6px -2px rgba(12, 15, 20, 0.03);
-  --tsh-shadow-lg: 0 12px 28px -4px rgba(12, 15, 20, 0.08), 0 4px 10px -4px rgba(12, 15, 20, 0.04);
-  --tsh-shadow-xl: 0 24px 44px -8px rgba(12, 15, 20, 0.12), 0 8px 18px -6px rgba(12, 15, 20, 0.05);
-  --tsh-shadow-gold: 0 10px 30px -5px rgba(194, 132, 26, 0.22);
-  --tsh-shadow-gold-lg: 0 20px 45px -8px rgba(194, 132, 26, 0.3);
-  --tsh-shadow-honey-glow: 0 0 35px rgba(212, 168, 83, 0.25);
-  --tsh-glass-bg: rgba(255, 255, 255, 0.88);
-  --tsh-glass-border: rgba(229, 224, 216, 0.7);
+  /* Telemetry Status Colors */
+  --tsh-status-success: #10b981;
+  --tsh-status-cyan: #06b6d4;
+  --tsh-status-amber: #f59e0b;
 
-  /* Layout & Spacing */
+  /* 100% Client-Specified Typography System (Lobster, Zeyada, Bungee, Delicious Handrawn ONLY) */
+  --tsh-font-primary: 'Delicious Handrawn', cursive;
+  --tsh-font-heading: 'Lobster', cursive;
+  --tsh-font-display: 'Lobster', cursive;
+  --tsh-font-sans-heading: 'Bungee', cursive, sans-serif;
+  --tsh-font-mono: 'Bungee', cursive, sans-serif;
+  --tsh-font-script: 'Zeyada', cursive;
+
+  --tsh-font-lobster: 'Lobster', cursive;
+  --tsh-font-zeyada: 'Zeyada', cursive;
+  --tsh-font-bungee: 'Bungee', cursive, sans-serif;
+  --tsh-font-handrawn: 'Delicious Handrawn', cursive;
+
+  /* Physics-Based Shadows & Glows */
+  --tsh-shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --tsh-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --tsh-shadow-md: 0 10px 25px -4px rgba(0, 0, 0, 0.5), 0 4px 10px -2px rgba(0, 0, 0, 0.3);
+  --tsh-shadow-lg: 0 20px 45px -8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 176, 56, 0.12);
+  --tsh-shadow-xl: 0 35px 70px -15px rgba(0, 0, 0, 0.7), 0 0 45px rgba(245, 176, 56, 0.2);
+  --tsh-shadow-gold: 0 0 40px rgba(245, 176, 56, 0.25);
+  --tsh-shadow-gold-lg: 0 0 75px rgba(245, 176, 56, 0.38);
+
+  /* Layout Sizing & Radii */
   --tsh-container-width: 1280px;
-  --tsh-container-wide: 1400px;
-  --tsh-border-radius-xs: 4px;
-  --tsh-border-radius-sm: 8px;
-  --tsh-border-radius: 12px;
-  --tsh-border-radius-lg: 16px;
-  --tsh-border-radius-xl: 22px;
-  --tsh-border-radius-full: 9999px;
-  --tsh-transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  --tsh-transition-smooth: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  --tsh-container-wide: 1440px;
+  --tsh-radius-xs: 4px;
+  --tsh-radius-sm: 8px;
+  --tsh-radius-md: 14px;
+  --tsh-radius-lg: 20px;
+  --tsh-radius-xl: 28px;
+  --tsh-radius-full: 9999px;
+
+  /* Easing Curves for $500k Fluid Motion */
+  --tsh-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --tsh-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --tsh-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 *, *::before, *::after {
@@ -78,34 +92,48 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--tsh-canvas);
+  color: var(--tsh-text-secondary);
 }
 
 body {
   font-family: var(--tsh-font-primary);
-  color: var(--tsh-dark-charcoal);
-  background-color: var(--tsh-bg-light);
-  line-height: 1.75;
+  background-color: var(--tsh-canvas);
+  color: var(--tsh-text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.65;
   overflow-x: hidden;
   position: relative;
-  letter-spacing: 0.005em;
-  font-weight: 400;
+  letter-spacing: 0.025em;
 }
 
-/* Subtle Honeycomb Pattern Texture Overlay across Body */
-body::before {
-  content: "";
+/* Interactive Liquid Honey Canvas Behind Everything */
+#tshFluidCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* Subtle Technical Honeycomb Grid Overlay */
+.tsh-grid-mesh {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(194, 132, 26, 0.035) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
   z-index: 1;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--tsh-transition);
+  transition: all 0.3s var(--tsh-ease-out);
 }
 
 img {
@@ -139,37 +167,71 @@ button, input, select, textarea {
   z-index: 2;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* Telemetry Pill Badges */
+.telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(245, 176, 56, 0.1);
+  border: 1px solid rgba(245, 176, 56, 0.3);
+  border-radius: var(--tsh-radius-full);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--tsh-gold-300);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* Primary CTA Buttons — $100k Luxury Craft */
+.telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tsh-status-success);
+  box-shadow: 0 0 10px var(--tsh-status-success);
+  animation: telemetryPulse 2s infinite;
+}
+
+@keyframes telemetryPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Gold Gradient Master Text */
+.gold-text-glow {
+  background: var(--tsh-gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 2px 14px rgba(245, 176, 56, 0.4));
+}
+
+.italic-serif {
+  font-family: var(--tsh-font-display);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Master Button System — Magnetic & Luminous */
 .tsh-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
   font-family: var(--tsh-font-sans-heading);
-  font-weight: 600;
-  padding: 0.95rem 1.85rem;
-  border-radius: var(--tsh-border-radius-sm);
+  font-weight: 700;
+  padding: 0.95rem 2rem;
+  border-radius: var(--tsh-radius-sm);
   cursor: pointer;
   border: 1px solid transparent;
   font-size: 0.95rem;
-  transition: var(--tsh-transition);
-  white-space: nowrap;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  transition: all 0.35s var(--tsh-ease-out);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  text-transform: uppercase;
 }
 
 .tsh-btn::before {
@@ -179,7 +241,7 @@ button, input, select, textarea {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   transition: left 0.6s ease;
   z-index: -1;
 }
@@ -189,159 +251,89 @@ button, input, select, textarea {
 }
 
 .tsh-btn-primary {
-  background: linear-gradient(135deg, #c2841a 0%, #a06c14 100%);
-  color: #ffffff;
-  box-shadow: var(--tsh-shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(160, 108, 20, 0.4);
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  box-shadow: 0 4px 20px rgba(245, 176, 56, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-weight: 800;
+  border-color: rgba(255, 217, 120, 0.6);
 }
 
 .tsh-btn-primary:hover {
-  background: linear-gradient(135deg, #d4a853 0%, #c2841a 100%);
-  box-shadow: var(--tsh-shadow-gold);
-  transform: translateY(-2px);
-  color: #ffffff;
-}
-
-.tsh-btn-primary:active {
-  transform: translateY(0);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(245, 176, 56, 0.55), 0 0 40px rgba(245, 176, 56, 0.3);
+  color: #06080d;
 }
 
 .tsh-btn-secondary {
-  background: #ffffff;
-  color: var(--tsh-dark-charcoal);
-  border: 1px solid var(--tsh-border-gray);
-  box-shadow: var(--tsh-shadow-xs);
+  background: rgba(14, 18, 28, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  box-shadow: var(--tsh-shadow-sm);
+  backdrop-filter: blur(12px);
 }
 
 .tsh-btn-secondary:hover {
-  background-color: var(--tsh-amber-subtle);
-  border-color: var(--tsh-gold-primary);
-  color: var(--tsh-gold-dark);
-  box-shadow: var(--tsh-shadow-sm);
-  transform: translateY(-2px);
+  background: rgba(245, 176, 56, 0.15);
+  border-color: var(--tsh-gold-400);
+  color: var(--tsh-gold-300);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 176, 56, 0.25);
 }
 
-.tsh-btn-secondary:active {
-  transform: translateY(0);
-}
-
-.tsh-btn-ghost {
-  background: transparent;
-  color: var(--tsh-slate-gray);
-  border: 1px solid transparent;
-}
-
-.tsh-btn-ghost:hover {
-  color: var(--tsh-gold-dark);
-  background: var(--tsh-amber-glow);
-}
-
-.tsh-btn-sm {
-  font-size: 0.85rem;
-  padding: 0.55rem 1.15rem;
-}
-
-.tsh-btn-lg {
-  font-size: 1.05rem;
-  padding: 1.15rem 2.25rem;
-  border-radius: 10px;
-}
-
-/* Reusable Section Headers */
+/* Master Section Architecture */
 .tsh-section {
-  padding: 7.5rem 0;
+  padding: 8.5rem 0;
   position: relative;
   z-index: 2;
 }
 
 .tsh-section-header {
   text-align: center;
-  max-width: 820px;
-  margin: 0 auto 3.75rem;
+  max-width: 860px;
+  margin: 0 auto 4.5rem;
 }
 
 .tsh-section-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.76rem;
+  gap: 0.65rem;
+  font-family: var(--tsh-font-mono);
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--tsh-gold-primary);
-  background: rgba(194, 132, 26, 0.08);
-  padding: 0.35rem 0.95rem;
-  border-radius: var(--tsh-border-radius-full);
-  margin-bottom: 1.25rem;
-  border: 1px solid rgba(194, 132, 26, 0.22);
-  font-family: var(--tsh-font-sans-heading);
-}
-
-.tsh-section-tag::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--tsh-gold-primary);
-  box-shadow: 0 0 8px var(--tsh-gold-light);
+  letter-spacing: 0.2em;
+  color: var(--tsh-gold-400);
+  background: rgba(245, 176, 56, 0.08);
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--tsh-radius-full);
+  margin-bottom: 1.35rem;
+  border: 1px solid rgba(245, 176, 56, 0.28);
 }
 
 .tsh-section-title {
   font-family: var(--tsh-font-heading);
-  font-size: clamp(2.35rem, 4.2vw, 3.25rem);
-  color: var(--tsh-deep-black);
-  margin-bottom: 1.25rem;
-  line-height: 1.18;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.5rem, 4.8vw, 3.85rem);
+  color: #ffffff;
+  margin-bottom: 1.35rem;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .tsh-section-desc {
-  font-size: 1.12rem;
-  color: var(--tsh-slate-gray);
-  line-height: 1.8;
-  font-weight: 400;
-  max-width: 740px;
+  font-size: 1.18rem;
+  color: var(--tsh-text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 760px;
   margin: 0 auto;
 }
 
-/* Luxury Editorial Accents */
-.editorial-italic {
-  font-family: var(--tsh-font-display);
-  font-style: italic;
-  font-weight: 500;
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #c2841a 0%, #dfba73 50%, #9e6811 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Utility Badges */
-.badge-gold {
-  background: rgba(194, 132, 26, 0.1);
-  color: #8c5b0d;
-  font-weight: 700;
-  font-size: 0.72rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--tsh-border-radius-full);
-  border: 1px solid rgba(194, 132, 26, 0.28);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-family: var(--tsh-font-sans-heading);
-}
-
-/* Scroll-triggered reveal animation classes */
+/* Scroll-triggered reveal animations */
 .tsh-reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--tsh-ease-out), transform 0.8s var(--tsh-ease-out);
   will-change: opacity, transform;
 }
 
@@ -350,18 +342,27 @@ button, input, select, textarea {
   transform: translateY(0);
 }
 
-/* Subtle Golden Shimmer Effect */
-@keyframes goldenSheen {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+/* Bespoke Artistic & Industrial Typography Utility Classes */
+.font-lobster {
+  font-family: var(--tsh-font-lobster) !important;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(1.5deg); }
+.font-zeyada {
+  font-family: var(--tsh-font-zeyada) !important;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+.font-bungee {
+  font-family: var(--tsh-font-bungee) !important;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.font-handrawn {
+  font-family: var(--tsh-font-handrawn) !important;
+  font-weight: 400;
+  letter-spacing: 0.025em;
 }

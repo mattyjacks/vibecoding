@@ -1,107 +1,277 @@
-<!-- Tri State Honey Packaging & Sizes Component -->
-<section id="products" class="tsh-section tsh-section-light">
+<!-- Tri State Honey Packaging Stage, ROI Engine & Container Suite -->
+<section id="products" class="tsh-section">
   <div class="container">
-    
-    <!-- Food Companies Callout Box -->
-    <div class="tsh-attention-box">
+
+    <!-- Attention Food Companies VIP Callout -->
+    <div class="tsh-attention-box tsh-reveal">
       <div class="tsh-attention-content">
-        <h3><span>⚠️</span> ATTENTION FOOD COMPANIES:</h3>
-        <p>We increase your company’s profit margins by beating the cost and quality of your current suppliers with a wide variety of imported food products.</p>
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--tsh-gold-400);">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          Attention Food Companies:
+        </h3>
+        <p>We increase your company’s profit margins by beating the cost and quality of your current suppliers with a wide variety of direct-imported food products.</p>
       </div>
       <div>
         <a href="#contact" class="tsh-btn tsh-btn-primary" style="white-space: nowrap;">
-          Get Competitive Quote ➔
+          Get Competitive Quote &rarr;
         </a>
       </div>
     </div>
 
-    <div class="tsh-section-header">
-      <span class="tsh-section-tag">Direct From Source &bull; Pure Liquid Gold</span>
-      <h2 class="tsh-section-title">Let's start with the tastiest part: Get more honey 🍯 for your money!</h2>
+    <!-- Section Header -->
+    <div class="tsh-section-header tsh-reveal">
+      <span class="tsh-section-tag font-handrawn" style="font-size: 1.35rem; letter-spacing: 0.04em; text-transform: none;">Direct From Primary Reserves &bull; Pure Liquid Gold</span>
+      <h2 class="tsh-section-title">Get more honey for your money.</h2>
       <p class="tsh-section-desc">
-        Our honey, pure liquid gold, is sold at prices so incredibly low that it undercuts almost every competitor. 
-        While Tri State Honey’s headquarters are in New Jersey, our honey is produced in India and other countries, offering you the sweetest deal in the flower field and full FDA compliance – something most foreign honey producers just can’t guarantee.
-      </p>
-      <p style="margin-top: 1rem; font-weight: 700; color: #1e293b; font-size: 1.1rem;">
-        We can private label with your brand in any size, including:
+        Our honey, <span class="font-lobster" style="color: var(--tsh-gold-300); font-size: 1.25em;">pure liquid gold</span>, is sold at prices so incredibly low that it undercuts almost every competitor.
+        While Tri State Honey’s headquarters are in New Jersey, our honey is produced in India and other countries,
+        offering you the sweetest deal in the flower field and full FDA compliance &ndash; something most foreign
+        honey producers just can’t guarantee.
       </p>
     </div>
 
+    <!-- FEATURE 1: 3D PACKAGING HOLOGRAM STAGE -->
+    <div class="tsh-stage-section tsh-reveal" id="packagingStage">
+      <div class="tsh-stage-header">
+        <div>
+          <span class="telemetry-badge"><span class="telemetry-dot"></span> Interactive 3D Stage</span>
+          <h3 style="font-family: var(--tsh-font-heading); font-size: 1.85rem; color: #ffffff; margin-top: 0.45rem;">The Packaging Vault</h3>
+        </div>
+        <div class="tsh-stage-tabs">
+          <button type="button" class="tsh-stage-tab active font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-1lb-bear">1 lb Bear</button>
+          <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-2lb-bottle">2 lb Bottle</button>
+          <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-60lb-bucket">60 lb Bucket</button>
+          <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-660lb-drum">660 lb Drum</button>
+          <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-3000lb-tote">3,000 lb Tote</button>
+        </div>
+      </div>
+
+      <div class="tsh-stage-viewport">
+        <!-- Interactive 3D Pedestal Stage -->
+        <div class="tsh-stage-pedestal">
+          <div class="tsh-pedestal-ring"></div>
+          <div class="tsh-stage-img-wrap" id="stageImgWrap">
+            <img id="stageMainImg" src="assets/images/tsh-1-lb-bear.png" alt="1 lb Classic Honey Bear" class="tsh-stage-img">
+          </div>
+        </div>
+
+        <!-- Telemetry Data Readout HUD -->
+        <div class="tsh-stage-telemetry">
+          <h4 class="tsh-stage-title" id="stageTitle">1 lb Classic Honey Bear</h4>
+          <div class="tsh-stage-subtitle" id="stageSubtitle">RETAIL HERO // SQUEEZE BEAR WITH FLIP-TOP VALVE</div>
+          <p style="color: var(--tsh-text-secondary); font-size: 0.96rem; line-height: 1.7; margin-bottom: 2rem;" id="stageDesc">
+            Iconic consumer squeeze bear with anti-drip silicone valve. Engineered for retail shelves, corporate gift baskets, and private labeling with custom foil tamper seals.
+          </p>
+
+          <div class="tsh-stage-specs-grid">
+            <div class="tsh-stage-spec-card">
+              <div class="tsh-spec-label">Net Unit Weight</div>
+              <div class="tsh-spec-val" id="stageWeightVal">1.0 lb (16 oz)</div>
+            </div>
+            <div class="tsh-stage-spec-card">
+              <div class="tsh-spec-label">Pallet Stacking</div>
+              <div class="tsh-spec-val" id="stagePalletVal">2,400 Units / Pallet</div>
+            </div>
+            <div class="tsh-stage-spec-card">
+              <div class="tsh-spec-label">Container FCL Max</div>
+              <div class="tsh-spec-val" id="stageFclVal">24,000 Units / 20ft FCL</div>
+            </div>
+            <div class="tsh-stage-spec-card">
+              <div class="tsh-spec-label">Resin Specification</div>
+              <div class="tsh-spec-val" id="stageResinVal">BPA-Free Food Grade PET</div>
+            </div>
+          </div>
+
+          <div class="tsh-stage-actions">
+            <button type="button" class="tsh-btn tsh-btn-primary" onclick="triggerFilterAndModal('tsh-1lb-bear')">
+              Open Complete Spec Sheet &rarr;
+            </button>
+            <button type="button" class="tsh-btn tsh-btn-secondary" id="stageXrayToggle">
+              Enable Holographic X-Ray
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 2: WHOLESALE MARGIN & FREIGHT ROI ENGINE -->
+    <div class="tsh-roi-calculator tsh-reveal" id="roi-calc">
+      <div class="tsh-roi-grid">
+        <div class="tsh-roi-header">
+          <span class="telemetry-badge"><span class="telemetry-dot"></span> B2B Margin Analysis</span>
+          <h3 style="margin-top: 0.75rem;">Wholesale Margin &amp; Freight ROI Engine</h3>
+          <p>
+            Estimate your exact cost reduction by bypassing domestic broker markups. Calculate instant volume savings and container capacity with Tri State Honey's direct import pipeline.
+          </p>
+
+          <div class="tsh-slider-wrap">
+            <div class="tsh-slider-meta">
+              <span class="tsh-slider-label">Monthly Honey Demand (Pounds):</span>
+              <span class="tsh-slider-value-badge" id="roiVolumeBadge">20,000 lbs / mo</span>
+            </div>
+            <input type="range" min="1000" max="60000" step="1000" value="20000" class="tsh-range-slider" id="roiVolumeSlider">
+          </div>
+
+          <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <div class="telemetry-badge">Direct Importer Rate</div>
+            <div class="telemetry-badge">NJ Warehouse Stockpile</div>
+            <div class="telemetry-badge">Zero Middlemen</div>
+          </div>
+        </div>
+
+        <div class="tsh-roi-terminal">
+          <div class="tsh-roi-stat-main">
+            <div class="savings-number font-bungee" id="roiAnnualSavings" style="font-size: 2.85rem; letter-spacing: 0.04em;">$396,000</div>
+            <div class="savings-desc">Projected Annual Savings vs Domestic Distributors</div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--tsh-border-dark);">
+            <span style="font-family: var(--tsh-font-mono); font-size: 0.85rem; color: #8492a6;">Estimated Direct Import Price:</span>
+            <span style="font-family: var(--tsh-font-sans-heading); font-size: 1.75rem; font-weight: 800; color: #ffffff;" id="roiPricePerLb">$1.55</span>
+          </div>
+
+          <div class="tsh-fcl-meter-wrap">
+            <div class="tsh-fcl-meter-label">
+              <span>20ft Ocean Container Optimization</span>
+              <span id="roiFclPct">50% FCL Capacity</span>
+            </div>
+            <div class="tsh-fcl-progress-bar">
+              <div class="tsh-fcl-progress-fill" id="roiFclProgress" style="width: 50%;"></div>
+            </div>
+          </div>
+
+          <button type="button" class="tsh-btn tsh-btn-primary" style="width: 100%;" id="roiLockQuoteBtn">
+            Lock In This Volume Quote &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Packaging Standard Cards Grid -->
     <div class="tsh-products-grid">
       <!-- 1 lb Bear -->
-      <article class="tsh-product-card">
+      <article class="tsh-product-card tsh-reveal">
         <span class="tsh-product-badge">Retail Favorite</span>
         <div class="tsh-product-img-wrapper">
           <img src="assets/images/tsh-1-lb-bear.png" alt="1 lb Bear Bottle" class="tsh-product-img" loading="lazy">
         </div>
         <h3 class="tsh-product-name">1 lb Bottle (Bear)</h3>
-        <p class="tsh-product-sub">Classic squeeze bear dispenser for retail shelves and private labels.</p>
+        <p class="tsh-product-sub">Classic squeeze bear dispenser for retail shelves, private labels, and gift sets.</p>
+        <div class="tsh-product-meta">
+          <span>Flip-top Cap &bull; Custom Labels</span>
+        </div>
         <div class="tsh-product-action">
-          <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-1lb-bear">
-            View Details & Specs
+          <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-1lb-bear">
+            View Specs &amp; Lab Data &rarr;
           </button>
         </div>
       </article>
 
       <!-- 2 lb Bottle -->
-      <article class="tsh-product-card">
+      <article class="tsh-product-card tsh-reveal">
         <span class="tsh-product-badge">High Volume</span>
         <div class="tsh-product-img-wrapper">
           <img src="assets/images/tsh-2-lb-bottle.png" alt="2 lb Bottle" class="tsh-product-img" loading="lazy">
         </div>
-        <h3 class="tsh-product-name">2 lb Bottle</h3>
-        <p class="tsh-product-sub">Ergonomic ribbed bottle designed for family and commercial kitchen use.</p>
+        <h3 class="tsh-product-name">2 lb Classic Bottle</h3>
+        <p class="tsh-product-sub">Ergonomic ribbed bottle designed for supermarket shelves, diners, and commercial bakeries.</p>
+        <div class="tsh-product-meta">
+          <span>Squeeze Valve &bull; Custom Branded</span>
+        </div>
         <div class="tsh-product-action">
-          <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-2lb-bottle">
-            View Details & Specs
+          <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-2lb-bottle">
+            View Specs &amp; Lab Data &rarr;
           </button>
         </div>
       </article>
 
       <!-- 60 lb Bucket -->
-      <article class="tsh-product-card">
-        <span class="tsh-product-badge">USA Stocked</span>
+      <article class="tsh-product-card tsh-reveal">
+        <span class="tsh-product-badge">NJ Stocked</span>
         <div class="tsh-product-img-wrapper">
           <img src="assets/images/tsh-60-lb-bucket.png" alt="60 lb Bucket" class="tsh-product-img" loading="lazy">
         </div>
-        <h3 class="tsh-product-name">60 lb Bucket (Pail)</h3>
-        <p class="tsh-product-sub">Commercial food service pail, stocked in NJ for lightning-fast delivery.</p>
+        <h3 class="tsh-product-name">60 lb Bulk Bucket (Pail)</h3>
+        <p class="tsh-product-sub">Commercial food service pail, stocked in Piscataway, NJ for fast nationwide dispatch.</p>
+        <div class="tsh-product-meta">
+          <span>HDPE Tamper Lid &bull; Next-Day Ready</span>
+        </div>
         <div class="tsh-product-action">
-          <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-60lb-bucket">
-            View Details & Specs
+          <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-60lb-bucket">
+            View Specs &amp; Lab Data &rarr;
           </button>
         </div>
       </article>
 
       <!-- 660 lb Drum -->
-      <article class="tsh-product-card">
+      <article class="tsh-product-card tsh-reveal">
         <span class="tsh-product-badge">Industrial Batch</span>
         <div class="tsh-product-img-wrapper">
           <img src="assets/images/tsh-660-lb-drum.png" alt="660 lb Drum" class="tsh-product-img" loading="lazy">
         </div>
-        <h3 class="tsh-product-name">660 lb Drum</h3>
-        <p class="tsh-product-sub">Food-grade lined steel drum for bakeries, breweries, and food factories.</p>
+        <h3 class="tsh-product-name">660 lb Industrial Drum</h3>
+        <p class="tsh-product-sub">Food-grade lined steel drum for industrial bakeries, breweries, sauces, and confectionery.</p>
+        <div class="tsh-product-meta">
+          <span>Epoxy Lined &bull; High Throughput</span>
+        </div>
         <div class="tsh-product-action">
-          <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-660lb-drum">
-            View Details & Specs
+          <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-660lb-drum">
+            View Specs &amp; Lab Data &rarr;
           </button>
         </div>
       </article>
 
       <!-- 3000 lb Tote -->
-      <article class="tsh-product-card">
+      <article class="tsh-product-card tsh-reveal">
         <span class="tsh-product-badge">Maximum Savings</span>
         <div class="tsh-product-img-wrapper">
           <img src="assets/images/tsh-3000-lb-tote.png" alt="3,000 lb Tote" class="tsh-product-img" loading="lazy">
         </div>
         <h3 class="tsh-product-name">3,000 lb Tote (IBC)</h3>
-        <p class="tsh-product-sub">Industrial container with pallet base & valve for full manufacturing runs.</p>
+        <p class="tsh-product-sub">Industrial composite tote with pallet base &amp; discharge valve for large-scale production.</p>
+        <div class="tsh-product-meta">
+          <span>Galvanized Cage &bull; Full FCL Savings</span>
+        </div>
         <div class="tsh-product-action">
-          <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-3000lb-tote">
-            View Details & Specs
+          <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-3000lb-tote">
+            View Specs &amp; Lab Data &rarr;
           </button>
         </div>
       </article>
+    </div>
+
+    <!-- Private Label Turnkey Strip -->
+    <div class="tsh-privatelabel-strip tsh-reveal">
+      <div>
+        <span class="telemetry-badge"><span class="telemetry-dot"></span> Turnkey Branding</span>
+        <h3 class="font-lobster" style="font-size: 2.2rem; color: #ffffff; margin: 0.85rem 0 0.5rem; letter-spacing: 0.02em;">
+          We private label with your brand in any container size
+        </h3>
+        <p style="color: var(--tsh-text-secondary); font-size: 1rem;">From supermarket squeeze bears to corporate gifts, our team applies your graphics, barcodes, and custom cap seals.</p>
+        <div class="tsh-privatelabel-steps">
+          <div class="tsh-step-item">
+            <span class="tsh-step-num font-bungee" style="font-size: 0.85rem;">1</span>
+            <span>Select Bottle Shape</span>
+          </div>
+          <div class="tsh-step-item">
+            <span class="tsh-step-num font-bungee" style="font-size: 0.85rem;">2</span>
+            <span>Provide Artwork / UPC</span>
+          </div>
+          <div class="tsh-step-item">
+            <span class="tsh-step-num font-bungee" style="font-size: 0.85rem;">3</span>
+            <span>Delivered Ready for Retail</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a href="#contact" class="tsh-btn tsh-btn-primary">
+          Request Private Label Packet &rarr;
+        </a>
+      </div>
     </div>
 
   </div>

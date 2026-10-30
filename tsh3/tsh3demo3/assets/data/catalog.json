@@ -3,7 +3,7 @@
     "id": "bulk-spices",
     "name": "High-Quality Spices",
     "category": "Ingredients",
-    "icon": "🌶️",
+    "icon": "spice",
     "badge": "Bulk Imports",
     "description": "Premium whole and ground spices sourced directly from fertile origin regions worldwide. Unadulterated, aromatic, and laboratory tested for volatile oil content and purity.",
     "highlights": ["Black & white pepper", "Turmeric & Curcumin", "Cardamom & Cinnamon", "Cumin & Coriander seeds"]
@@ -12,7 +12,7 @@
     "id": "hot-honey",
     "name": "Hot Honey",
     "category": "Specialty Condiments",
-    "icon": "🔥",
+    "icon": "flame",
     "badge": "High Demand",
     "description": "Our pure natural honey infused with fiery chili pepper extract and crushed chili. Creates the trending sweet-heat profile pizzas, fried chicken, and marinades crave.",
     "highlights": ["Custom heat levels available", "Private label retail bottles", "Bulk pails for restaurant chains", "100% natural ingredients"]
@@ -21,7 +21,7 @@
     "id": "chili-peppers",
     "name": "Whole Chili Peppers",
     "category": "Ingredients",
-    "icon": "🌶️",
+    "icon": "pepper",
     "badge": "Direct Crop",
     "description": "Sun-dried whole red chilies with intense pungency and deep ruby coloration. Tested for aflatoxins, pesticide residues, and moisture control.",
     "highlights": ["Stemless or stem-on options", "Multiple heat / Scoville grades", "Bulk multi-wall export bags", "HACCP & FDA compliant"]
@@ -30,7 +30,7 @@
     "id": "essential-oils",
     "name": "Essential Oils & Flavorings",
     "category": "Extracts & Flavors",
-    "icon": "🧪",
+    "icon": "droplet",
     "badge": "Food Grade",
     "description": "Pure steam-distilled essential oils, botanical aromatics, and food flavorings for culinary, beverage, confectionery, and health & wellness manufacturing.",
     "highlights": ["Food grade certification", "Gas Chromatography (GC-MS) verified", "Sealed drum packaging", "Custom profile blending"]
@@ -39,7 +39,7 @@
     "id": "sweet-sour-sauce",
     "name": "Sweet & Sour Sauce",
     "category": "Sauces & Condiments",
-    "icon": "🥣",
+    "icon": "sauce",
     "badge": "Wholesale Blend",
     "description": "Versatile culinary sweet and sour sauce base formulated with genuine honey and corn syrup balance for high-volume commercial kitchens and food processors.",
     "highlights": ["Consistent viscosity & brix", "Custom acidity profiles", "Food-service gallons & drums", "Ready for packaging"]
@@ -48,7 +48,7 @@
     "id": "blended-oils",
     "name": "Olive Oil & Vegetable Oil Blends",
     "category": "Oils & Fats",
-    "icon": "🫒",
+    "icon": "oil",
     "badge": "High Smoke Point",
     "description": "Cost-effective, versatile blended cooking oils combining the flavor nuances of extra virgin olive oil with the economy and stability of refined vegetable oils.",
     "highlights": ["Custom percentage formulations (80/20, 90/10)", "Excellent high-heat frying performance", "Drums, totes and retail jugs", "Fully certified fatty acid profile"]
@@ -57,7 +57,7 @@
     "id": "agi-glasspac-bottles",
     "name": "Bulk Glass & Plastic Bottles",
     "category": "Packaging & Bottling",
-    "icon": "🏺",
+    "icon": "bottle",
     "badge": "AGI-Glasspac Partner",
     "description": "Through our official partnership with AGI-Glasspac—the largest and most advanced bottle manufacturer in India—we supply turnkey custom and stock glass/PET bottles.",
     "highlights": ["Custom emboss & custom shapes", "Rapid tooling & competitive tooling cost", "Ultra-low unit pricing on full containers", "Caps, corks & induction liners available"]
@@ -66,7 +66,7 @@
     "id": "danish-cookies",
     "name": "Danish Butter Cookies in Tins",
     "category": "Confectionery",
-    "icon": "🍪",
+    "icon": "cookie",
     "badge": "Retail Ready",
     "description": "Traditional Danish-style butter cookies packed in collectible embossed tin containers. Ideal for holiday retail campaigns, gift distribution, and supermarket clubs.",
     "highlights": ["Rich genuine butter recipe", "Custom holiday & generic tin art", "Private labeling for volume orders", "Long ambient shelf life"]

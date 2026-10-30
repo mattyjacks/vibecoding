@@ -34,7 +34,7 @@
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
-        showStatus(`Thank you, ${name}! Your free sample request for ${product || 'Tri State Honey products'} has been routed to Ashley Dutta & our sales team. We will contact you at ${email} shortly! 🍯`, 'success');
+        showStatus(`Thank you, ${name}! Your inquiry for ${product || 'Tri State Honey products'} has been routed to Ashley Dutta & our sales team. We will contact you at ${email} shortly.`, 'success');
         form.reset();
       }, 700);
     });

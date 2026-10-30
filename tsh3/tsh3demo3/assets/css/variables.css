@@ -1,58 +1,87 @@
+/* Tri State Honey — $500k Masterpiece Design System & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Delicious+Handrawn&family=Lobster&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Zeyada&display=swap');
+
 :root {
-  /* Ultra-Premium Honey Palette */
-  --tsh-primary: #d97706;
-  --tsh-primary-hover: #b45309;
-  --tsh-primary-dark: #92400e;
-  --tsh-primary-light: #fbbf24;
-  --tsh-gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
-  --tsh-gold-shimmer: linear-gradient(110deg, #fef3c7 0%, #fde68a 30%, #f59e0b 60%, #b45309 100%);
-  --tsh-amber-glow: rgba(245, 158, 11, 0.15);
-  --tsh-amber-subtle: #fffbeb;
-  --tsh-amber-100: #fef3c7;
-  --tsh-amber-50: #fffdf7;
+  /* $500k Obsidian & Liquid Gold Color Architecture */
+  --tsh-canvas: #06080d;
+  --tsh-canvas-subtle: #0b0f17;
+  --tsh-canvas-card: rgba(14, 18, 28, 0.75);
+  --tsh-canvas-card-hover: rgba(20, 26, 40, 0.85);
+  --tsh-canvas-elevated: #121724;
 
-  /* Sophisticated Neutrals */
-  --tsh-dark-charcoal: #0f172a;
-  --tsh-deep-black: #090d16;
-  --tsh-slate-dark: #1e293b;
-  --tsh-slate-gray: #334155;
-  --tsh-muted-gray: #64748b;
-  --tsh-border-gray: #e2e8f0;
-  --tsh-border-subtle: rgba(226, 232, 240, 0.8);
-  --tsh-bg-light: #f8fafc;
-  --tsh-pure-white: #ffffff;
+  /* Pure Liquid Gold Chromatic Scale */
+  --tsh-gold-50: #fef9ee;
+  --tsh-gold-100: #fdf0d2;
+  --tsh-gold-200: #fbe0a6;
+  --tsh-gold-300: #f8cb70;
+  --tsh-gold-400: #f5b038;
+  --tsh-gold-500: #c2841a;
+  --tsh-gold-600: #a06c14;
+  --tsh-gold-700: #7c510e;
+  --tsh-gold-800: #59390a;
+  --tsh-gold-glow: rgba(245, 176, 56, 0.35);
+  --tsh-gold-radial: radial-gradient(circle, rgba(245, 176, 56, 0.25) 0%, rgba(194, 132, 26, 0.05) 50%, transparent 75%);
+  --tsh-gold-gradient: linear-gradient(135deg, #fce49e 0%, #e2a838 50%, #9e6811 100%);
+  --tsh-gold-metallic: linear-gradient(110deg, #ffd978 0%, #c2841a 45%, #fff1b8 70%, #8e5c09 100%);
+  --tsh-amber-liquid: #ffaa1d;
 
-  /* Accent Badges & Highlights */
-  --tsh-green: #059669;
-  --tsh-green-bg: #ecfdf5;
-  --tsh-blue: #0284c7;
-  --tsh-blue-bg: #f0f9ff;
-  --tsh-red: #dc2626;
-  --tsh-red-bg: #fef2f2;
+  /* Glassmorphism & High-Precision Borders */
+  --tsh-glass-bg: rgba(14, 18, 28, 0.65);
+  --tsh-glass-border: rgba(245, 176, 56, 0.22);
+  --tsh-glass-border-hover: rgba(245, 176, 56, 0.6);
+  --tsh-border-dark: rgba(255, 255, 255, 0.08);
+  --tsh-border-subtle: rgba(255, 255, 255, 0.05);
 
-  /* Typography */
-  --tsh-font-primary: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --tsh-font-heading: 'Cabinet Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --tsh-font-serif: 'Playfair Display', Georgia, serif;
+  /* Typography Colors */
+  --tsh-text-primary: #ffffff;
+  --tsh-text-secondary: #cbd5e1;
+  --tsh-text-muted: #8492a6;
+  --tsh-text-gold: #f8cb70;
 
-  /* Smooth Modern Shadows */
-  --tsh-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --tsh-shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
-  --tsh-shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08);
-  --tsh-shadow-lg: 0 16px 32px -4px rgba(15, 23, 42, 0.1);
-  --tsh-shadow-xl: 0 24px 48px -12px rgba(15, 23, 42, 0.14);
-  --tsh-shadow-honey: 0 12px 30px -4px rgba(217, 119, 6, 0.28);
-  --tsh-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  /* Telemetry Status Colors */
+  --tsh-status-success: #10b981;
+  --tsh-status-cyan: #06b6d4;
+  --tsh-status-amber: #f59e0b;
 
-  /* Layout & Sizing */
-  --tsh-container-width: 1240px;
-  --tsh-container-wide: 1380px;
+  /* Client Typography System */
+  --tsh-font-primary: 'Delicious Handrawn', cursive;
+  --tsh-font-heading: 'Lobster', cursive;
+  --tsh-font-display: 'Lobster', cursive;
+  --tsh-font-sans-heading: 'Bungee', cursive, sans-serif;
+  --tsh-font-mono: 'Bungee', cursive, sans-serif;
+  --tsh-font-script: 'Zeyada', cursive;
+
+  /* High-Legibility SI Technical & Corporate Footer Font */
+  --tsh-font-readable: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --tsh-font-lobster: 'Lobster', cursive;
+  --tsh-font-zeyada: 'Zeyada', cursive;
+  --tsh-font-bungee: 'Bungee', cursive, sans-serif;
+  --tsh-font-handrawn: 'Delicious Handrawn', cursive;
+
+  /* Physics-Based Shadows & Glows */
+  --tsh-shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --tsh-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --tsh-shadow-md: 0 10px 25px -4px rgba(0, 0, 0, 0.5), 0 4px 10px -2px rgba(0, 0, 0, 0.3);
+  --tsh-shadow-lg: 0 20px 45px -8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 176, 56, 0.12);
+  --tsh-shadow-xl: 0 35px 70px -15px rgba(0, 0, 0, 0.7), 0 0 45px rgba(245, 176, 56, 0.2);
+  --tsh-shadow-gold: 0 0 40px rgba(245, 176, 56, 0.25);
+  --tsh-shadow-gold-lg: 0 0 75px rgba(245, 176, 56, 0.38);
+
+  /* Layout Sizing & Radii */
+  --tsh-container-width: 1280px;
+  --tsh-container-wide: 1440px;
+  --tsh-radius-xs: 4px;
   --tsh-radius-sm: 8px;
   --tsh-radius-md: 14px;
-  --tsh-radius-lg: 22px;
+  --tsh-radius-lg: 20px;
+  --tsh-radius-xl: 28px;
   --tsh-radius-full: 9999px;
-  --tsh-transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --tsh-transition-slow: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Easing Curves for $500k Fluid Motion */
+  --tsh-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --tsh-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --tsh-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 *, *::before, *::after {
@@ -66,20 +95,48 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--tsh-canvas);
+  color: var(--tsh-text-secondary);
 }
 
 body {
   font-family: var(--tsh-font-primary);
-  color: var(--tsh-slate-gray);
-  background-color: var(--tsh-bg-light);
-  line-height: 1.6;
+  background-color: var(--tsh-canvas);
+  color: var(--tsh-text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.65;
   overflow-x: hidden;
+  position: relative;
+  letter-spacing: 0.025em;
+}
+
+/* Interactive Liquid Honey Canvas Behind Everything */
+#tshFluidCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* Subtle Technical Honeycomb Grid Overlay */
+.tsh-grid-mesh {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--tsh-transition);
+  transition: all 0.3s var(--tsh-ease-out);
 }
 
 img {
@@ -97,121 +154,223 @@ button, input, select, textarea {
   max-width: var(--tsh-container-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .container-wide {
   max-width: var(--tsh-container-wide);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* Base Utility Classes */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.section-tag {
+/* Telemetry Pill Badges */
+.telemetry-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--tsh-primary);
-  background: rgba(245, 158, 11, 0.1);
-  padding: 0.4rem 0.9rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(245, 176, 56, 0.1);
+  border: 1px solid rgba(245, 176, 56, 0.3);
   border-radius: var(--tsh-radius-full);
-  margin-bottom: 0.85rem;
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--tsh-gold-300);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.section-title {
-  font-family: var(--tsh-font-heading);
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  color: var(--tsh-dark-charcoal);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  margin-bottom: 1rem;
+.telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tsh-status-success);
+  box-shadow: 0 0 10px var(--tsh-status-success);
+  animation: telemetryPulse 2s infinite;
 }
 
-.section-desc {
-  font-size: 1.125rem;
-  color: var(--tsh-muted-gray);
-  max-width: 720px;
-  line-height: 1.65;
-  margin-left: auto;
-  margin-right: auto;
+@keyframes telemetryPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }
 
-/* Button UI Components */
-.btn {
+/* Gold Gradient Master Text */
+.gold-text-glow {
+  background: var(--tsh-gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 2px 14px rgba(245, 176, 56, 0.4));
+}
+
+.italic-serif {
+  font-family: var(--tsh-font-display);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Master Button System — Magnetic & Luminous */
+.tsh-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
+  font-family: var(--tsh-font-sans-heading);
   font-weight: 700;
-  font-size: 0.95rem;
-  padding: 0.75rem 1.6rem;
-  border-radius: var(--tsh-radius-full);
+  padding: 0.95rem 2rem;
+  border-radius: var(--tsh-radius-sm);
   cursor: pointer;
-  border: none;
-  transition: var(--tsh-transition);
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: all 0.35s var(--tsh-ease-out);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.tsh-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+.tsh-btn:hover::before {
+  left: 100%;
+}
+
+.tsh-btn-primary {
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  box-shadow: 0 4px 20px rgba(245, 176, 56, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-weight: 800;
+  border-color: rgba(255, 217, 120, 0.6);
+}
+
+.tsh-btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(245, 176, 56, 0.55), 0 0 40px rgba(245, 176, 56, 0.3);
+  color: #06080d;
+}
+
+.tsh-btn-secondary {
+  background: rgba(14, 18, 28, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  box-shadow: var(--tsh-shadow-sm);
+  backdrop-filter: blur(12px);
+}
+
+.tsh-btn-secondary:hover {
+  background: rgba(245, 176, 56, 0.15);
+  border-color: var(--tsh-gold-400);
+  color: var(--tsh-gold-300);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 176, 56, 0.25);
+}
+
+/* Master Section Architecture */
+.tsh-section {
+  padding: 8.5rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tsh-section-header {
   text-align: center;
-  white-space: nowrap;
+  max-width: 860px;
+  margin: 0 auto 4.5rem;
 }
 
-.btn-primary {
-  background: var(--tsh-gold-gradient);
+.tsh-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--tsh-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--tsh-gold-400);
+  background: rgba(245, 176, 56, 0.08);
+  padding: 0.4rem 1.15rem;
+  border-radius: var(--tsh-radius-full);
+  margin-bottom: 1.35rem;
+  border: 1px solid rgba(245, 176, 56, 0.28);
+}
+
+.tsh-section-title {
+  font-family: var(--tsh-font-heading);
+  font-size: clamp(2.5rem, 4.8vw, 3.85rem);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+  margin-bottom: 1.35rem;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45);
-  color: #ffffff;
+.tsh-section-desc {
+  font-size: 1.18rem;
+  color: var(--tsh-text-secondary);
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-.btn-secondary {
-  background: #ffffff;
-  color: var(--tsh-dark-charcoal);
-  border: 1px solid var(--tsh-border-gray);
-  box-shadow: var(--tsh-shadow-xs);
+/* Scroll-triggered reveal animations */
+.tsh-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--tsh-ease-out), transform 0.8s var(--tsh-ease-out);
+  will-change: opacity, transform;
 }
 
-.btn-secondary:hover {
-  background: var(--tsh-amber-subtle);
-  border-color: var(--tsh-primary-light);
-  color: var(--tsh-primary-dark);
-  transform: translateY(-2px);
+.tsh-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.btn-dark {
-  background: var(--tsh-dark-charcoal);
-  color: #ffffff;
+/* Bespoke Artistic & Industrial Typography Utility Classes */
+.font-lobster {
+  font-family: var(--tsh-font-lobster) !important;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
-.btn-dark:hover {
-  background: #000000;
-  transform: translateY(-2px);
-  box-shadow: var(--tsh-shadow-md);
+.font-zeyada {
+  font-family: var(--tsh-font-zeyada) !important;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
-.btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
+.font-bungee {
+  font-family: var(--tsh-font-bungee) !important;
+  font-weight: 400;
+  letter-spacing: 0.06em;
 }
 
-/* Micro-interaction bounce */
-.hover-lift {
-  transition: var(--tsh-transition);
+.font-handrawn {
+  font-family: var(--tsh-font-handrawn) !important;
+  font-weight: 400;
+  letter-spacing: 0.025em;
 }
-.hover-lift:hover {
-  transform: translateY(-4px);
+
+.font-readable {
+  font-family: var(--tsh-font-readable) !important;
+  letter-spacing: 0.01em;
 }

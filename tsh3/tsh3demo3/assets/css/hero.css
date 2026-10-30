@@ -1,254 +1,306 @@
-/* Ultra-Modern Hero Showcase Section */
+/* Tri State Honey — $500k Liquid Gold Observatory Hero & Telemetry Bar */
+
 .tsh-hero {
   position: relative;
-  background: radial-gradient(circle at 85% 15%, rgba(254, 243, 199, 0.45) 0%, rgba(255, 255, 255, 0.95) 60%), #ffffff;
-  padding: 5rem 0 5.5rem;
-  border-bottom: 1px solid var(--tsh-border-subtle);
+  background: radial-gradient(circle at 75% 25%, rgba(245, 176, 56, 0.18) 0%, rgba(6, 8, 13, 0) 65%);
+  padding: 8rem 0 6.5rem;
+  border-bottom: 1px solid var(--tsh-border-dark);
   overflow: hidden;
 }
 
-/* Subtle decorative honeycomb background pattern */
+/* Radiant Liquid Honey Luminescence Glow */
 .tsh-hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(rgba(217, 119, 6, 0.08) 1.5px, transparent 1.5px);
-  background-size: 32px 32px;
+  top: -180px;
+  right: -120px;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 176, 56, 0.22) 0%, rgba(194, 132, 26, 0) 70%);
+  filter: blur(60px);
   pointer-events: none;
-  opacity: 0.6;
+  z-index: 1;
 }
 
 .tsh-hero-grid {
-  position: relative;
-  z-index: 2;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 4rem;
+  gap: 5rem;
+  position: relative;
+  z-index: 2;
 }
 
+/* Eyebrow Chip */
 .tsh-hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.45rem 1.1rem;
-  background: #ffffff;
-  color: var(--tsh-primary-dark);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  gap: 0.85rem;
+  padding: 0.4rem 1.1rem 0.4rem 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 176, 56, 0.3);
   border-radius: var(--tsh-radius-full);
-  font-weight: 700;
-  font-size: 0.88rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.12);
+  color: var(--tsh-text-secondary);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.tsh-hero-badge .pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--tsh-green);
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+.tsh-hero-badge-pill {
+  background: var(--tsh-gold-metallic);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--tsh-radius-full);
+  font-size: 0.72rem;
+  color: #06080d;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 2px 8px rgba(245, 176, 56, 0.4);
 }
 
+/* Headline */
 .tsh-hero-title {
   font-family: var(--tsh-font-heading);
-  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
-  line-height: 1.12;
-  color: var(--tsh-dark-charcoal);
-  margin-bottom: 1.35rem;
+  font-size: clamp(3.2rem, 5.8vw, 5.25rem);
+  line-height: 1.06;
+  color: #ffffff;
+  margin-bottom: 1.75rem;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 .tsh-hero-title .highlight {
-  background: var(--tsh-gold-gradient);
+  font-family: var(--tsh-font-display);
+  font-style: italic;
+  font-weight: 600;
+  background: var(--tsh-gold-metallic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
   display: inline-block;
+  filter: drop-shadow(0 4px 20px rgba(245, 176, 56, 0.45));
 }
 
 .tsh-hero-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.65;
-  color: var(--tsh-muted-gray);
-  margin-bottom: 2rem;
-  font-weight: 400;
-  max-width: 600px;
+  font-size: 1.22rem;
+  line-height: 1.85;
+  color: var(--tsh-text-secondary);
+  margin-bottom: 2.75rem;
+  font-weight: 300;
+  max-width: 620px;
 }
 
+/* Value Triad Pills */
 .tsh-triad-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .tsh-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: #ffffff;
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--tsh-radius-md);
-  border: 1px solid var(--tsh-border-gray);
-  box-shadow: var(--tsh-shadow-sm);
+  background: rgba(14, 18, 28, 0.75);
+  backdrop-filter: blur(12px);
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--tsh-radius-full);
+  border: 1px solid rgba(245, 176, 56, 0.25);
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 0.9rem;
   font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--tsh-dark-charcoal);
-  transition: var(--tsh-transition);
+  color: #ffffff;
+  box-shadow: var(--tsh-shadow-sm);
+  transition: all 0.35s var(--tsh-ease-out);
+  cursor: default;
 }
 
 .tsh-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--tsh-shadow-md);
+  transform: translateY(-3px) scale(1.03);
+  border-color: var(--tsh-gold-400);
+  background: rgba(245, 176, 56, 0.15);
+  box-shadow: 0 8px 24px rgba(245, 176, 56, 0.25);
+  color: var(--tsh-gold-300);
 }
 
-.tsh-pill.flavor { border-left: 4px solid #f59e0b; }
-.tsh-pill.safety { border-left: 4px solid #10b981; }
-.tsh-pill.price { border-left: 4px solid #3b82f6; }
-
-.tsh-pill .pill-sub {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--tsh-muted-gray);
+.tsh-pill-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(245, 176, 56, 0.18);
+  color: var(--tsh-gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Hero CTAs */
 .tsh-hero-ctas {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-/* Hero Media & Floating Badges */
+/* 3D Hologram Picture Framing */
 .tsh-hero-media {
   position: relative;
+  z-index: 2;
+  perspective: 1200px;
 }
 
 .tsh-hero-media-wrapper {
   position: relative;
+  border-radius: var(--tsh-radius-xl);
+  padding: 14px;
+  background: linear-gradient(135deg, rgba(245, 176, 56, 0.3) 0%, rgba(20, 26, 40, 0.8) 50%, rgba(6, 8, 13, 0.9) 100%);
+  border: 1px solid rgba(245, 176, 56, 0.4);
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.8), 0 0 50px rgba(245, 176, 56, 0.25);
+  transition: transform 0.5s var(--tsh-ease-out);
+}
+
+.tsh-hero-img-box {
+  position: relative;
   border-radius: var(--tsh-radius-lg);
-  padding: 0.75rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(254, 243, 199, 0.5));
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  box-shadow: var(--tsh-shadow-xl);
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 4 / 3;
 }
 
 .tsh-hero-img {
   width: 100%;
-  height: 440px;
+  height: 100%;
   object-fit: cover;
-  border-radius: calc(var(--tsh-radius-lg) - 6px);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s var(--tsh-ease-out);
 }
 
 .tsh-hero-media-wrapper:hover .tsh-hero-img {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
-/* Glass Floating Cards */
-.tsh-floating-card-1 {
+/* Floating Hologram Radar Badge */
+.tsh-hero-floating-badge {
   position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  padding: 1rem 1.25rem;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(6, 8, 13, 0.88);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(245, 176, 56, 0.5);
   border-radius: var(--tsh-radius-md);
-  box-shadow: var(--tsh-shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  max-width: 320px;
-  animation: floatSlow 5s ease-in-out infinite alternate;
-}
-
-.tsh-floating-card-2 {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background: rgba(15, 23, 42, 0.92);
+  padding: 1rem 1.45rem;
   color: #ffffff;
-  backdrop-filter: blur(12px);
-  padding: 0.8rem 1.2rem;
-  border-radius: var(--tsh-radius-md);
-  box-shadow: var(--tsh-shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  animation: floatSlow 6s ease-in-out infinite alternate-reverse;
+  gap: 1rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 176, 56, 0.25);
+  z-index: 3;
 }
 
-@keyframes floatSlow {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-8px); }
+.tsh-floating-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--tsh-gold-metallic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #06080d;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(245, 176, 56, 0.5);
 }
 
-/* Live Wholesale Price Comparison Widget */
-.hero-stats-banner {
-  margin-top: 3.5rem;
-  background: #ffffff;
-  border: 1px solid var(--tsh-border-gray);
-  border-radius: var(--tsh-radius-md);
-  padding: 1.25rem 2rem;
+.tsh-floating-title {
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.tsh-floating-subtitle {
+  font-family: var(--tsh-font-mono);
+  font-size: 0.74rem;
+  color: var(--tsh-gold-300);
+  letter-spacing: 0.04em;
+}
+
+/* Live Stats / Telemetry Bar Section */
+.tsh-trust-bar {
+  background: #080b12;
+  border-bottom: 1px solid var(--tsh-border-dark);
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tsh-trust-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  box-shadow: var(--tsh-shadow-sm);
+  gap: 2.5rem;
+  align-items: center;
 }
 
-.hero-stat-item {
-  text-align: center;
-  border-right: 1px solid var(--tsh-border-gray);
+.tsh-trust-stat {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0.75rem 1.75rem;
+  background: rgba(14, 18, 28, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--tsh-radius-md);
+  transition: all 0.35s ease;
 }
-.hero-stat-item:last-child {
-  border-right: none;
+
+.tsh-trust-stat:hover {
+  background: rgba(245, 176, 56, 0.08);
+  border-color: rgba(245, 176, 56, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
 }
-.hero-stat-num {
-  font-family: var(--tsh-font-heading);
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--tsh-dark-charcoal);
+
+.tsh-trust-stat-num {
+  font-family: var(--tsh-font-sans-heading);
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
 }
-.hero-stat-label {
+
+.tsh-trust-stat-num span {
+  color: var(--tsh-gold-400);
+  font-size: 0.65em;
+  margin-left: 2px;
+}
+
+.tsh-trust-stat-text {
+  font-family: var(--tsh-font-mono);
   font-size: 0.82rem;
-  color: var(--tsh-muted-gray);
   font-weight: 600;
-  margin-top: 0.15rem;
+  color: var(--tsh-text-muted);
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 @media (max-width: 992px) {
   .tsh-hero-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
   }
-  .hero-stats-banner {
+  .tsh-trust-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  .hero-stat-item:nth-child(2) {
-    border-right: none;
   }
 }
 
 @media (max-width: 600px) {
-  .hero-stats-banner {
+  .tsh-trust-grid {
     grid-template-columns: 1fr;
-  }
-  .hero-stat-item {
-    border-right: none;
-    border-bottom: 1px solid var(--tsh-border-gray);
-    padding-bottom: 0.75rem;
-  }
-  .hero-stat-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
   }
 }

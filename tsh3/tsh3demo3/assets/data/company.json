@@ -21,32 +21,32 @@
   "certifications": [
     {
       "name": "Kosher Certified",
-      "icon": "✡️",
+      "icon": "shield-check",
       "desc": "Produced under strict rabbinical dietary supervision"
     },
     {
       "name": "Halal Certified",
-      "icon": "☪️",
+      "icon": "award",
       "desc": "Conforming strictly to international Islamic food standards"
     },
     {
       "name": "FDA Compliant",
-      "icon": "🏛️",
+      "icon": "building",
       "desc": "Registered facility compliant with 21 CFR regulations"
     },
     {
       "name": "HACCP Safe",
-      "icon": "🛡️",
+      "icon": "shield",
       "desc": "Rigorous Hazard Analysis Critical Control Point biological safety system"
     },
     {
       "name": "Non-GMO & Organic",
-      "icon": "🌿",
+      "icon": "feather",
       "desc": "Pure wildcrafted and natural origins with zero genetic modification"
     },
     {
       "name": "True Source Certified®",
-      "icon": "🍯",
+      "icon": "check-circle",
       "desc": "Traceable chain of custody verifying origin and ethical beekeeping"
     }
   ],

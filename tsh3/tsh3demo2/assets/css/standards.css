@@ -208,7 +208,7 @@
 }
 
 .tsh-test-verify-badge::before {
-  content: "✓";
+  content: "// ";
   font-weight: 800;
 }
 

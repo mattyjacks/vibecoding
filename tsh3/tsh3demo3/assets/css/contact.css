@@ -1,8 +1,131 @@
-/* Contact Section & Premium Inbound Conversion Architecture */
-.tsh-contact-section {
-  background: linear-gradient(135deg, #090d16 0%, #0f172a 60%, #1e293b 100%);
+/* Tri State Honey — $500k Logistics Terminal, Executive Trade Desk & Footer */
+
+/* Ocean Freight & Logistics Terminal Section */
+.tsh-logistics-section {
+  background: radial-gradient(circle at 80% 20%, rgba(245, 176, 56, 0.12) 0%, rgba(6, 8, 13, 0) 65%);
+  padding: 8.5rem 0;
+  border-top: 1px solid var(--tsh-border-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.tsh-logistics-card {
+  background: rgba(14, 18, 28, 0.75);
+  border-radius: var(--tsh-radius-xl);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(245, 176, 56, 0.15);
+  backdrop-filter: blur(16px);
+}
+
+.tsh-logistics-media {
+  position: relative;
+  min-height: 480px;
+  background: #000;
+}
+
+.tsh-logistics-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--tsh-ease-out);
+}
+
+.tsh-logistics-card:hover .tsh-logistics-img {
+  transform: scale(1.05);
+}
+
+.tsh-logistics-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(6, 8, 13, 0.88);
+  backdrop-filter: blur(14px);
   color: #ffffff;
-  padding: 6.5rem 0;
+  padding: 1.15rem 1.45rem;
+  border-radius: var(--tsh-radius-md);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.84rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.tsh-logistics-caption svg {
+  color: var(--tsh-gold-400);
+  flex-shrink: 0;
+}
+
+.tsh-logistics-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tsh-logistics-content h3 {
+  font-family: var(--tsh-font-heading);
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 1rem 0 1.25rem;
+  line-height: 1.2;
+}
+
+/* Ashley Dutta Executive Memo Callout */
+.tsh-logistics-tip {
+  background: rgba(245, 176, 56, 0.08);
+  border-left: 3px solid var(--tsh-gold-400);
+  border-radius: 0 var(--tsh-radius-sm) var(--tsh-radius-sm) 0;
+  padding: 1.5rem 1.85rem;
+  margin: 2rem 0 2.25rem;
+  font-size: 0.96rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+.tsh-logistics-tip strong {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 0.95rem;
+  color: var(--tsh-gold-300);
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tsh-logistics-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tsh-route-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--tsh-border-dark);
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--tsh-radius-full);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--tsh-gold-300);
+}
+
+/* Executive Contact & Sample Inquiry Section */
+.tsh-contact-section {
+  background: radial-gradient(circle at 75% 25%, #121824 0%, #06080d 80%);
+  color: #ffffff;
+  padding: 8.5rem 0 6.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -12,279 +135,363 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(rgba(245, 158, 11, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 60%, rgba(245, 176, 56, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .tsh-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: flex-start;
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 4rem;
-  align-items: flex-start;
 }
 
 .tsh-contact-info-col h2 {
   font-family: var(--tsh-font-heading);
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-size: clamp(2.4rem, 4.2vw, 3.45rem);
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: -0.02em;
-  margin: 0.5rem 0 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.15;
 }
 
 .tsh-contact-tagline {
   font-size: 1.2rem;
-  color: #fbbf24;
-  font-weight: 600;
-  margin-bottom: 2.5rem;
+  color: var(--tsh-text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.65;
+  font-weight: 300;
 }
 
 .tsh-contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.35rem;
 }
 
 .tsh-contact-method-item {
   display: flex;
   align-items: flex-start;
-  gap: 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.25rem 1.5rem;
+  gap: 1.35rem;
+  background: rgba(14, 18, 28, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 1.65rem;
   border-radius: var(--tsh-radius-md);
-  transition: var(--tsh-transition);
+  border: 1px solid var(--tsh-border-dark);
+  transition: all 0.35s var(--tsh-ease-out);
 }
 
 .tsh-contact-method-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(245, 158, 11, 0.35);
-  transform: translateX(4px);
+  background: rgba(20, 26, 40, 0.8);
+  border-color: rgba(245, 176, 56, 0.5);
+  transform: translateX(6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 176, 56, 0.15);
 }
 
 .tsh-contact-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(245, 158, 11, 0.2);
+  width: 52px;
+  height: 52px;
+  border-radius: var(--tsh-radius-sm);
+  background: rgba(245, 176, 56, 0.15);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  color: var(--tsh-gold-400);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  color: #fbbf24;
   flex-shrink: 0;
 }
 
 .tsh-contact-method-item h4 {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #94a3b8;
+  font-family: var(--tsh-font-sans-heading);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--tsh-gold-300);
+  margin-bottom: 0.35rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.3rem;
+  letter-spacing: 0.04em;
 }
 
 .tsh-contact-method-item a {
   color: #ffffff;
   font-weight: 700;
-  font-size: 1.15rem;
-  transition: color 0.2s ease;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
 .tsh-contact-method-item a:hover {
-  color: #fbbf24;
+  color: var(--tsh-gold-300);
+  text-decoration: underline;
 }
 
-/* Sample Request Modern Card Form */
+.tsh-contact-subtext {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin-top: 0.35rem;
+  line-height: 1.5;
+}
+
+/* Sample Request Card */
 .tsh-form-card {
-  background: #ffffff;
-  color: var(--tsh-dark-charcoal);
-  border-radius: var(--tsh-radius-lg);
-  padding: 2.75rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-  position: relative;
-}
-
-.tsh-form-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: var(--tsh-gold-gradient);
-  border-radius: var(--tsh-radius-lg) var(--tsh-radius-lg) 0 0;
+  background: rgba(14, 18, 28, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(245, 176, 56, 0.4);
+  border-radius: var(--tsh-radius-xl);
+  padding: 3.25rem 3rem;
+  box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.8), 0 0 45px rgba(245, 176, 56, 0.2);
 }
 
 .tsh-form-card h3 {
   font-family: var(--tsh-font-heading);
-  font-size: 1.65rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: var(--tsh-dark-charcoal);
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
-.tsh-form-card > p {
-  color: var(--tsh-muted-gray);
-  font-size: 0.95rem;
-  margin-bottom: 1.75rem;
+.tsh-form-card p {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
+}
+
+.tsh-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.35rem;
 }
 
 .tsh-form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .tsh-form-label {
   display: block;
-  font-size: 0.85rem;
+  font-family: var(--tsh-font-mono);
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--tsh-slate-gray);
-  margin-bottom: 0.4rem;
+  color: var(--tsh-gold-300);
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .tsh-form-control {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--tsh-border-gray);
+  padding: 0.95rem 1.25rem;
+  background: rgba(6, 8, 13, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--tsh-radius-sm);
-  background: #f8fafc;
-  color: var(--tsh-dark-charcoal);
-  font-size: 0.95rem;
-  transition: var(--tsh-transition);
+  color: #ffffff;
+  font-family: var(--tsh-font-primary);
+  font-size: 0.98rem;
+  transition: all 0.3s ease;
 }
 
 .tsh-form-control:focus {
   outline: none;
-  border-color: var(--tsh-primary);
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+  border-color: var(--tsh-gold-400);
+  box-shadow: 0 0 0 3px rgba(245, 176, 56, 0.25), 0 0 20px rgba(245, 176, 56, 0.2);
+  background: rgba(6, 8, 13, 0.98);
 }
 
+.tsh-form-control::placeholder {
+  color: #64748b;
+}
+
+select.tsh-form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5b038' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  padding-right: 2.75rem;
+}
+
+select.tsh-form-control option {
+  background-color: #06080d;
+  color: #ffffff;
+}
+
+/* Status Alert */
 .tsh-status-alert {
-  display: none;
-  margin-top: 1.25rem;
-  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
   border-radius: var(--tsh-radius-sm);
-  font-size: 0.92rem;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  display: none;
 }
 
 .tsh-status-alert.success {
   display: block;
-  background-color: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #86efac;
 }
 
 .tsh-status-alert.error {
   display: block;
-  background-color: #fef2f2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  color: #fca5a5;
 }
 
-/* Footer Styling */
+/* Modern Multi-Column Footer */
 .tsh-footer {
-  background-color: #060911;
+  background: #040508;
   color: #94a3b8;
-  padding: 4.5rem 0 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5.5rem 0 3rem;
+  border-top: 1px solid rgba(245, 176, 56, 0.25);
+  position: relative;
+  z-index: 2;
+  font-family: var(--tsh-font-readable);
+}
+
+.tsh-footer p {
+  font-family: var(--tsh-font-readable) !important;
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
 }
 
 .tsh-footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 3rem;
-  margin-bottom: 3.5rem;
+  gap: 4rem;
+  margin-bottom: 4.5rem;
 }
 
-.tsh-footer h4 {
+.tsh-footer-title {
+  font-family: var(--tsh-font-bungee);
+  font-size: 0.85rem;
+  font-weight: 400;
   color: #ffffff;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.75rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.tsh-footer-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--tsh-gold-400);
 }
 
 .tsh-footer-links {
   list-style: none;
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
+  font-family: var(--tsh-font-readable);
+}
+
+.tsh-footer-links li {
+  margin-bottom: 0.85rem;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  font-family: var(--tsh-font-readable);
+  letter-spacing: 0.01em;
+}
+
+.tsh-footer-links a {
+  color: #cbd5e1;
+  font-family: var(--tsh-font-readable);
+  font-size: 0.93rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
 }
 
 .tsh-footer-links a:hover {
-  color: #fbbf24;
+  color: var(--tsh-gold-300);
+  padding-left: 6px;
 }
 
 .tsh-footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 2rem;
+  padding-top: 2.25rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.85rem;
+  gap: 1.25rem;
+  font-size: 0.88rem;
+  color: #64748b;
+  font-family: var(--tsh-font-readable);
+}
+
+.tsh-footer-bottom strong {
+  color: #e2e8f0;
+  font-family: var(--tsh-font-readable);
 }
 
 /* Floating Back to Top Button */
 .tsh-back-to-top {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 46px;
-  height: 46px;
+  bottom: 35px;
+  right: 35px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #ffffff;
-  color: var(--tsh-primary-dark);
-  border: 1px solid var(--tsh-border-gray);
-  box-shadow: var(--tsh-shadow-lg);
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  border: 1px solid rgba(255, 217, 120, 0.8);
+  box-shadow: 0 8px 28px rgba(245, 176, 56, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 990;
+  font-size: 1.35rem;
+  font-weight: 900;
   opacity: 0;
-  pointer-events: none;
-  transition: var(--tsh-transition);
-  font-weight: 800;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s var(--tsh-ease-spring);
+  z-index: 999;
 }
 
 .tsh-back-to-top.visible {
   opacity: 1;
-  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .tsh-back-to-top:hover {
-  background: var(--tsh-primary);
-  color: #ffffff;
-  border-color: var(--tsh-primary);
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 14px 35px rgba(245, 176, 56, 0.65);
 }
 
 @media (max-width: 992px) {
+  .tsh-logistics-card {
+    grid-template-columns: 1fr;
+  }
   .tsh-contact-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
   }
   .tsh-footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 580px) {
+  .tsh-form-row {
+    grid-template-columns: 1fr;
+  }
   .tsh-footer-grid {
     grid-template-columns: 1fr;
   }
+  .tsh-logistics-content {
+    padding: 2.5rem 1.75rem;
+  }
   .tsh-form-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 }
