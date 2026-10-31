@@ -110,7 +110,7 @@ body {
   letter-spacing: 0.025em;
 }
 
-/* Interactive Liquid Honey Canvas Behind Everything */
+/* Atmospheric Amber Caustic Glow */
 #tshFluidCanvas {
   position: fixed;
   inset: 0;
@@ -121,16 +121,9 @@ body {
   opacity: 0.65;
 }
 
-/* Subtle Technical Honeycomb Grid Overlay */
+/* Technical Grid Mesh Overlay Removed */
 .tsh-grid-mesh {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  z-index: 1;
+  display: none !important;
 }
 
 a {

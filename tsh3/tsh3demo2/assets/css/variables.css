@@ -1,5 +1,5 @@
 /* Tri State Honey — $500k Masterpiece Design System & Variables */
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Delicious+Handrawn&family=Lobster&family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Delicious+Handrawn&family=Lobster&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Zeyada&display=swap');
 
 :root {
   /* $500k Obsidian & Liquid Gold Color Architecture */
@@ -43,13 +43,16 @@
   --tsh-status-cyan: #06b6d4;
   --tsh-status-amber: #f59e0b;
 
-  /* 100% Client-Specified Typography System (Lobster, Zeyada, Bungee, Delicious Handrawn ONLY) */
+  /* Client Typography System */
   --tsh-font-primary: 'Delicious Handrawn', cursive;
   --tsh-font-heading: 'Lobster', cursive;
   --tsh-font-display: 'Lobster', cursive;
   --tsh-font-sans-heading: 'Bungee', cursive, sans-serif;
   --tsh-font-mono: 'Bungee', cursive, sans-serif;
   --tsh-font-script: 'Zeyada', cursive;
+
+  /* High-Legibility SI Technical & Corporate Footer Font */
+  --tsh-font-readable: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --tsh-font-lobster: 'Lobster', cursive;
   --tsh-font-zeyada: 'Zeyada', cursive;
@@ -107,7 +110,7 @@ body {
   letter-spacing: 0.025em;
 }
 
-/* Interactive Liquid Honey Canvas Behind Everything */
+/* Atmospheric Amber Caustic Glow */
 #tshFluidCanvas {
   position: fixed;
   inset: 0;
@@ -118,16 +121,9 @@ body {
   opacity: 0.65;
 }
 
-/* Subtle Technical Honeycomb Grid Overlay */
+/* Technical Grid Mesh Overlay Removed */
 .tsh-grid-mesh {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  z-index: 1;
+  display: none !important;
 }
 
 a {
@@ -365,4 +361,9 @@ button, input, select, textarea {
   font-family: var(--tsh-font-handrawn) !important;
   font-weight: 400;
   letter-spacing: 0.025em;
+}
+
+.font-readable {
+  font-family: var(--tsh-font-readable) !important;
+  letter-spacing: 0.01em;
 }

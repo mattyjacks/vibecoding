@@ -489,19 +489,37 @@
     }
   }
 
-  // 9. WEB AUDIO API SOUND GENERATOR (Tactile Click Effects)
+  // 9. WEB AUDIO API SOUND GENERATOR (Tactile Click Effects & Ambient Audio)
   let audioCtx = null;
   let soundEnabled = true;
 
-  function playBeep(freq, duration) {
-    if (!soundEnabled) return;
+  function initGlobalAudio() {
     try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
       if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        audioCtx = new AudioCtx();
       }
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
+      window.tshSharedAudioCtx = audioCtx;
+    } catch (e) {
+      // Audio autoplay policy
+    }
+  }
+
+  // Eagerly unlock audio on page load and user interaction
+  window.addEventListener('load', initGlobalAudio);
+  window.addEventListener('pointerdown', initGlobalAudio, { once: false });
+  window.addEventListener('scroll', initGlobalAudio, { once: false, passive: true });
+  window.addEventListener('keydown', initGlobalAudio, { once: false });
+
+  function playBeep(freq, duration) {
+    if (!soundEnabled) return;
+    try {
+      initGlobalAudio();
+      if (!audioCtx || audioCtx.state !== 'running') return;
 
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
@@ -518,7 +536,7 @@
       osc.start();
       osc.stop(audioCtx.currentTime + duration);
     } catch (e) {
-      // Audio not supported or blocked
+      // Audio blocked or not supported
     }
   }
   window.playTshBeep = playBeep;
@@ -527,12 +545,21 @@
     const toggleBtn = document.getElementById('soundToggleBtn');
     if (!toggleBtn) return;
 
+    // SVG icon for sound active (unmuted speaker with soundwaves)
+    const iconOn = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
+    
+    // SVG icon for sound muted (speaker with slash/X)
+    const iconOff = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`;
+
+    toggleBtn.innerHTML = soundEnabled ? iconOn : iconOff;
+    toggleBtn.title = soundEnabled ? 'Audio Synthesis: Active (Click to Mute)' : 'Audio Synthesis: Muted (Click to Unmute)';
+
     toggleBtn.addEventListener('click', function () {
       soundEnabled = !soundEnabled;
+      document.body.classList.toggle('tsh-sound-muted', !soundEnabled);
       this.classList.toggle('is-active', soundEnabled);
-      this.innerHTML = soundEnabled 
-        ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Audio: ON`
-        : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg> Audio: MUTED`;
+      this.innerHTML = soundEnabled ? iconOn : iconOff;
+      this.title = soundEnabled ? 'Audio Synthesis: Active (Click to Mute)' : 'Audio Synthesis: Muted (Click to Unmute)';
 
       if (soundEnabled) playBeep(600, 0.05);
     });

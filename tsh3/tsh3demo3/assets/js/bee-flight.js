@@ -743,9 +743,25 @@
 
   function initFlightAudio() {
     try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContext) return;
-      audioCtx = new AudioContext();
+      if (flightGain && flightOsc) {
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return;
+      }
+
+      if (window.tshSharedAudioCtx) {
+        audioCtx = window.tshSharedAudioCtx;
+      } else {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        audioCtx = new AudioContext();
+        window.tshSharedAudioCtx = audioCtx;
+      }
+
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
 
       flightOsc = audioCtx.createOscillator();
       flightOsc.type = 'sawtooth';
@@ -756,7 +772,8 @@
       filter.frequency.setValueAtTime(320, audioCtx.currentTime);
 
       flightGain = audioCtx.createGain();
-      flightGain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+      // Start with comfortable baseline so sound plays automatically as soon as context unlocks
+      flightGain.gain.setValueAtTime(0.014, audioCtx.currentTime);
 
       flightOsc.connect(filter);
       filter.connect(flightGain);
@@ -793,7 +810,7 @@
     }
 
     if (flightGain) {
-      const targetVol = Math.min(0.012 + speed * 0.04, 0.042);
+      const targetVol = Math.min(0.014 + speed * 0.045, 0.045);
       flightGain.gain.setTargetAtTime(targetVol, audioCtx.currentTime, 0.05);
       if (flightOsc) {
         flightOsc.frequency.setTargetAtTime(140 + speed * 85, audioCtx.currentTime, 0.05);
@@ -813,10 +830,13 @@
     }
   }
 
-  window.addEventListener('pointerdown', () => {
-    if (!audioCtx) initFlightAudio();
-    else if (audioCtx.state === 'suspended') audioCtx.resume();
-  }, { once: true });
+  // Eagerly unlock & initialize sound on immediate page load and any subtle action
+  window.addEventListener('load', initFlightAudio);
+  window.addEventListener('pointerdown', initFlightAudio);
+  window.addEventListener('scroll', initFlightAudio, { passive: true });
+  window.addEventListener('mousemove', initFlightAudio, { once: true });
+  window.addEventListener('touchstart', initFlightAudio, { once: true });
+  window.addEventListener('keydown', initFlightAudio, { once: true });
 
   // 8. TWO GIANT BEES PERIODIC FLYBY SCHEDULER (Every ~20 seconds)
   let activeGiant = null;

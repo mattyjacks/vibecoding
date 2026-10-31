@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tri State Honey &ndash; Pure Liquid Gold | Direct Wholesale Importers</title>
   <meta name="description"
-    content="Pure liquid gold honey at unbeatable wholesale prices. Kosher, Halal, HACCP certified, FDA compliant, tested by NMR & HRMS. Stocked in NJ for fast delivery.">
+    content="Tri State Honey LLC: Direct importers of 100% pure liquid gold honey at unbeatable wholesale prices. Kosher, Halal, HACCP safe, and FDA compliant. Packed in NJ, USA.">
   <link rel="canonical" href="https://www.tristatehoney.com/">
 
   <!-- Favicons -->
@@ -23,6 +23,7 @@
 
   <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/loader.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/hero.css">
   <link rel="stylesheet" href="assets/css/products.css">
@@ -33,6 +34,48 @@
 </head>
 
 <body>
+
+  <!-- Hyper-Realistic 3D Honeycomb Fracture & Viscous Honey Drip Loader -->
+  <div id="tshLoaderOverlay" role="dialog" aria-modal="true" aria-label="Tri State Honey Interactive Experience Loading">
+    <canvas id="tshLoaderCanvas"></canvas>
+    <div class="tsh-loader-vignette"></div>
+
+    <div class="tsh-loader-hud">
+      <div class="tsh-hud-top">
+        <div class="tsh-hud-brand">
+          <img src="assets/images/logo-realistic.svg" alt="Tri State Honey" class="tsh-hud-logo">
+          <span class="tsh-hud-title">Tri State Honey LLC</span>
+        </div>
+        <div class="tsh-hud-status">
+          <span class="tsh-hud-dot"></span>
+          <span>CELL PRESSURIZATION ACTIVE</span>
+        </div>
+      </div>
+
+      <div class="tsh-loader-center">
+        <div class="tsh-loader-pct" id="tshLoaderPct">0%</div>
+        <div class="tsh-loader-label" id="tshLoaderLabel">Initializing Floral Reserves...</div>
+      </div>
+
+      <div class="tsh-loader-bottom">
+        <div class="tsh-loader-bar-track">
+          <div class="tsh-loader-bar-fill" id="tshLoaderFill"></div>
+        </div>
+        <div class="tsh-loader-specs">
+          <div>SPECS: <span>100% UNADULTERATED</span></div>
+          <div>VISCOSITY: <span>1.42 G/CM³</span></div>
+          <div>PURITY: <span>NMR VERIFIED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="tsh-loader-skip" id="tshLoaderSkip" aria-label="Skip intro animation">
+      Enter Site &rarr;
+    </button>
+  </div>
+
+  <!-- Liquid Honey Viscous Canvas Reactor -->
+  <canvas id="tshFluidCanvas"></canvas>
 
   <!-- Client Demo Banner -->
   <aside class="mj-demo-banner" aria-label="Demo Announcement">
@@ -58,15 +101,15 @@
     </div>
   </aside>
 
-  <!-- Top Announcement Bar -->
+  <!-- Top Announcement Telemetry Bar -->
   <div class="tsh-top-announcement">
     <div class="tsh-announcement-highlight">
-      <span class="tsh-announcement-pulse"></span>
+      <span class="telemetry-dot"></span>
       <span><strong>Pure Liquid Gold Direct From Source</strong> &bull; FDA Registered &bull; Kosher &amp; Halal &bull;
         HACCP Certified</span>
     </div>
     <div class="tsh-announcement-contact">
-      <span>Immediate Inquiries</span>
+      <span>Immediate Wholesale Inquiries</span>
       <a href="tel:18568646639">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: middle;">
@@ -97,61 +140,78 @@
         <ul class="tsh-nav-menu">
           <li>
             <a href="#products" class="tsh-nav-link">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" />
                 <path d="M12 12l8-4.5M12 12v8M12 12L4 7.5" />
               </svg>
-              Honey Packaging
+              Packaging Stage
+            </a>
+          </li>
+          <li>
+            <a href="#roi-calc" class="tsh-nav-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2" />
+                <line x1="8" y1="6" x2="16" y2="6" />
+                <line x1="16" y1="14" x2="16" y2="18" />
+                <line x1="12" y1="14" x2="12" y2="18" />
+                <line x1="8" y1="14" x2="8" y2="18" />
+              </svg>
+              ROI Engine
             </a>
           </li>
           <li>
             <a href="#standards" class="tsh-nav-link">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
-              Quality &amp; Science
+              Spectral Lab
             </a>
           </li>
           <li>
             <a href="#catalog" class="tsh-nav-link">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
               </svg>
-              Full Catalog
+              Commodities
             </a>
           </li>
           <li>
             <a href="#logistics" class="tsh-nav-link">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.5 0 2.5 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
                 <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.07" />
-                <path d="M12 10V4" />
-                <path d="m8 6 4-2 4 2" />
               </svg>
               Ocean Logistics
             </a>
           </li>
           <li>
             <a href="#contact" class="tsh-nav-link">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              Contact &amp; Samples
+              Trade Desk
             </a>
           </li>
         </ul>
       </nav>
 
       <div class="tsh-nav-actions">
+        <button type="button" class="tsh-sound-toggle is-active" id="soundToggleBtn"
+          title="Audio Synthesis: Active (Click to Mute)" aria-label="Toggle audio synthesis">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+          </svg>
+        </button>
+
         <a href="tel:18568646639" class="tsh-btn-phone" title="Call Tri State Honey">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -166,24 +226,18 @@
 
   <!-- Hero Section -->
   <section class="tsh-hero">
-    <!-- Subtle Floating Pollen Dust -->
-    <div class="tsh-pollen-particle tsh-pollen-1"></div>
-    <div class="tsh-pollen-particle tsh-pollen-2"></div>
-    <div class="tsh-pollen-particle tsh-pollen-3"></div>
-    <div class="tsh-pollen-particle tsh-pollen-4"></div>
-
     <div class="container tsh-hero-grid">
       <div class="tsh-hero-content">
         <div class="tsh-hero-badge">
           <span class="tsh-hero-badge-pill font-bungee" style="font-size: 0.72rem; letter-spacing: 0.08em;">Direct Importers</span>
-          <span>In business since 2009 &bull; <strong class="font-lobster" style="font-size: 1.15rem; color: var(--tsh-gold-600); font-weight: normal;">Pure Liquid Gold</strong></span>
+          <span>Est. 2009 &bull; Global Floral Reserves &bull; <strong class="font-lobster" style="font-size: 1.15rem; color: var(--tsh-gold-300); font-weight: normal;">Pure Liquid Gold</strong></span>
         </div>
         <h1 class="tsh-hero-title">
-          The Best Honey <br><span class="highlight editorial-italic">in the World.</span>
+          The Best Honey <br><span class="highlight italic-serif">in the World.</span>
         </h1>
         <p class="tsh-hero-subtitle">
-          With unbeatable wholesale prices, Tri State Honey offers <span class="font-lobster" style="font-size: 1.25em; color: var(--tsh-gold-600);">pure liquid gold</span>, and much more than honey! Get more
-          honey for your money direct from foreign floral reserves to your warehouse dock.
+          With unbeatable wholesale prices, Tri State Honey offers <span class="font-lobster" style="font-size: 1.25em; color: var(--tsh-gold-300);">pure liquid gold</span>, and much more than honey! Get more
+          honey for your money direct from foreign floral reserves straight to your warehouse dock.
         </p>
 
         <!-- Triad Value Propositions -->
@@ -216,16 +270,16 @@
                 <path d="M12 6v12" />
               </svg>
             </span>
-            <span>Cheapest Prices</span>
+            <span>Cheapest Wholesale Prices</span>
           </div>
         </div>
 
         <div class="tsh-hero-ctas">
-          <a href="#contact" class="tsh-btn tsh-btn-primary tsh-btn-lg">
+          <a href="#contact" class="tsh-btn tsh-btn-primary">
             Request Free Samples &rarr;
           </a>
-          <a href="#products" class="tsh-btn tsh-btn-secondary tsh-btn-lg">
-            Explore Packaging Sizes
+          <a href="#products" class="tsh-btn tsh-btn-secondary">
+            Launch Packaging Stage
           </a>
         </div>
       </div>
@@ -238,13 +292,13 @@
           </div>
           <div class="tsh-hero-floating-badge">
             <div class="tsh-floating-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z" />
               </svg>
             </div>
             <div>
-              <div class="tsh-floating-title">100% Direct Floral Reserves</div>
+              <div class="tsh-floating-title font-handrawn" style="font-size: 1.45rem; color: #ffd369; line-height: 1.15;">Direct Floral Reserves &bull; Unadulterated</div>
               <div class="tsh-floating-subtitle">NMR &amp; HRMS Lab Screened &bull; Est. 2009</div>
             </div>
           </div>
@@ -253,12 +307,12 @@
     </div>
   </section>
 
-  <!-- Live Stats / Trust Bar -->
+  <!-- Live Telemetry & Trust Board -->
   <section class="tsh-trust-bar">
     <div class="container tsh-trust-grid">
       <div class="tsh-trust-stat tsh-reveal">
         <div class="tsh-trust-stat-num">17<span>+</span></div>
-        <div class="tsh-trust-stat-text">Years of Direct<br>Import Excellence</div>
+        <div class="tsh-trust-stat-text">Years Direct Import<br>Excellence (2009)</div>
       </div>
       <div class="tsh-trust-stat tsh-reveal">
         <div class="tsh-trust-stat-num">100<span>%</span></div>
@@ -269,8 +323,8 @@
         <div class="tsh-trust-stat-text">NMR &amp; HRMS Lab<br>Screening Verified</div>
       </div>
       <div class="tsh-trust-stat tsh-reveal">
-        <div class="tsh-trust-stat-num">3,000<span>lb</span></div>
-        <div class="tsh-trust-stat-text">IBC Pallet Totes to<br>1 lb Retail Squeeze Bears</div>
+        <div class="tsh-trust-stat-num font-bungee" style="font-size: 2.15rem; letter-spacing: 0.04em;">3,000<span style="font-family: var(--tsh-font-mono); font-size: 1.15rem;">lb</span></div>
+        <div class="tsh-trust-stat-text">IBC Pallet Totes to<br>1 lb Retail Bears</div>
       </div>
     </div>
   </section>
@@ -279,12 +333,12 @@
   <section id="products" class="tsh-section">
     <div class="container">
 
-      <!-- Attention Food Companies VIP B2B Callout Box -->
+      <!-- Attention Food Companies VIP Callout -->
       <div class="tsh-attention-box tsh-reveal">
         <div class="tsh-attention-content">
           <h3>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              style="color: #dfba73;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="color: var(--tsh-gold-400);">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -292,7 +346,7 @@
             Attention Food Companies:
           </h3>
           <p>We increase your company’s profit margins by beating the cost and quality of your current suppliers with a
-            wide variety of imported food products.</p>
+            wide variety of direct-imported food products.</p>
         </div>
         <div>
           <a href="#contact" class="tsh-btn tsh-btn-primary" style="white-space: nowrap;">
@@ -301,30 +355,149 @@
         </div>
       </div>
 
+      <!-- Section Header -->
       <div class="tsh-section-header tsh-reveal">
-        <span class="tsh-section-tag">Direct From Source &bull; Pure Liquid Gold</span>
+        <span class="tsh-section-tag font-handrawn" style="font-size: 1.35rem; letter-spacing: 0.04em; text-transform: none;">Direct From Primary Reserves &bull; Pure Liquid Gold</span>
         <h2 class="tsh-section-title">Get more honey for your money.</h2>
         <p class="tsh-section-desc">
-          Our honey, pure liquid gold, is sold at prices so incredibly low that it undercuts almost every competitor.
+          Our honey, <span class="font-lobster" style="color: var(--tsh-gold-300); font-size: 1.25em;">pure liquid gold</span>, is sold at prices so incredibly low that it undercuts almost every competitor.
           While Tri State Honey’s headquarters are in New Jersey, our honey is produced in India and other countries,
           offering you the sweetest deal in the flower field and full FDA compliance &ndash; something most foreign
           honey producers just can’t guarantee.
         </p>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="tsh-product-filters tsh-reveal" id="productFilterBar">
-        <button type="button" class="tsh-filter-btn active" data-filter="all">All Sizes (5)</button>
-        <button type="button" class="tsh-filter-btn" data-filter="Retail">Retail Bottling</button>
-        <button type="button" class="tsh-filter-btn" data-filter="Food Service & Bulk">Commercial Pails</button>
-        <button type="button" class="tsh-filter-btn" data-filter="Manufacturing">Industrial Drums &amp; Totes</button>
+      <!-- FEATURE 1: 3D PACKAGING HOLOGRAM STAGE -->
+      <div class="tsh-stage-section tsh-reveal" id="packagingStage">
+        <div class="tsh-stage-header">
+          <div>
+            <span class="telemetry-badge"><span class="telemetry-dot"></span> Interactive 3D Stage</span>
+            <h3 style="font-family: var(--tsh-font-heading); font-size: 1.85rem; color: #ffffff; margin-top: 0.45rem;">
+              The Packaging Vault</h3>
+          </div>
+          <div class="tsh-stage-tabs">
+            <button type="button" class="tsh-stage-tab active font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-1lb-bear">1 lb Bear</button>
+            <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-2lb-bottle">2 lb Bottle</button>
+            <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-60lb-bucket">60 lb Bucket</button>
+            <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-660lb-drum">660 lb Drum</button>
+            <button type="button" class="tsh-stage-tab font-bungee" style="font-size: 0.74rem;" data-stage-key="tsh-3000lb-tote">3,000 lb Tote</button>
+          </div>
+        </div>
+
+        <div class="tsh-stage-viewport">
+          <!-- Interactive 3D Pedestal Stage -->
+          <div class="tsh-stage-pedestal">
+            <div class="tsh-pedestal-ring"></div>
+            <div class="tsh-stage-img-wrap" id="stageImgWrap">
+              <img id="stageMainImg" src="assets/images/tsh-1-lb-bear.png" alt="1 lb Classic Honey Bear"
+                class="tsh-stage-img">
+            </div>
+          </div>
+
+          <!-- Telemetry Data Readout HUD -->
+          <div class="tsh-stage-telemetry">
+            <h4 class="tsh-stage-title" id="stageTitle">1 lb Classic Honey Bear</h4>
+            <div class="tsh-stage-subtitle" id="stageSubtitle">RETAIL HERO // SQUEEZE BEAR WITH FLIP-TOP VALVE</div>
+            <p style="color: var(--tsh-text-secondary); font-size: 0.96rem; line-height: 1.7; margin-bottom: 2rem;"
+              id="stageDesc">
+              Iconic consumer squeeze bear with anti-drip silicone valve. Engineered for retail shelves, corporate gift
+              baskets, and private labeling with custom foil tamper seals.
+            </p>
+
+            <div class="tsh-stage-specs-grid">
+              <div class="tsh-stage-spec-card">
+                <div class="tsh-spec-label">Net Unit Weight</div>
+                <div class="tsh-spec-val" id="stageWeightVal">1.0 lb (16 oz)</div>
+              </div>
+              <div class="tsh-stage-spec-card">
+                <div class="tsh-spec-label">Pallet Stacking</div>
+                <div class="tsh-spec-val" id="stagePalletVal">2,400 Units / Pallet</div>
+              </div>
+              <div class="tsh-stage-spec-card">
+                <div class="tsh-spec-label">Container FCL Max</div>
+                <div class="tsh-spec-val" id="stageFclVal">24,000 Units / 20ft FCL</div>
+              </div>
+              <div class="tsh-stage-spec-card">
+                <div class="tsh-spec-label">Resin Specification</div>
+                <div class="tsh-spec-val" id="stageResinVal">BPA-Free Food Grade PET</div>
+              </div>
+            </div>
+
+            <div class="tsh-stage-actions">
+              <button type="button" class="tsh-btn tsh-btn-primary" onclick="triggerFilterAndModal('tsh-1lb-bear')">
+                Open Complete Spec Sheet &rarr;
+              </button>
+              <button type="button" class="tsh-btn tsh-btn-secondary" id="stageXrayToggle">
+                Enable Holographic X-Ray
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Products Grid -->
-      <div class="tsh-products-grid" id="productsGridContainer">
+      <!-- FEATURE 2: WHOLESALE MARGIN & FREIGHT ROI ENGINE -->
+      <div class="tsh-roi-calculator tsh-reveal" id="roi-calc">
+        <div class="tsh-roi-grid">
+          <div class="tsh-roi-header">
+            <span class="telemetry-badge"><span class="telemetry-dot"></span> B2B Margin Analysis</span>
+            <h3 style="margin-top: 0.75rem;">Wholesale Margin &amp; Freight ROI Engine</h3>
+            <p>
+              Estimate your exact cost reduction by bypassing domestic broker markups. Calculate instant volume
+              savings and container capacity with Tri State Honey's direct import pipeline.
+            </p>
 
+            <div class="tsh-slider-wrap">
+              <div class="tsh-slider-meta">
+                <span class="tsh-slider-label">Monthly Honey Demand (Pounds):</span>
+                <span class="tsh-slider-value-badge" id="roiVolumeBadge">20,000 lbs / mo</span>
+              </div>
+              <input type="range" min="1000" max="60000" step="1000" value="20000" class="tsh-range-slider"
+                id="roiVolumeSlider">
+            </div>
+
+            <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+              <div class="telemetry-badge">Direct Importer Rate</div>
+              <div class="telemetry-badge">NJ Warehouse Stockpile</div>
+              <div class="telemetry-badge">Zero Middlemen</div>
+            </div>
+          </div>
+
+          <div class="tsh-roi-terminal">
+            <div class="tsh-roi-stat-main">
+              <div class="savings-number font-bungee" id="roiAnnualSavings" style="font-size: 2.85rem; letter-spacing: 0.04em;">$396,000</div>
+              <div class="savings-desc">Projected Annual Savings vs Domestic Distributors</div>
+            </div>
+
+            <div
+              style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--tsh-border-dark);">
+              <span style="font-family: var(--tsh-font-mono); font-size: 0.85rem; color: #8492a6;">Estimated Direct
+                Import Price:</span>
+              <span
+                style="font-family: var(--tsh-font-sans-heading); font-size: 1.75rem; font-weight: 800; color: #ffffff;"
+                id="roiPricePerLb">$1.55</span>
+            </div>
+
+            <div class="tsh-fcl-meter-wrap">
+              <div class="tsh-fcl-meter-label">
+                <span>20ft Ocean Container Optimization</span>
+                <span id="roiFclPct">50% FCL Capacity</span>
+              </div>
+              <div class="tsh-fcl-progress-bar">
+                <div class="tsh-fcl-progress-fill" id="roiFclProgress" style="width: 50%;"></div>
+              </div>
+            </div>
+
+            <button type="button" class="tsh-btn tsh-btn-primary" style="width: 100%;" id="roiLockQuoteBtn">
+              Lock In This Volume Quote &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Packaging Standard Cards Grid -->
+      <div class="tsh-products-grid">
         <!-- 1 lb Bear -->
-        <article class="tsh-product-card tsh-reveal" data-category="Retail">
+        <article class="tsh-product-card tsh-reveal">
           <span class="tsh-product-badge">Retail Favorite</span>
           <div class="tsh-product-img-wrapper">
             <img src="assets/images/tsh-1-lb-bear.png" alt="1 lb Bear Bottle" class="tsh-product-img" loading="lazy">
@@ -333,39 +506,36 @@
           <p class="tsh-product-sub">Classic squeeze bear dispenser for retail shelves, private labels, and gift sets.
           </p>
           <div class="tsh-product-meta">
-            <span>Flip-top Cap</span>
-            <span>&bull;</span>
-            <span>Custom Labels</span>
+            <span>Flip-top Cap &bull; Custom Labels</span>
           </div>
           <div class="tsh-product-action">
-            <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-1lb-bear">
+            <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-1lb-bear">
               View Specs &amp; Lab Data &rarr;
             </button>
           </div>
         </article>
 
         <!-- 2 lb Bottle -->
-        <article class="tsh-product-card tsh-reveal" data-category="Retail">
+        <article class="tsh-product-card tsh-reveal">
           <span class="tsh-product-badge">High Volume</span>
           <div class="tsh-product-img-wrapper">
             <img src="assets/images/tsh-2-lb-bottle.png" alt="2 lb Bottle" class="tsh-product-img" loading="lazy">
           </div>
           <h3 class="tsh-product-name">2 lb Classic Bottle</h3>
-          <p class="tsh-product-sub">Ergonomic ribbed bottle designed for supermarket shelves, diners, and bakeries.</p>
+          <p class="tsh-product-sub">Ergonomic ribbed bottle designed for supermarket shelves, diners, and commercial
+            bakeries.</p>
           <div class="tsh-product-meta">
-            <span>Squeeze Valve</span>
-            <span>&bull;</span>
-            <span>Custom Branded</span>
+            <span>Squeeze Valve &bull; Custom Branded</span>
           </div>
           <div class="tsh-product-action">
-            <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-2lb-bottle">
+            <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-2lb-bottle">
               View Specs &amp; Lab Data &rarr;
             </button>
           </div>
         </article>
 
         <!-- 60 lb Bucket -->
-        <article class="tsh-product-card tsh-reveal" data-category="Food Service & Bulk">
+        <article class="tsh-product-card tsh-reveal">
           <span class="tsh-product-badge">NJ Stocked</span>
           <div class="tsh-product-img-wrapper">
             <img src="assets/images/tsh-60-lb-bucket.png" alt="60 lb Bucket" class="tsh-product-img" loading="lazy">
@@ -374,19 +544,17 @@
           <p class="tsh-product-sub">Commercial food service pail, stocked in Piscataway, NJ for fast nationwide
             dispatch.</p>
           <div class="tsh-product-meta">
-            <span>HDPE Tamper Lid</span>
-            <span>&bull;</span>
-            <span>Next-Day Ready</span>
+            <span>HDPE Tamper Lid &bull; Next-Day Ready</span>
           </div>
           <div class="tsh-product-action">
-            <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-60lb-bucket">
+            <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-60lb-bucket">
               View Specs &amp; Lab Data &rarr;
             </button>
           </div>
         </article>
 
         <!-- 660 lb Drum -->
-        <article class="tsh-product-card tsh-reveal" data-category="Manufacturing">
+        <article class="tsh-product-card tsh-reveal">
           <span class="tsh-product-badge">Industrial Batch</span>
           <div class="tsh-product-img-wrapper">
             <img src="assets/images/tsh-660-lb-drum.png" alt="660 lb Drum" class="tsh-product-img" loading="lazy">
@@ -395,19 +563,17 @@
           <p class="tsh-product-sub">Food-grade lined steel drum for industrial bakeries, breweries, sauces, and
             confectionery.</p>
           <div class="tsh-product-meta">
-            <span>Epoxy-Lined Steel</span>
-            <span>&bull;</span>
-            <span>High Throughput</span>
+            <span>Epoxy Lined &bull; High Throughput</span>
           </div>
           <div class="tsh-product-action">
-            <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-660lb-drum">
+            <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-660lb-drum">
               View Specs &amp; Lab Data &rarr;
             </button>
           </div>
         </article>
 
         <!-- 3000 lb Tote -->
-        <article class="tsh-product-card tsh-reveal" data-category="Manufacturing">
+        <article class="tsh-product-card tsh-reveal">
           <span class="tsh-product-badge">Maximum Savings</span>
           <div class="tsh-product-img-wrapper">
             <img src="assets/images/tsh-3000-lb-tote.png" alt="3,000 lb Tote" class="tsh-product-img" loading="lazy">
@@ -416,39 +582,36 @@
           <p class="tsh-product-sub">Industrial composite tote with pallet base &amp; discharge valve for large-scale
             production.</p>
           <div class="tsh-product-meta">
-            <span>Galvanized Cage</span>
-            <span>&bull;</span>
-            <span>Full FCL Savings</span>
+            <span>Galvanized Cage &bull; Full FCL Savings</span>
           </div>
           <div class="tsh-product-action">
-            <button type="button" class="tsh-btn tsh-btn-secondary tsh-btn-sm" data-product-id="tsh-3000lb-tote">
+            <button type="button" class="tsh-btn tsh-btn-secondary" data-product-id="tsh-3000lb-tote">
               View Specs &amp; Lab Data &rarr;
             </button>
           </div>
         </article>
-
       </div>
 
       <!-- Private Label Turnkey Strip -->
       <div class="tsh-privatelabel-strip tsh-reveal">
         <div>
-          <div class="badge-gold">Private Label Turnkey Service</div>
-          <h3
-            style="font-family: var(--tsh-font-heading); font-size: 1.65rem; color: var(--tsh-deep-black); margin: 0.65rem 0 0.4rem;">
-            We private label with your brand in any container size</h3>
-          <p style="color: var(--tsh-slate-gray); font-size: 0.96rem;">From supermarket squeeze bears to corporate
+          <span class="telemetry-badge"><span class="telemetry-dot"></span> Turnkey Branding</span>
+          <h3 class="font-lobster" style="font-size: 2.2rem; color: #ffffff; margin: 0.85rem 0 0.5rem; letter-spacing: 0.02em;">
+            We private label with your brand in any container size
+          </h3>
+          <p style="color: var(--tsh-text-secondary); font-size: 1rem;">From supermarket squeeze bears to corporate
             gifts, our team applies your graphics, barcodes, and custom cap seals.</p>
           <div class="tsh-privatelabel-steps">
             <div class="tsh-step-item">
-              <span class="tsh-step-num">1</span>
+              <span class="tsh-step-num font-bungee" style="font-size: 0.85rem;">1</span>
               <span>Select Bottle Shape</span>
             </div>
             <div class="tsh-step-item">
-              <span class="tsh-step-num">2</span>
+              <span class="tsh-step-num font-bungee" style="font-size: 0.85rem;">2</span>
               <span>Provide Artwork / UPC</span>
             </div>
             <div class="tsh-step-item">
-              <span class="tsh-step-num">3</span>
+              <span class="tsh-step-num font-bungee" style="font-size: 0.85rem;">3</span>
               <span>Delivered Ready for Retail</span>
             </div>
           </div>
@@ -472,11 +635,11 @@
           <span class="tsh-section-tag">Uncompromising Purity &bull; Non-Crystallizing</span>
           <h2>Safest Standards in the World</h2>
           <p class="tsh-section-desc">
-            Our honey is Kosher, Halal, organic, non-GMO, HACCP (Hazard Analysis Critical Control Point) safe, and
-            passes all 4 major honey quality tests.
+            Our honey is Kosher, Halal, organic, non-GMO, HACCP safe, and passes all 4 major international honey purity
+            tests.
           </p>
 
-          <div class="tsh-quote-box font-zeyada" style="font-size: 1.65rem; line-height: 1.35; color: var(--tsh-primary-dark);">
+          <div class="tsh-quote-box font-zeyada" style="font-size: 1.75rem; line-height: 1.35; color: #f8cb70;">
             &ldquo;All those science words mean there’s no added sugar, the honey comes from the exact regions we say
             it’s coming from, and there are no toxins like lead or mercury in the honey. It’s non-crystallizing honey,
             which means that it stays okay to consume forever. We offer both True Source Certified&reg; and conventional
@@ -487,7 +650,7 @@
             <!-- Kosher -->
             <div class="tsh-standard-badge-card">
               <div class="tsh-standard-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2" />
                 </svg>
@@ -499,35 +662,35 @@
             <!-- Halal -->
             <div class="tsh-standard-badge-card">
               <div class="tsh-standard-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path
                     d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
                 </svg>
               </div>
               <div class="tsh-standard-title">Halal Certified</div>
-              <div class="tsh-standard-desc">Conforming fully to international Halal purity and halal-compliant
-                processing.</div>
+              <div class="tsh-standard-desc">Conforming fully to international Halal purity and compliance guidelines.
+              </div>
             </div>
 
             <!-- HACCP -->
             <div class="tsh-standard-badge-card">
               <div class="tsh-standard-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   <polyline points="9 12 11 14 15 10" />
                 </svg>
               </div>
               <div class="tsh-standard-title">HACCP Safe</div>
-              <div class="tsh-standard-desc">Strict Hazard Analysis Critical Control Points biological risk protocols.
+              <div class="tsh-standard-desc">Strict Hazard Analysis Critical Control Points biological risk protocol.
               </div>
             </div>
 
             <!-- Organic -->
             <div class="tsh-standard-badge-card">
               <div class="tsh-standard-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
                   <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
@@ -540,13 +703,13 @@
           </div>
         </div>
 
-        <!-- 4 Honey Tests Card -->
+        <!-- FEATURE 3: LABORATORY SPECTRAL ANALYSIS TERMINAL -->
         <div class="tsh-tests-container tsh-reveal">
           <div class="tsh-tests-header">
-            <span class="tsh-tests-header-tag">Laboratory Verification System</span>
-            <h3>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                style="color: var(--tsh-gold-primary);">
+            <span class="telemetry-badge"><span class="telemetry-dot"></span> Certified Spectral Screening</span>
+            <h3 style="margin-top: 0.55rem;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color: var(--tsh-gold-400);">
                 <path
                   d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
                 <line x1="8.5" y1="2" x2="15.5" y2="2" />
@@ -554,78 +717,65 @@
               </svg>
               Passes All 4 Major Honey Tests
             </h3>
-            <p style="font-size: 0.92rem; color: #64748b; margin-top: 0.4rem;">Every incoming lot is scientifically
-              fingerprinted before distribution:</p>
+            <p style="font-size: 0.94rem; color: #8492a6; margin-top: 0.45rem;">
+              Every incoming batch undergoes rigorous multi-tier molecular fingerprinting:
+            </p>
           </div>
 
-          <div class="tsh-test-item">
-            <div class="tsh-test-number">1</div>
-            <div class="tsh-test-details">
-              <h4>C3 / C4 Sugar Stable Isotope Analysis</h4>
-              <p>Guarantees zero added high-fructose corn syrup, cane sugar, beet invert syrup, or industrial
-                sweeteners.</p>
-              <span class="tsh-test-verify-badge">100% Purity Verified</span>
+          <!-- Interactive Test Nav Selector -->
+          <div class="tsh-test-nav">
+            <button type="button" class="tsh-test-tab active" data-test-key="c3c4">1. C3/C4 Sugar</button>
+            <button type="button" class="tsh-test-tab" data-test-key="pollen">2. Pollen Origin</button>
+            <button type="button" class="tsh-test-tab" data-test-key="hrms">3. HRMS Mass Spec</button>
+            <button type="button" class="tsh-test-tab" data-test-key="nmr">4. NMR Resonance</button>
+          </div>
+
+          <!-- Dynamic Spectral Harmonics Screen -->
+          <div class="tsh-spectral-screen">
+            <div class="tsh-spectral-graph" id="spectralGraph">
+              <!-- Dynamically populated 12 animated spectral harmonic bars -->
             </div>
           </div>
 
-          <div class="tsh-test-item">
-            <div class="tsh-test-number">2</div>
-            <div class="tsh-test-details">
-              <h4>Microscopic Pollen Test (Melissopalynology)</h4>
-              <p>Verifies exact botanical and geographical origin, validating genuine multi-floral pollen spectrums.</p>
-              <span class="tsh-test-verify-badge">Origin Authenticated</span>
+          <!-- Test Details Readout -->
+          <div style="margin-bottom: 2rem;">
+            <h4 class="tsh-test-pane-title" id="spectralTitle">C3 / C4 Stable Carbon Isotope Ratio Spectrometry</h4>
+            <p class="tsh-test-pane-desc" id="spectralDesc">
+              Guarantees zero added high-fructose corn syrup, cane sugar, beet invert syrup, or industrial sweeteners
+              through stable isotope ratio mass spectrometry.
+            </p>
+            <div class="tsh-test-verify-badge font-bungee" id="spectralBadge" style="font-size: 0.74rem; letter-spacing: 0.05em;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="M20 6L9 17l-5-5"/></svg>100% Purity Verified // Zero Added Sugar
             </div>
           </div>
 
-          <div class="tsh-test-item">
-            <div class="tsh-test-number">3</div>
-            <div class="tsh-test-details">
-              <h4>HRMS (High-Resolution Mass Spectrometry)</h4>
-              <p>Screens for trace residues, pesticides, antibiotics, or synthetic impurities down to parts per billion.
-              </p>
-              <span class="tsh-test-verify-badge">Zero Contaminants</span>
-            </div>
-          </div>
-
-          <div class="tsh-test-item">
-            <div class="tsh-test-number">4</div>
-            <div class="tsh-test-details">
-              <h4>NMR (Nuclear Magnetic Resonance Spectroscopy)</h4>
-              <p>Fingerprints molecular structure, confirming natural integrity and zero heavy metals like lead or
-                mercury.</p>
-              <span class="tsh-test-verify-badge">Molecular Fingerprint Match</span>
-            </div>
-          </div>
-
-          <div style="margin-top: 2rem;">
-            <a href="#contact" class="tsh-btn tsh-btn-primary" style="width: 100%;">
-              Request Full Certificates of Analysis (CoA) &rarr;
-            </a>
-          </div>
+          <a href="#contact" class="tsh-btn tsh-btn-primary" style="width: 100%;">
+            Request Full Certificates of Analysis (CoA) &rarr;
+          </a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Popular Products / Catalog Section -->
+  <!-- Popular Commodities / Catalog Section -->
   <section id="catalog" class="tsh-section">
     <div class="container">
       <div class="tsh-section-header tsh-reveal">
         <span class="tsh-section-tag">Beyond Honey &bull; Global Supply Network</span>
-        <h2 class="tsh-section-title">Popular Products</h2>
+        <h2 class="tsh-section-title">Popular Commodities</h2>
         <p class="tsh-section-desc">
           Our goods are more than great, they're the best. We sell more than just honey: this is a selection of products
-          we distribute regularly, with custom global sourcing available for unique specifications.
+          we distribute regularly, with custom global sourcing available for unique enterprise specifications.
         </p>
       </div>
 
-      <!-- Quick Search Bar for Catalog -->
+      <!-- Quick Search Bar -->
       <div class="tsh-search-container tsh-reveal">
         <input type="text" id="catalogSearchInput" class="tsh-search-input"
           placeholder="Search commodities (spices, packaging, oils, chilies...)">
         <span class="tsh-search-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -638,7 +788,7 @@
         <article class="tsh-catalog-card tsh-reveal" data-keywords="honey retail private label jar bottle">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" />
                 <path d="M12 12l8-4.5M12 12v8M12 12L4 7.5" />
@@ -654,7 +804,7 @@
             <li>Glass jars or BPA-free squeeze bottles</li>
             <li>Turnkey label printing and application</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Retail Honey (Private Labeled)')">Inquire on Retail &rarr;</a>
         </article>
 
@@ -662,7 +812,7 @@
         <article class="tsh-catalog-card tsh-reveal" data-keywords="honey bulk commercial pail tote nj usa stocked">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -674,13 +824,13 @@
           </div>
           <h3 class="tsh-catalog-name">Bulk Honey (USA Stocked)</h3>
           <p class="tsh-catalog-desc">Commercial bulk honey for food service and manufacturing. In stock in New Jersey
-            for fast shipping.</p>
+            for rapid shipping.</p>
           <ul class="tsh-catalog-list">
             <li>60 lb buckets &amp; 3,000 lb pallets/totes</li>
             <li>Stocked and packed in NJ, USA</li>
             <li>Continuous lot-to-lot consistency</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Bulk Honey (USA Stocked)')">Inquire on Bulk &rarr;</a>
         </article>
 
@@ -688,7 +838,7 @@
         <article class="tsh-catalog-card tsh-reveal" data-keywords="hot honey spicy chili pizza sweet heat">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
@@ -696,7 +846,7 @@
             </span>
             <span class="tsh-catalog-badge">Trending Selection</span>
           </div>
-          <h3 class="tsh-catalog-name">Hot Honey</h3>
+          <h3 class="tsh-catalog-name font-lobster" style="font-size: 1.45rem; letter-spacing: 0.02em;">Hot Honey Specialty Blend</h3>
           <p class="tsh-catalog-desc">Pure honey and hot chili pepper infusion formulated together for the ultimate
             sweet-heat culinary profile.</p>
           <ul class="tsh-catalog-list">
@@ -704,7 +854,7 @@
             <li>Retail squeeze bottles or bulk pails</li>
             <li>Exceptional pizza, wing &amp; BBQ glaze</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Hot Honey')">Inquire on Hot Honey &rarr;</a>
         </article>
 
@@ -712,7 +862,7 @@
         <article class="tsh-catalog-card tsh-reveal" data-keywords="chili peppers red spice agricultural crop">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 8c0 4.5-3.5 8-8 8a6 6 0 0 1-5-2.7" />
                 <path d="M10 3c-1.5 0-3 1-3 3 0 2 1 3 3 3s3-1 3-3c0-2-1.5-3-3-3Z" />
@@ -729,7 +879,7 @@
             <li>Consistent capsaicin and heat levels</li>
             <li>Aflatoxin and pesticide laboratory tested</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Whole Chili Peppers')">Inquire on Chilies &rarr;</a>
         </article>
 
@@ -738,7 +888,7 @@
           data-keywords="spices pepper turmeric cardamom cinnamon cumin coriander">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3" />
                 <circle cx="19" cy="8" r="2" />
@@ -750,7 +900,7 @@
             </span>
             <span class="tsh-catalog-badge">Wholesale Spices</span>
           </div>
-          <h3 class="tsh-catalog-name">High-Quality Spices</h3>
+          <h3 class="tsh-catalog-name">High-Quality Wholesale Spices</h3>
           <p class="tsh-catalog-desc">A wide range of potent, aromatic spices sourced directly from premier agricultural
             origin regions.</p>
           <ul class="tsh-catalog-list">
@@ -758,7 +908,7 @@
             <li>High volatile essential oil content</li>
             <li>Strict microbial &amp; pathogen controls</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('High-Quality Spices')">Inquire on Spices &rarr;</a>
         </article>
 
@@ -767,7 +917,7 @@
           data-keywords="essential oils extracts flavorings natural steam distilled">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
@@ -785,7 +935,7 @@
             <li>GC-MS laboratory certified profiles</li>
             <li>Drums and food-grade canisters</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Essential Oils & Flavorings')">Inquire on Oils &rarr;</a>
         </article>
 
@@ -794,7 +944,7 @@
           data-keywords="sweet sour sauce condiments glaze honey food service">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
                 <line x1="8" y1="12" x2="16" y2="12" />
@@ -810,7 +960,7 @@
             <li>Consistent viscosity, brix and gloss</li>
             <li>Food service jugs and drums</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Sweet and Sour Sauce')">Inquire on Sauces &rarr;</a>
         </article>
 
@@ -819,7 +969,7 @@
           data-keywords="olive oil vegetable cooking oils blend fry high smoke">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
               </svg>
@@ -834,7 +984,7 @@
             <li>Ideal for high heat frying &amp; dressing</li>
             <li>Totes, drums, and retail jugs</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Olive Oil & Vegetable Oil Blend')">Inquire on Blends &rarr;</a>
         </article>
 
@@ -842,7 +992,7 @@
         <article class="tsh-catalog-card tsh-reveal" data-keywords="bottles glass plastic packaging agi glasspac pet">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 2h6v4l2 3v13H7V9l2-3V2z" />
                 <line x1="9" y1="6" x2="15" y2="6" />
@@ -858,7 +1008,7 @@
             <li>Massive full-container container savings</li>
             <li>Complete closure, cork &amp; capping options</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Bulk Glass & Plastic Bottles')">Inquire on Bottles &rarr;</a>
         </article>
 
@@ -867,7 +1017,7 @@
           data-keywords="danish cookies tin butter holiday bakery confectionery">
           <div class="tsh-catalog-icon-wrapper">
             <span class="tsh-catalog-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9" />
                 <circle cx="9" cy="9" r="1" fill="currentColor" />
@@ -878,7 +1028,7 @@
             </span>
             <span class="tsh-catalog-badge">Confectionery</span>
           </div>
-          <h3 class="tsh-catalog-name">Danish Cookies in Tin Boxes</h3>
+          <h3 class="tsh-catalog-name font-lobster" style="font-size: 1.45rem; letter-spacing: 0.02em;">Danish Cookies in Tin Boxes</h3>
           <p class="tsh-catalog-desc">Rich Danish butter cookies packaged in classic embossed tin boxes, plus other fine
             cookie varieties.</p>
           <ul class="tsh-catalog-list">
@@ -886,14 +1036,15 @@
             <li>Seasonal &amp; custom tin branding</li>
             <li>Pallet and container quantities</li>
           </ul>
-          <a href="#contact" class="tsh-btn tsh-btn-secondary tsh-btn-sm"
+          <a href="#contact" class="tsh-btn tsh-btn-secondary"
             onclick="prefillContactProduct('Danish Cookies in Tin Boxes')">Inquire on Cookies &rarr;</a>
         </article>
       </div>
 
       <!-- Custom Sourcing Request Banner -->
       <div class="tsh-sourcing-banner tsh-reveal">
-        <h3>Looking for specific commodities or custom packing?</h3>
+        <span class="font-handrawn" style="font-size: 1.45rem; color: var(--tsh-gold-300); display: block; margin-bottom: 0.35rem;">Bespoke Agricultural Procurement</span>
+        <h3 class="font-lobster" style="font-size: 2.2rem; color: #ffffff; margin-bottom: 0.65rem;">Looking for specific commodities or custom packing?</h3>
         <p>
           Direct inquiries welcome. We leverage an extensive global network of vetted food producers and exporters
           across multiple agricultural sectors.
@@ -923,7 +1074,7 @@
           <img src="assets/images/blue-barrels-warehouse.jpg" alt="Blue Barrels of Honey in New Jersey Warehouse"
             class="tsh-logistics-img">
           <div class="tsh-logistics-caption">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
               <circle cx="12" cy="10" r="3" />
@@ -933,13 +1084,13 @@
         </div>
 
         <div class="tsh-logistics-content">
-          <div class="badge-gold">Direct From Factory To Dock</div>
-          <h3 style="margin-top: 0.85rem;">Direct From Factory to Floor</h3>
+          <div class="telemetry-badge"><span class="telemetry-dot"></span> Direct Factory Dock</div>
+          <h3 style="margin-top: 1rem;">Direct From Factory to Floor</h3>
 
-          <p style="color: var(--tsh-slate-gray); font-size: 1.05rem; line-height: 1.65; font-weight: 400;">
-            <strong style="color: var(--tsh-deep-black);">Shipping:</strong> We ship by ocean vessel, then by land,
-            directly to your warehouse. Our New Jersey hub maintains strategic stockpiles of 60 lb buckets, 3,000 lb
-            totes, and retail bottles for instantaneous local and regional replenishment.
+          <p style="color: var(--tsh-text-secondary); font-size: 1.05rem; line-height: 1.7; font-weight: 300;">
+            <strong style="color: #ffffff;">Shipping Pipeline:</strong> We ship by ocean vessel, then by land,
+            directly to your warehouse receiving dock. Our New Jersey hub maintains strategic stockpiles of 60 lb
+            buckets, 3,000 lb totes, and retail bottles for instantaneous local and regional replenishment.
           </p>
 
           <div class="tsh-logistics-tip">
@@ -1006,21 +1157,18 @@
       <div class="tsh-contact-grid">
 
         <div class="tsh-contact-info-col tsh-reveal">
-          <span
-            style="color: #dfba73; font-family: var(--tsh-font-sans-heading); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; display: inline-block; margin-bottom: 0.85rem;">
-            Direct Executive &bull; Wholesale Trade Desk
-          </span>
-          <h2>Contact Tri State Honey</h2>
+          <span class="telemetry-badge"><span class="telemetry-dot"></span> Executive Wholesale Desk</span>
+          <h2 style="margin-top: 0.85rem;">Contact Tri State Honey</h2>
           <p class="tsh-contact-tagline">
-            Let's connect directly. Free sample kits and Certificates of Analysis (CoA) are available for verified food
-            businesses.
+            Let's connect directly. Certified sample kits and full laboratory Certificates of Analysis (CoA) are
+            dispatched within 24 hours for verified commercial food companies.
           </p>
 
           <div class="tsh-contact-methods">
             <!-- Phone Hotline -->
             <div class="tsh-contact-method-item">
               <div class="tsh-contact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -1030,7 +1178,7 @@
                 <h4>Direct CEO Line &bull; Toll-Free:</h4>
                 <div><a href="tel:18568646639">(856) 86 HONEY</a> or <a href="tel:18568646639">(856) 864-6639</a>
                 </div>
-                <p class="tsh-contact-subtext" style="color: #dfba73; font-weight: 500;">
+                <p class="tsh-contact-subtext" style="color: var(--tsh-gold-300); font-weight: 600;">
                   Press 0 to speak directly with CEO Ashley Dutta.
                 </p>
               </div>
@@ -1039,7 +1187,7 @@
             <!-- Wholesale Team Email -->
             <div class="tsh-contact-method-item">
               <div class="tsh-contact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -1056,7 +1204,7 @@
             <!-- CEO Direct Email -->
             <div class="tsh-contact-method-item">
               <div class="tsh-contact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
@@ -1073,36 +1221,37 @@
             <!-- NJ Headquarters -->
             <div class="tsh-contact-method-item">
               <div class="tsh-contact-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
                   <path d="M9 22v-4h6v4" />
                 </svg>
               </div>
               <div>
-                <h4>Corporate Headquarters &amp; Distribution:</h4>
-                <p style="color: #ffffff; font-weight: 600; margin-top: 0.2rem;">2 Lake View Ave, Suite
+                <h4>Corporate Headquarters &amp; Stockpile:</h4>
+                <p style="color: #ffffff; font-weight: 700; margin-top: 0.2rem;">2 Lake View Ave, Suite
                   314D<br>Piscataway, NJ 08854 USA</p>
-                <p class="tsh-contact-subtext">Warehouse pickups available by commercial appointment.</p>
+                <p class="tsh-contact-subtext">Warehouse pickups available by appointment.</p>
               </div>
             </div>
           </div>
 
           <!-- Founder Executive Memo -->
-          <div style="background: rgba(245, 176, 56, 0.08); border: 1px dashed rgba(245, 176, 56, 0.45); border-radius: var(--tsh-radius-sm); padding: 1.25rem 1.45rem; margin-top: 1.85rem;">
-            <div class="font-handrawn" style="font-size: 1.35rem; color: var(--tsh-gold-600); margin-bottom: 0.35rem;">Direct From The Desk of the Founder</div>
-            <p class="font-zeyada" style="font-size: 1.85rem; line-height: 1.3; color: #ffffff; margin-bottom: 0.65rem;">
+          <div style="background: rgba(245, 176, 56, 0.05); border: 1px dashed rgba(245, 176, 56, 0.35); border-radius: var(--tsh-radius-sm); padding: 1.25rem 1.45rem; margin-top: 1.85rem;">
+            <div class="font-handrawn" style="font-size: 1.35rem; color: var(--tsh-gold-300); margin-bottom: 0.35rem;">Direct From The Desk of the Founder</div>
+            <p class="font-zeyada" style="font-size: 1.95rem; line-height: 1.3; color: #fdf0d2; margin-bottom: 0.65rem;">
               &ldquo;Call my personal line anytime at (856) 86 HONEY and press 0. I take honey purity and your wholesale savings personally.&rdquo;
             </p>
-            <div class="font-lobster" style="font-size: 1.45rem; color: var(--tsh-gold-600);">Ashley Dutta, CEO</div>
+            <div class="font-lobster" style="font-size: 1.45rem; color: var(--tsh-gold-400);">Ashley Dutta, CEO</div>
           </div>
         </div>
 
         <!-- Sample Request Card -->
         <div class="tsh-form-card tsh-reveal">
-          <span class="font-handrawn" style="font-size: 1.35rem; color: var(--tsh-gold-600); display: block; margin-bottom: 0.25rem;">Priority Commercial Dispatch</span>
+          <span class="font-handrawn" style="font-size: 1.35rem; color: var(--tsh-gold-300); display: block; margin-bottom: 0.25rem;">Priority Commercial Dispatch</span>
           <h3 class="font-lobster" style="font-size: 2.1rem; color: #ffffff; margin-bottom: 0.5rem; letter-spacing: 0.02em;">Request Free Honey Samples</h3>
-          <p>Specify the packaging format or commodities required and we will dispatch a certified sample kit.</p>
+          <p>Specify the packaging format or commodities required and our logistics desk will dispatch a certified
+            sample kit.</p>
 
           <form id="tshSampleForm" novalidate>
             <div class="tsh-form-row">
@@ -1159,7 +1308,7 @@
                 placeholder="Estimated monthly volume, destination zip code, and sample specifications..."></textarea>
             </div>
 
-            <button type="submit" class="tsh-btn tsh-btn-primary" style="width: 100%; padding: 0.95rem;">
+            <button type="submit" class="tsh-btn tsh-btn-primary" style="width: 100%; padding: 1.05rem;">
               Send Free Sample Request Now &rarr;
             </button>
 
@@ -1177,23 +1326,25 @@
       <div class="tsh-footer-grid">
 
         <div>
-          <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.35rem;">
-            <img src="assets/images/logo-realistic.svg" alt="Tri State Honey Logo - Pure Honey Bee" style="height: 50px; width: auto; filter: drop-shadow(0 4px 12px rgba(245, 176, 56, 0.4));">
+          <div style="display: flex; align-items: center; gap: 0.95rem; margin-bottom: 1.5rem;">
+            <img src="assets/images/logo-realistic.svg" alt="Tri State Honey Logo - Pure Honey Bee" style="height: 52px; width: auto; filter: drop-shadow(0 4px 12px rgba(245, 176, 56, 0.4));">
             <span
-              style="font-family: var(--tsh-font-heading); font-size: 1.4rem; font-weight: 700; color: #ffffff;">Tri
+              style="font-family: var(--tsh-font-heading); font-size: 1.45rem; font-weight: 800; color: #ffffff;">Tri
               State Honey</span>
           </div>
-          <p style="font-size: 0.9rem; line-height: 1.75; color: #94a3b8; margin-bottom: 1.25rem; font-weight: 400;">
+          <p
+            style="font-size: 0.92rem; line-height: 1.8; color: #94a3b8; margin-bottom: 1.35rem; font-weight: 300;">
             Headquartered in Piscataway, New Jersey, Tri State Honey LLC is a direct wholesale importer of the world's
             finest honey, bulk spices, custom packaging, and food ingredients.
           </p>
-          <div style="font-size: 0.84rem; color: #dfba73; font-weight: 600; letter-spacing: 0.02em;">
-            The sweetest deal in the flower field &bull; Est. 2009
+          <div
+            style="font-family: var(--tsh-font-mono); font-size: 0.8rem; color: var(--tsh-gold-300); font-weight: 600; letter-spacing: 0.04em;">
+            Direct Foreign Reserves &bull; Est. 2009
           </div>
         </div>
 
         <div>
-          <h4 class="tsh-footer-title">Packaging Sizes</h4>
+          <h4 class="tsh-footer-title">Packaging Tiers</h4>
           <ul class="tsh-footer-links">
             <li><a href="#products" onclick="triggerFilterAndModal('tsh-1lb-bear')">1 lb Honey Bear Bottle</a></li>
             <li><a href="#products" onclick="triggerFilterAndModal('tsh-2lb-bottle')">2 lb Squeeze Dispenser</a></li>
@@ -1205,7 +1356,7 @@
         </div>
 
         <div>
-          <h4 class="tsh-footer-title">Quality &amp; Science</h4>
+          <h4 class="tsh-footer-title">Spectral Lab</h4>
           <ul class="tsh-footer-links">
             <li><a href="#standards">C3 / C4 Sugar Analysis</a></li>
             <li><a href="#standards">HRMS Mass Spectrometry</a></li>
@@ -1217,14 +1368,15 @@
         </div>
 
         <div>
-          <h4 class="tsh-footer-title">Direct Contact</h4>
+          <h4 class="tsh-footer-title">Trade Desk</h4>
           <ul class="tsh-footer-links">
-            <li><a href="tel:18568646639" style="color: #dfba73; font-weight: 600;">(856) 86 HONEY</a>
+            <li><a href="tel:18568646639" style="color: var(--tsh-gold-300); font-weight: 700;">(856) 86 HONEY</a>
             </li>
             <li><a href="tel:18568646639">(856) 864-6639 (Press 0 for CEO)</a></li>
             <li><a href="mailto:Team@TriStateHoney.com">Team@TriStateHoney.com</a></li>
             <li><a href="mailto:Info@TriStateHoney.com">Info@TriStateHoney.com (Ashley Dutta)</a></li>
-            <li style="color: #94a3b8; font-size: 0.88rem; margin-top: 0.65rem; line-height: 1.55; font-weight: 400;">
+            <li
+              style="color: #94a3b8; font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.55; font-weight: 300;">
               2 Lake View Ave, Suite 314D<br>Piscataway, NJ 08854 USA
             </li>
           </ul>
@@ -1248,52 +1400,52 @@
     &uarr;
   </button>
 
-  <!-- Specification Modal Dialog -->
+  <!-- Specification & CoA Modal Dialog -->
   <div id="tshProductModal" class="tsh-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="tsh-modal-dialog">
       <button type="button" id="tshModalClose" class="tsh-modal-close" aria-label="Close dialog">&times;</button>
 
       <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
         <div
-          style="width: 140px; height: 160px; background: var(--tsh-bg-light); border-radius: var(--tsh-border-radius-sm); display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid var(--tsh-border-gray); flex-shrink: 0;">
+          style="width: 150px; height: 170px; background: rgba(6, 8, 13, 0.9); border-radius: var(--tsh-radius-sm); display: flex; align-items: center; justify-content: center; padding: 0.85rem; border: 1px solid rgba(245, 176, 56, 0.35); flex-shrink: 0; box-shadow: 0 0 25px rgba(245, 176, 56, 0.15);">
           <img id="modalImg" src="" alt="Product Package"
-            style="max-height: 135px; max-width: 100%; object-fit: contain;">
+            style="max-height: 145px; max-width: 100%; object-fit: contain;">
         </div>
 
-        <div style="flex: 1; min-width: 250px;">
-          <span id="modalCategoryBadge" class="badge-gold" style="margin-bottom: 0.5rem;">Packaging</span>
+        <div style="flex: 1; min-width: 260px;">
+          <span id="modalCategoryBadge" class="telemetry-badge" style="margin-bottom: 0.65rem;">Packaging Tier</span>
           <h3 id="modalTitle"
-            style="font-family: var(--tsh-font-heading); font-size: 1.65rem; color: var(--tsh-deep-black); margin-bottom: 0.35rem; font-weight: 700;">
+            style="font-family: var(--tsh-font-heading); font-size: 1.85rem; color: #ffffff; margin-bottom: 0.35rem; font-weight: 800;">
             Product Name</h3>
           <p id="modalSubtitle"
-            style="color: var(--tsh-gold-primary); font-weight: 600; font-size: 0.92rem; margin-bottom: 0.65rem;">
+            style="color: var(--tsh-gold-300); font-family: var(--tsh-font-mono); font-weight: 600; font-size: 0.88rem; margin-bottom: 0.75rem;">
             Subtitle</p>
           <p id="modalDesc"
-            style="color: var(--tsh-slate-gray); font-size: 0.94rem; line-height: 1.65; font-weight: 400;">Description
-          </p>
+            style="color: var(--tsh-text-secondary); font-size: 0.95rem; line-height: 1.7; font-weight: 300;">
+            Description</p>
         </div>
       </div>
 
-      <div style="margin-top: 2rem; border-top: 1px solid var(--tsh-border-light); padding-top: 1.5rem;">
+      <div style="margin-top: 2.25rem; border-top: 1px solid var(--tsh-border-dark); padding-top: 1.75rem;">
         <h4
-          style="font-family: var(--tsh-font-sans-heading); font-size: 0.95rem; color: var(--tsh-deep-black); margin-bottom: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          style="font-family: var(--tsh-font-mono); font-size: 0.88rem; color: var(--tsh-gold-300); margin-bottom: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
           Key Advantages &amp; Purity</h4>
         <ul id="modalFeatures"
-          style="list-style: none; font-size: 0.92rem; color: var(--tsh-slate-gray); display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; font-weight: 400;">
+          style="list-style: none; font-size: 0.94rem; color: var(--tsh-text-secondary); display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem; font-weight: 400;">
         </ul>
 
         <h4
-          style="font-family: var(--tsh-font-sans-heading); font-size: 0.95rem; color: var(--tsh-deep-black); margin-bottom: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          style="font-family: var(--tsh-font-mono); font-size: 0.88rem; color: var(--tsh-gold-300); margin-bottom: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
           Technical Specifications</h4>
         <table class="tsh-modal-table">
           <tbody id="modalSpecs">
           </tbody>
         </table>
 
-        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.75rem;">
+        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
           <a id="modalSampleCta" href="#contact" class="tsh-btn tsh-btn-primary"
-            style="font-size: 0.92rem; padding: 0.75rem 1.5rem;">
-            Request Sample For This Size &rarr;
+            style="font-size: 0.92rem; padding: 0.85rem 1.75rem;">
+            Request Certified Sample For This Tier &rarr;
           </a>
         </div>
       </div>
@@ -1302,13 +1454,14 @@
 
   <!-- Modular Scripts -->
   <script src="assets/js/three.min.js"></script>
+  <script src="assets/js/loader.js"></script>
   <script src="assets/js/security.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/bee-flight.js"></script>
 
-  <!-- Global Helpers for Quick Interactions -->
+  <!-- Global Interaction Helpers -->
   <script>
     function prefillContactProduct(productName) {
       const select = document.getElementById('inquiryProduct');

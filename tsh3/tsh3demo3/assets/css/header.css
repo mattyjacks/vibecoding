@@ -169,7 +169,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(6, 8, 13, 0.92);
+  background: rgba(6, 8, 13, 0.94);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(245, 176, 56, 0.22);
@@ -188,30 +188,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 94px;
-  padding: 0.65rem 0;
+  min-height: 82px;
+  padding: 0.5rem 0;
+  gap: 1.25rem;
   transition: min-height 0.3s ease, padding 0.3s ease;
   overflow: visible;
 }
 
 .tsh-header.is-scrolled .tsh-nav-wrapper {
-  min-height: 78px;
-  padding: 0.45rem 0;
+  min-height: 72px;
+  padding: 0.35rem 0;
 }
 
 /* Brand Identity */
 .tsh-brand {
   display: inline-flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: 0.85rem;
   text-decoration: none;
   overflow: visible;
   padding: 0.25rem 0;
+  flex-shrink: 0;
 }
 
 .tsh-brand-logo {
-  height: 58px;
-  width: 58px;
+  height: 52px;
+  width: 52px;
   object-fit: contain;
   transition: transform 0.4s var(--tsh-ease-spring);
   filter: drop-shadow(0 4px 14px rgba(245, 176, 56, 0.45));
@@ -231,10 +233,10 @@
 
 .tsh-brand-title {
   font-family: var(--tsh-font-heading);
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 400;
   color: #ffffff;
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: 0.02em;
   margin: 0;
   padding: 0;
@@ -250,12 +252,12 @@
 
 .tsh-brand-tagline {
   font-family: var(--tsh-font-bungee);
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--tsh-gold-400);
-  margin-top: 0.25rem;
+  margin-top: 0.15rem;
   white-space: nowrap;
   line-height: 1.2;
 }
@@ -264,36 +266,39 @@
 .tsh-nav-menu {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.25rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1 1 auto;
+  justify-content: center;
 }
 
 .tsh-nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.9rem;
+  gap: 0.35rem;
+  padding: 0.45rem 0.65rem;
   font-family: var(--tsh-font-bungee);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 400;
   color: #cbd5e1;
   border-radius: var(--tsh-radius-sm);
   position: relative;
-  transition: all 0.3s var(--tsh-ease-out);
-  letter-spacing: 0.06em;
+  transition: all 0.25s var(--tsh-ease-out);
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
 .tsh-nav-link svg {
   color: var(--tsh-gold-400);
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
 }
 
 .tsh-nav-link:hover {
   color: #ffffff;
-  background: rgba(245, 176, 56, 0.1);
+  background: rgba(245, 176, 56, 0.12);
 }
 
 .tsh-nav-link:hover svg {
@@ -304,60 +309,73 @@
 .tsh-nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
 
-/* Sound FX Toggle Pill */
+/* Minimalist Icon-Only Audio Toggle Button */
 .tsh-sound-toggle {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--tsh-border-dark);
   color: #94a3b8;
-  padding: 0.55rem 0.95rem;
-  border-radius: var(--tsh-radius-full);
-  font-family: var(--tsh-font-bungee);
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  justify-content: center;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tsh-sound-toggle svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .tsh-sound-toggle:hover {
   border-color: var(--tsh-gold-400);
   color: var(--tsh-gold-300);
+  background: rgba(245, 176, 56, 0.12);
+  transform: scale(1.06);
 }
 
 .tsh-sound-toggle.is-active {
-  background: rgba(245, 176, 56, 0.15);
+  background: rgba(245, 176, 56, 0.18);
   border-color: var(--tsh-gold-400);
   color: var(--tsh-gold-300);
+  box-shadow: 0 0 16px rgba(245, 176, 56, 0.35);
 }
 
 .tsh-btn-phone {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  justify-content: center;
+  gap: 0.5rem;
   background: var(--tsh-gold-metallic);
   color: #06080d;
-  padding: 0.65rem 1.25rem;
+  padding: 0.55rem 1.25rem;
+  min-width: 175px;
+  height: 40px;
+  box-sizing: border-box;
   border-radius: var(--tsh-radius-full);
   font-family: var(--tsh-font-bungee);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
   box-shadow: 0 4px 18px rgba(245, 176, 56, 0.35);
   border: 1px solid rgba(255, 217, 120, 0.6);
   transition: all 0.3s var(--tsh-ease-out);
   white-space: nowrap;
+  flex-shrink: 0;
+  overflow: visible;
 }
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  box-shadow: 0 4px 18px rgba(245, 176, 56, 0.35);
-  border: 1px solid rgba(255, 217, 120, 0.6);
-  transition: all 0.3s var(--tsh-ease-out);
+
+.tsh-btn-phone svg {
+  flex-shrink: 0;
 }
 
 .tsh-btn-phone:hover {
@@ -388,7 +406,13 @@
   color: var(--tsh-gold-300);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1260px) {
+  .tsh-btn-phone {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
   .tsh-mobile-toggle {
     display: inline-flex;
   }
@@ -413,6 +437,20 @@
   }
 
   .tsh-nav-actions {
-    display: none;
+    display: flex;
+  }
+}
+
+@media (max-width: 580px) {
+  .tsh-brand-title {
+    font-size: 1.35rem;
+  }
+  .tsh-brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+  .tsh-sound-toggle {
+    width: 36px;
+    height: 36px;
   }
 }

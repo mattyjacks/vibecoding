@@ -1,27 +1,28 @@
-/* Tri State Honey — $100k Logistics, Contact & Global Trade Footer */
+/* Tri State Honey — $500k Logistics Terminal, Executive Trade Desk & Footer */
 
-/* Ocean Freight & Logistics Section */
+/* Ocean Freight & Logistics Terminal Section */
 .tsh-logistics-section {
-  background: radial-gradient(circle at 80% 20%, rgba(245, 237, 214, 0.5) 0%, #faf7f2 70%);
-  padding: 7.5rem 0;
-  border-top: 1px solid var(--tsh-border-gray);
+  background: radial-gradient(circle at 80% 20%, rgba(245, 176, 56, 0.12) 0%, rgba(6, 8, 13, 0) 65%);
+  padding: 8.5rem 0;
+  border-top: 1px solid var(--tsh-border-dark);
   position: relative;
   overflow: hidden;
 }
 
 .tsh-logistics-card {
-  background: #ffffff;
-  border-radius: var(--tsh-border-radius-xl);
-  border: 1px solid var(--tsh-border-gray);
+  background: rgba(14, 18, 28, 0.75);
+  border-radius: var(--tsh-radius-xl);
+  border: 1px solid rgba(245, 176, 56, 0.35);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  box-shadow: 0 20px 45px -8px rgba(12, 15, 20, 0.08);
+  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(245, 176, 56, 0.15);
+  backdrop-filter: blur(16px);
 }
 
 .tsh-logistics-media {
   position: relative;
-  min-height: 440px;
+  min-height: 480px;
   background: #000;
 }
 
@@ -29,40 +30,39 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s var(--tsh-ease-out);
 }
 
 .tsh-logistics-card:hover .tsh-logistics-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .tsh-logistics-caption {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: rgba(12, 15, 20, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(6, 8, 13, 0.88);
+  backdrop-filter: blur(14px);
   color: #ffffff;
-  padding: 0.95rem 1.35rem;
-  border-radius: var(--tsh-border-radius);
-  border: 1px solid rgba(194, 132, 26, 0.3);
-  font-family: var(--tsh-font-sans-heading);
-  font-size: 0.86rem;
-  font-weight: 500;
+  padding: 1.15rem 1.45rem;
+  border-radius: var(--tsh-radius-md);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.84rem;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
 .tsh-logistics-caption svg {
-  color: var(--tsh-gold-primary);
+  color: var(--tsh-gold-400);
   flex-shrink: 0;
 }
 
 .tsh-logistics-content {
-  padding: 3.5rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,33 +70,33 @@
 
 .tsh-logistics-content h3 {
   font-family: var(--tsh-font-heading);
-  font-size: 2.15rem;
-  font-weight: 700;
-  color: var(--tsh-deep-black);
-  margin: 0.85rem 0 1.25rem;
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 1rem 0 1.25rem;
   line-height: 1.2;
 }
 
-/* Ashley Dutta Executive Tip Callout */
+/* Ashley Dutta Executive Memo Callout */
 .tsh-logistics-tip {
-  background: rgba(194, 132, 26, 0.08);
-  border-left: 3px solid var(--tsh-gold-primary);
-  border-radius: 0 var(--tsh-border-radius-sm) var(--tsh-border-radius-sm) 0;
-  padding: 1.35rem 1.65rem;
-  margin: 1.75rem 0 2rem;
-  font-size: 0.92rem;
-  color: #4b3815;
-  line-height: 1.65;
+  background: rgba(245, 176, 56, 0.08);
+  border-left: 3px solid var(--tsh-gold-400);
+  border-radius: 0 var(--tsh-radius-sm) var(--tsh-radius-sm) 0;
+  padding: 1.5rem 1.85rem;
+  margin: 2rem 0 2.25rem;
+  font-size: 0.96rem;
+  color: #e2e8f0;
+  line-height: 1.7;
 }
 
 .tsh-logistics-tip strong {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   font-family: var(--tsh-font-sans-heading);
-  font-size: 0.92rem;
-  color: #8c5b0d;
-  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--tsh-gold-300);
+  margin-bottom: 0.45rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -104,29 +104,28 @@
 .tsh-logistics-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .tsh-route-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  background: #ffffff;
-  border: 1px solid var(--tsh-border-gray);
-  padding: 0.45rem 0.95rem;
-  border-radius: var(--tsh-border-radius-full);
-  font-family: var(--tsh-font-sans-heading);
-  font-size: 0.82rem;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--tsh-border-dark);
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--tsh-radius-full);
+  font-family: var(--tsh-font-mono);
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--tsh-dark-charcoal);
-  box-shadow: var(--tsh-shadow-xs);
+  color: var(--tsh-gold-300);
 }
 
 /* Executive Contact & Sample Inquiry Section */
 .tsh-contact-section {
-  background: radial-gradient(circle at 75% 25%, #161e2e 0%, #0c1017 80%);
+  background: radial-gradient(circle at 75% 25%, #121824 0%, #06080d 80%);
   color: #ffffff;
-  padding: 7.5rem 0 6rem;
+  padding: 8.5rem 0 6.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -138,14 +137,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 10% 60%, rgba(194, 132, 26, 0.12) 0%, transparent 60%);
+  background: radial-gradient(circle at 10% 60%, rgba(245, 176, 56, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .tsh-contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4.5rem;
+  gap: 5rem;
   align-items: flex-start;
   position: relative;
   z-index: 2;
@@ -153,53 +152,53 @@
 
 .tsh-contact-info-col h2 {
   font-family: var(--tsh-font-heading);
-  font-size: clamp(2.35rem, 4vw, 3.25rem);
-  font-weight: 700;
+  font-size: clamp(2.4rem, 4.2vw, 3.45rem);
+  font-weight: 800;
   color: #ffffff;
   margin-bottom: 1rem;
   line-height: 1.15;
 }
 
 .tsh-contact-tagline {
-  font-size: 1.15rem;
-  color: #cbd5e1;
-  margin-bottom: 2.75rem;
-  line-height: 1.6;
-  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--tsh-text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.65;
+  font-weight: 300;
 }
 
 .tsh-contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 .tsh-contact-method-item {
   display: flex;
   align-items: flex-start;
-  gap: 1.25rem;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: var(--tsh-border-radius);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 1.35rem;
+  background: rgba(14, 18, 28, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 1.65rem;
+  border-radius: var(--tsh-radius-md);
+  border: 1px solid var(--tsh-border-dark);
+  transition: all 0.35s var(--tsh-ease-out);
 }
 
 .tsh-contact-method-item:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(194, 132, 26, 0.45);
-  transform: translateX(4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(20, 26, 40, 0.8);
+  border-color: rgba(245, 176, 56, 0.5);
+  transform: translateX(6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 176, 56, 0.15);
 }
 
 .tsh-contact-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--tsh-border-radius-sm);
-  background: rgba(194, 132, 26, 0.15);
-  border: 1px solid rgba(194, 132, 26, 0.3);
-  color: #dfba73;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--tsh-radius-sm);
+  background: rgba(245, 176, 56, 0.15);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  color: var(--tsh-gold-400);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,9 +207,9 @@
 
 .tsh-contact-method-item h4 {
   font-family: var(--tsh-font-sans-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #dfba73;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--tsh-gold-300);
   margin-bottom: 0.35rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -218,86 +217,87 @@
 
 .tsh-contact-method-item a {
   color: #ffffff;
-  font-weight: 600;
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
 .tsh-contact-method-item a:hover {
-  color: #dfba73;
+  color: var(--tsh-gold-300);
   text-decoration: underline;
 }
 
 .tsh-contact-subtext {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: #94a3b8;
   margin-top: 0.35rem;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* Sample Request Card */
 .tsh-form-card {
-  background: rgba(18, 24, 38, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(194, 132, 26, 0.35);
-  border-radius: var(--tsh-border-radius-xl);
-  padding: 3rem 2.75rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(194, 132, 26, 0.15);
+  background: rgba(14, 18, 28, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(245, 176, 56, 0.4);
+  border-radius: var(--tsh-radius-xl);
+  padding: 3.25rem 3rem;
+  box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.8), 0 0 45px rgba(245, 176, 56, 0.2);
 }
 
 .tsh-form-card h3 {
   font-family: var(--tsh-font-heading);
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .tsh-form-card p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #94a3b8;
-  line-height: 1.55;
-  margin-bottom: 2rem;
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
 }
 
 .tsh-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 .tsh-form-group {
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.5rem;
 }
 
 .tsh-form-label {
   display: block;
-  font-family: var(--tsh-font-sans-heading);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #cbd5e1;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.02em;
+  font-family: var(--tsh-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tsh-gold-300);
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .tsh-form-control {
   width: 100%;
-  padding: 0.85rem 1.15rem;
-  background: rgba(10, 14, 22, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--tsh-border-radius-sm);
+  padding: 0.95rem 1.25rem;
+  background: rgba(6, 8, 13, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--tsh-radius-sm);
   color: #ffffff;
   font-family: var(--tsh-font-primary);
-  font-size: 0.95rem;
-  transition: var(--tsh-transition);
+  font-size: 0.98rem;
+  transition: all 0.3s ease;
 }
 
 .tsh-form-control:focus {
   outline: none;
-  border-color: #dfba73;
-  box-shadow: 0 0 0 3px rgba(194, 132, 26, 0.25);
-  background: rgba(10, 14, 22, 0.95);
+  border-color: var(--tsh-gold-400);
+  box-shadow: 0 0 0 3px rgba(245, 176, 56, 0.25), 0 0 20px rgba(245, 176, 56, 0.2);
+  background: rgba(6, 8, 13, 0.98);
 }
 
 .tsh-form-control::placeholder {
@@ -306,68 +306,77 @@
 
 select.tsh-form-control {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23dfba73' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5b038' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
+  background-position: right 1.2rem center;
+  padding-right: 2.75rem;
 }
 
 select.tsh-form-control option {
-  background-color: #0c1017;
+  background-color: #06080d;
   color: #ffffff;
 }
 
 /* Status Alert */
 .tsh-status-alert {
-  margin-top: 1.25rem;
-  padding: 1rem 1.25rem;
-  border-radius: var(--tsh-border-radius-sm);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--tsh-radius-sm);
+  font-size: 0.94rem;
+  line-height: 1.6;
   display: none;
 }
 
 .tsh-status-alert.success {
   display: block;
-  background: rgba(34, 197, 94, 0.12);
-  border: 1px solid rgba(34, 197, 94, 0.35);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.45);
   color: #86efac;
 }
 
 .tsh-status-alert.error {
   display: block;
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.45);
   color: #fca5a5;
 }
 
-/* Footer Section */
+/* Modern Multi-Column Footer */
 .tsh-footer {
-  background: #080a0f;
+  background: #040508;
   color: #94a3b8;
-  padding: 5.5rem 0 2.5rem;
-  border-top: 1px solid rgba(194, 132, 26, 0.2);
+  padding: 5.5rem 0 3rem;
+  border-top: 1px solid rgba(245, 176, 56, 0.25);
   position: relative;
   z-index: 2;
+  font-family: var(--tsh-font-readable);
+}
+
+.tsh-footer p {
+  font-family: var(--tsh-font-readable) !important;
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
 }
 
 .tsh-footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 3.5rem;
-  margin-bottom: 4rem;
+  gap: 4rem;
+  margin-bottom: 4.5rem;
 }
 
 .tsh-footer-title {
-  font-family: var(--tsh-font-sans-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-family: var(--tsh-font-bungee);
+  font-size: 0.85rem;
+  font-weight: 400;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   position: relative;
-  padding-bottom: 0.65rem;
+  padding-bottom: 0.75rem;
 }
 
 .tsh-footer-title::after {
@@ -375,67 +384,77 @@ select.tsh-form-control option {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 24px;
+  width: 28px;
   height: 2px;
-  background: var(--tsh-gold-primary);
+  background: var(--tsh-gold-400);
 }
 
 .tsh-footer-links {
   list-style: none;
+  font-family: var(--tsh-font-readable);
 }
 
 .tsh-footer-links li {
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  font-family: var(--tsh-font-readable);
+  letter-spacing: 0.01em;
 }
 
 .tsh-footer-links a {
-  color: #94a3b8;
-  transition: all 0.3s ease;
+  color: #cbd5e1;
+  font-family: var(--tsh-font-readable);
+  font-size: 0.93rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
 }
 
 .tsh-footer-links a:hover {
-  color: #dfba73;
-  padding-left: 4px;
+  color: var(--tsh-gold-300);
+  padding-left: 6px;
 }
 
 .tsh-footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 2rem;
+  padding-top: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.84rem;
+  gap: 1.25rem;
+  font-size: 0.88rem;
   color: #64748b;
+  font-family: var(--tsh-font-readable);
 }
 
 .tsh-footer-bottom strong {
-  color: #cbd5e1;
+  color: #e2e8f0;
+  font-family: var(--tsh-font-readable);
 }
 
 /* Floating Back to Top Button */
 .tsh-back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 48px;
-  height: 48px;
+  bottom: 35px;
+  right: 35px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #c2841a 0%, #a06c14 100%);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 24px rgba(194, 132, 26, 0.35);
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  border: 1px solid rgba(255, 217, 120, 0.8);
+  box-shadow: 0 8px 28px rgba(245, 176, 56, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 900;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(15px);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: all 0.4s var(--tsh-ease-spring);
   z-index: 999;
 }
 
@@ -446,17 +465,13 @@ select.tsh-form-control option {
 }
 
 .tsh-back-to-top:hover {
-  background: linear-gradient(135deg, #d4a853 0%, #c2841a 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(194, 132, 26, 0.45);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 14px 35px rgba(245, 176, 56, 0.65);
 }
 
 @media (max-width: 992px) {
   .tsh-logistics-card {
     grid-template-columns: 1fr;
-  }
-  .tsh-logistics-media {
-    min-height: 320px;
   }
   .tsh-contact-grid {
     grid-template-columns: 1fr;
@@ -474,9 +489,9 @@ select.tsh-form-control option {
     grid-template-columns: 1fr;
   }
   .tsh-logistics-content {
-    padding: 2.25rem 1.75rem;
+    padding: 2.5rem 1.75rem;
   }
   .tsh-form-card {
-    padding: 2.25rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 }
