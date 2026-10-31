@@ -95,19 +95,26 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tsh-canvas);
+  background-color: #06080d !important;
+  background: #06080d !important;
   color: var(--tsh-text-secondary);
 }
 
 body {
   font-family: var(--tsh-font-primary);
-  background-color: var(--tsh-canvas);
+  background-color: #06080d !important;
+  background: #06080d !important;
   color: var(--tsh-text-secondary);
   font-size: 1.15rem;
   line-height: 1.65;
   overflow-x: hidden;
   position: relative;
   letter-spacing: 0.025em;
+}
+
+#tshBeeCanvas {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Atmospheric Amber Caustic Glow */

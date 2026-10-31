@@ -63,20 +63,34 @@
 
     let width = window.innerWidth;
     let height = window.innerHeight;
+    const isMobile = width < 768;
 
     // 1. Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
     camera.position.set(0, 0, 10);
 
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvas,
-      alpha: true,
-      antialias: true,
-      powerPreference: 'high-performance'
-    });
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: !isMobile,
+        powerPreference: 'high-performance'
+      });
+    } catch (e) {
+      dismissOverlayDirectly();
+      return;
+    }
+
+    canvas.addEventListener('webglcontextlost', (e) => {
+      e.preventDefault();
+      dismissOverlayDirectly();
+    }, false);
+
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+    renderer.setClearColor(0x000000, 0);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.35;
 
@@ -179,18 +193,27 @@
       bumpScale: 0.08
     });
 
-    const honeyLiquidMat = new THREE.MeshPhysicalMaterial({
-      color: 0xf5b038,
-      emissive: 0x4a2a04,
-      roughness: 0.06,
-      metalness: 0.08,
-      transmission: 0.75,
-      ior: 1.53, // Honey refractive index ~1.50 - 1.54
-      thickness: 2.2,
-      map: honeyTex,
-      transparent: true,
-      opacity: 0.96
-    });
+    const honeyLiquidMat = isMobile
+      ? new THREE.MeshStandardMaterial({
+          color: 0xf5b038,
+          roughness: 0.15,
+          metalness: 0.12,
+          map: honeyTex,
+          transparent: true,
+          opacity: 0.94
+        })
+      : new THREE.MeshPhysicalMaterial({
+          color: 0xf5b038,
+          emissive: 0x4a2a04,
+          roughness: 0.06,
+          metalness: 0.08,
+          transmission: 0.75,
+          ior: 1.53, // Honey refractive index ~1.50 - 1.54
+          thickness: 2.2,
+          map: honeyTex,
+          transparent: true,
+          opacity: 0.96
+        });
 
     // 5. Build Hexagonal Honeycomb Clusters (Left Half & Right Half)
     const combRoot = new THREE.Group();
@@ -354,10 +377,23 @@
         }
       } catch (e) {}
 
+      // Clean up loader WebGL resources immediately to free GPU memory for main page & bee
+      try {
+        if (renderer) {
+          renderer.forceContextLoss();
+          renderer.dispose();
+        }
+        if (canvas && canvas.parentNode) {
+          canvas.parentNode.removeChild(canvas);
+        }
+      } catch (e) {}
+
       setTimeout(() => {
         overlay.style.display = 'none';
-        renderer.dispose();
-      }, 1000);
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      }, 700);
     }
 
     if (skipBtn) {

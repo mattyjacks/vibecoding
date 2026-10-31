@@ -21,51 +21,198 @@
     return;
   }
 
-  // 1. SETUP CANVAS & THREE.JS SCENE
-  const canvas = document.createElement('canvas');
-  canvas.id = 'tshBeeCanvas';
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100vw';
-  canvas.style.height = '100vh';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '20';
-  document.body.appendChild(canvas);
+  // Acoustic Flight Synthesizer & Doppler Audio Engine
+  let perchFactor = 1.0;
+  let audioCtx = null;
+  let flightOsc = null;
+  let flightGain = null;
+  let giantOsc = null;
+  let giantGain = null;
 
-  let width = window.innerWidth;
-  let height = window.innerHeight;
+  function initFlightAudio() {
+    try {
+      if (flightGain && flightOsc) {
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return;
+      }
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-  camera.position.set(0, 0, 22);
+      if (window.tshSharedAudioCtx) {
+        audioCtx = window.tshSharedAudioCtx;
+      } else {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        audioCtx = new AudioContext();
+        window.tshSharedAudioCtx = audioCtx;
+      }
 
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    alpha: true,
-    antialias: true,
-    powerPreference: 'high-performance'
-  });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
 
-  // 2. LIGHTING (Warm sunlight & amber rim highlights)
-  const ambientLight = new THREE.AmbientLight(0xfff6e6, 1.5);
-  scene.add(ambientLight);
+      flightOsc = audioCtx.createOscillator();
+      flightOsc.type = 'sawtooth';
+      flightOsc.frequency.setValueAtTime(140, audioCtx.currentTime);
 
-  const sunLight = new THREE.DirectionalLight(0xfffaec, 2.2);
-  sunLight.position.set(18, 28, 22);
-  scene.add(sunLight);
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(320, audioCtx.currentTime);
 
-  const rimLight = new THREE.DirectionalLight(0xf5b038, 2.0);
-  rimLight.position.set(-18, -12, -12);
-  scene.add(rimLight);
+      flightGain = audioCtx.createGain();
+      flightGain.gain.setValueAtTime(0.014, audioCtx.currentTime);
 
-  const warmUnderlight = new THREE.PointLight(0xd97706, 1.4, 60);
-  warmUnderlight.position.set(0, -6, 12);
-  scene.add(warmUnderlight);
+      flightOsc.connect(filter);
+      filter.connect(flightGain);
+      flightGain.connect(audioCtx.destination);
+      flightOsc.start();
+
+      giantOsc = audioCtx.createOscillator();
+      giantOsc.type = 'triangle';
+      giantOsc.frequency.setValueAtTime(85, audioCtx.currentTime);
+
+      const giantFilter = audioCtx.createBiquadFilter();
+      giantFilter.type = 'lowpass';
+      giantFilter.frequency.setValueAtTime(240, audioCtx.currentTime);
+
+      giantGain = audioCtx.createGain();
+      giantGain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+
+      giantOsc.connect(giantFilter);
+      giantFilter.connect(giantGain);
+      giantGain.connect(audioCtx.destination);
+      giantOsc.start();
+    } catch (err) {
+      // Audio policy handled silently
+    }
+  }
+
+  function updateFlightAudio(speed, giantSpeed, giantDist) {
+    if (!audioCtx) return;
+    const isMuted = document.body.classList.contains('tsh-sound-muted');
+    if (isMuted || audioCtx.state !== 'running') {
+      if (flightGain) flightGain.gain.setTargetAtTime(0.00001, audioCtx.currentTime, 0.05);
+      if (giantGain) giantGain.gain.setTargetAtTime(0.00001, audioCtx.currentTime, 0.05);
+      return;
+    }
+
+    if (flightGain) {
+      const activeVol = Math.min(0.014 + speed * 0.045, 0.045);
+      const peacefulVol = 0.0001;
+      const targetVol = THREE.MathUtils.lerp(activeVol, peacefulVol, Math.pow(perchFactor, 1.5));
+      flightGain.gain.setTargetAtTime(targetVol, audioCtx.currentTime, 0.05);
+      if (flightOsc) {
+        const targetFreq = THREE.MathUtils.lerp(140 + speed * 85, 95, perchFactor);
+        flightOsc.frequency.setTargetAtTime(targetFreq, audioCtx.currentTime, 0.05);
+      }
+    }
+
+    if (giantGain && giantSpeed > 0.01) {
+      const prox = Math.max(0, 1 - giantDist / 30);
+      const giantTargetVol = Math.min(0.05 * prox, 0.048);
+      giantGain.gain.setTargetAtTime(giantTargetVol, audioCtx.currentTime, 0.08);
+      if (giantOsc) {
+        const dopplerFreq = 80 + (1 - giantDist / 25) * 60;
+        giantOsc.frequency.setTargetAtTime(dopplerFreq, audioCtx.currentTime, 0.08);
+      }
+    } else if (giantGain) {
+      giantGain.gain.setTargetAtTime(0.00001, audioCtx.currentTime, 0.1);
+    }
+  }
+
+  function startBeeAudio() {
+    initFlightAudio();
+    if (!audioCtx) return;
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume().catch(() => {});
+    }
+    const isMuted = document.body.classList.contains('tsh-sound-muted');
+    if (!isMuted && flightGain) {
+      flightGain.gain.cancelScheduledValues(audioCtx.currentTime);
+      flightGain.gain.setValueAtTime(0.024, audioCtx.currentTime);
+      if (flightOsc) {
+        flightOsc.frequency.setValueAtTime(155, audioCtx.currentTime);
+      }
+    }
+  }
+  window.startBeeAudio = startBeeAudio;
+
+  // Eager user interaction listeners for audio unlock
+  window.addEventListener('pointerdown', startBeeAudio);
+  window.addEventListener('scroll', startBeeAudio, { passive: true });
+  window.addEventListener('mousemove', startBeeAudio, { once: true });
+  window.addEventListener('touchstart', startBeeAudio, { once: true });
+  window.addEventListener('keydown', startBeeAudio, { once: true });
+
+  // 1. SETUP CANVAS & THREE.JS SCENE ENGINE
+  function initBeeFlight() {
+    const isMobile = window.innerWidth < 768;
+
+    const canvas = document.createElement('canvas');
+    canvas.id = 'tshBeeCanvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '20';
+    canvas.style.backgroundColor = 'transparent';
+    canvas.style.background = 'transparent';
+    document.body.appendChild(canvas);
+
+    canvas.addEventListener('webglcontextlost', (e) => {
+      e.preventDefault();
+      console.warn('TSH: Bee WebGL context lost - hiding canvas');
+      canvas.style.display = 'none';
+    }, false);
+
+    canvas.addEventListener('webglcontextrestored', () => {
+      canvas.style.display = 'block';
+    }, false);
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+    camera.position.set(0, 0, 22);
+
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: !isMobile,
+        powerPreference: 'high-performance'
+      });
+    } catch (err) {
+      console.warn('TSH: WebGL not available for 3D bee', err);
+      if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
+      return;
+    }
+
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+    renderer.setClearColor(0x000000, 0);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+
+    // 2. LIGHTING (Warm sunlight & amber rim highlights)
+    const ambientLight = new THREE.AmbientLight(0xfff6e6, 1.5);
+    scene.add(ambientLight);
+
+    const sunLight = new THREE.DirectionalLight(0xfffaec, 2.2);
+    sunLight.position.set(18, 28, 22);
+    scene.add(sunLight);
+
+    const rimLight = new THREE.DirectionalLight(0xf5b038, 2.0);
+    rimLight.position.set(-18, -12, -12);
+    scene.add(rimLight);
+
+    const warmUnderlight = new THREE.PointLight(0xd97706, 1.4, 60);
+    warmUnderlight.position.set(0, -6, 12);
+    scene.add(warmUnderlight);
 
   // 3. HYPER-REALISTIC PROCEDURAL TEXTURES
 
@@ -765,134 +912,6 @@
     }
   }
 
-  // 7. WEBAUDIO FLIGHT BUZZ & DOPPLER GLIDE
-  let audioCtx = null;
-  let flightOsc = null;
-  let flightGain = null;
-  let giantOsc = null;
-  let giantGain = null;
-
-  function initFlightAudio() {
-    try {
-      if (flightGain && flightOsc) {
-        if (audioCtx && audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-        return;
-      }
-
-      if (window.tshSharedAudioCtx) {
-        audioCtx = window.tshSharedAudioCtx;
-      } else {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) return;
-        audioCtx = new AudioContext();
-        window.tshSharedAudioCtx = audioCtx;
-      }
-
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      flightOsc = audioCtx.createOscillator();
-      flightOsc.type = 'sawtooth';
-      flightOsc.frequency.setValueAtTime(140, audioCtx.currentTime);
-
-      const filter = audioCtx.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(320, audioCtx.currentTime);
-
-      flightGain = audioCtx.createGain();
-      // Start with comfortable baseline so sound plays automatically as soon as context unlocks
-      flightGain.gain.setValueAtTime(0.014, audioCtx.currentTime);
-
-      flightOsc.connect(filter);
-      filter.connect(flightGain);
-      flightGain.connect(audioCtx.destination);
-      flightOsc.start();
-
-      giantOsc = audioCtx.createOscillator();
-      giantOsc.type = 'triangle';
-      giantOsc.frequency.setValueAtTime(85, audioCtx.currentTime);
-
-      const giantFilter = audioCtx.createBiquadFilter();
-      giantFilter.type = 'lowpass';
-      giantFilter.frequency.setValueAtTime(240, audioCtx.currentTime);
-
-      giantGain = audioCtx.createGain();
-      giantGain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
-
-      giantOsc.connect(giantFilter);
-      giantFilter.connect(giantGain);
-      giantGain.connect(audioCtx.destination);
-      giantOsc.start();
-    } catch (err) {
-      // Audio policy handled silently
-    }
-  }
-
-  function updateFlightAudio(speed, giantSpeed, giantDist) {
-    if (!audioCtx) return;
-    const isMuted = document.body.classList.contains('tsh-sound-muted');
-    if (isMuted || audioCtx.state !== 'running') {
-      if (flightGain) flightGain.gain.setTargetAtTime(0.00001, audioCtx.currentTime, 0.05);
-      if (giantGain) giantGain.gain.setTargetAtTime(0.00001, audioCtx.currentTime, 0.05);
-      return;
-    }
-
-    if (flightGain) {
-      // Full flight = lively buzz; Peaceful perch = quietude
-      const activeVol = Math.min(0.014 + speed * 0.045, 0.045);
-      const peacefulVol = 0.0001;
-      const targetVol = THREE.MathUtils.lerp(activeVol, peacefulVol, Math.pow(perchFactor, 1.5));
-      flightGain.gain.setTargetAtTime(targetVol, audioCtx.currentTime, 0.05);
-      if (flightOsc) {
-        const targetFreq = THREE.MathUtils.lerp(140 + speed * 85, 95, perchFactor);
-        flightOsc.frequency.setTargetAtTime(targetFreq, audioCtx.currentTime, 0.05);
-      }
-    }
-
-    if (giantGain && giantSpeed > 0.01) {
-      const prox = Math.max(0, 1 - giantDist / 30);
-      const giantTargetVol = Math.min(0.05 * prox, 0.048);
-      giantGain.gain.setTargetAtTime(giantTargetVol, audioCtx.currentTime, 0.08);
-      if (giantOsc) {
-        const dopplerFreq = 80 + (1 - giantDist / 25) * 60;
-        giantOsc.frequency.setTargetAtTime(dopplerFreq, audioCtx.currentTime, 0.08);
-      }
-    } else if (giantGain) {
-      giantGain.gain.setTargetAtTime(0.00001, audioCtx.currentTime, 0.1);
-    }
-  }
-
-  function startBeeAudio() {
-    initFlightAudio();
-    if (!audioCtx) return;
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume().catch(() => {});
-    }
-    const isMuted = document.body.classList.contains('tsh-sound-muted');
-    if (!isMuted && flightGain) {
-      flightGain.gain.cancelScheduledValues(audioCtx.currentTime);
-      flightGain.gain.setValueAtTime(0.024, audioCtx.currentTime);
-      if (flightOsc) {
-        flightOsc.frequency.setValueAtTime(155, audioCtx.currentTime);
-      }
-    }
-  }
-  window.startBeeAudio = startBeeAudio;
-
-  // Trigger bee flight acoustics the exact instant the site reveals
-  window.addEventListener('tsh-site-revealed', startBeeAudio);
-
-  // Eagerly unlock & initialize sound on site reveal and user interactions
-  window.addEventListener('load', initFlightAudio);
-  window.addEventListener('pointerdown', startBeeAudio);
-  window.addEventListener('scroll', startBeeAudio, { passive: true });
-  window.addEventListener('mousemove', startBeeAudio, { once: true });
-  window.addEventListener('touchstart', startBeeAudio, { once: true });
-  window.addEventListener('keydown', startBeeAudio, { once: true });
-
   // 8. TWO GIANT BEES PERIODIC FLYBY SCHEDULER (Every ~20 seconds)
   let activeGiant = null;
   let giantProgress = 0;
@@ -1134,9 +1153,11 @@
     let giantDist = 99;
 
     if (!activeGiant) {
-      timeUntilNextGiant -= delta;
-      if (timeUntilNextGiant <= 0) {
-        launchGiantFlyby();
+      if (!isMobile) {
+        timeUntilNextGiant -= delta;
+        if (timeUntilNextGiant <= 0) {
+          launchGiantFlyby();
+        }
       }
     } else {
       giantProgress += delta / giantDuration;
@@ -1207,16 +1228,39 @@
     renderer.render(scene, camera);
   }
 
-  // 10. WINDOW RESIZE HANDLER
-  window.addEventListener('resize', () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-    vHeight = 2 * Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
-    vWidth = vHeight * camera.aspect;
-  });
+    // 10. WINDOW RESIZE HANDLER
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+      vHeight = 2 * Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
+      vWidth = vHeight * camera.aspect;
+    });
 
-  animate();
+    animate();
+  }
+
+  // Orchestrate launch: Wait until loader fractures open to prevent concurrent WebGL context memory exhaustion
+  let beeLaunched = false;
+  function launchBee() {
+    if (beeLaunched) return;
+    beeLaunched = true;
+    startBeeAudio();
+    initBeeFlight();
+  }
+
+  const loaderOverlay = document.getElementById('tshLoaderOverlay');
+  if (loaderOverlay && !loaderOverlay.classList.contains('is-loaded')) {
+    window.addEventListener('tsh-site-revealed', launchBee, { once: true });
+    // Safety fallback: launch bee after 3.2s regardless
+    setTimeout(launchBee, 3200);
+  } else {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', launchBee);
+    } else {
+      launchBee();
+    }
+  }
 })();
