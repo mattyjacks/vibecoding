@@ -1,5 +1,163 @@
 /* Tri State Honey — $500k 3D Packaging Stage & ROI Engine Architecture */
 
+/* =========================================================================
+   INFINITE SLIDING MARQUEE CAROUSEL (Relocated Above 'Attention Food Companies')
+   Single continuous line, smooth infinite loop with pause-on-hover
+   ========================================================================= */
+.tsh-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(8, 11, 18, 0.92);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  border-radius: var(--tsh-radius-full);
+  padding: 0.65rem 0;
+  margin-bottom: 2.25rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 24px rgba(245, 176, 56, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  z-index: 5;
+}
+
+.tsh-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: tshMarqueeScroll 38s linear infinite;
+  will-change: transform;
+}
+
+.tsh-marquee-wrapper:hover .tsh-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes tshMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tsh-marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mj-carousel-badge {
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--tsh-radius-full);
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(245, 176, 56, 0.35);
+  flex-shrink: 0;
+}
+
+.mj-carousel-text {
+  color: #f1f5f9;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mj-carousel-link {
+  color: var(--tsh-gold-300);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  margin: 0 0.35rem;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.mj-carousel-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px var(--tsh-gold-400);
+}
+
+.mj-carousel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 1rem;
+  background: rgba(18, 24, 38, 0.85);
+  border: 1px solid var(--tsh-border-gold);
+  border-radius: var(--tsh-radius-full);
+  color: var(--tsh-gold-300);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mj-carousel-btn:hover {
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  box-shadow: 0 0 16px rgba(245, 176, 56, 0.5);
+  transform: translateY(-1px);
+}
+
+.mj-carousel-divider {
+  color: var(--tsh-gold-400);
+  font-size: 1.2rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.mj-carousel-telemetry {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #e2e8f0;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.mj-carousel-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.38rem 1.05rem;
+  background: rgba(245, 176, 56, 0.12);
+  border: 1px solid var(--tsh-gold-400);
+  border-radius: var(--tsh-radius-full);
+  color: var(--tsh-gold-300);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mj-carousel-phone:hover {
+  background: var(--tsh-gold-metallic);
+  color: #06080d;
+  box-shadow: 0 0 18px rgba(245, 176, 56, 0.55);
+  transform: translateY(-1px);
+}
+
+.mj-carousel-phone svg {
+  color: currentColor;
+  flex-shrink: 0;
+}
+
 /* Attention Food Companies VIP B2B Card */
 .tsh-attention-box {
   background: linear-gradient(135deg, rgba(20, 26, 40, 0.95) 0%, rgba(10, 14, 22, 0.98) 100%);

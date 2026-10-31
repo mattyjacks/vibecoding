@@ -30,7 +30,7 @@
   canvas.style.width = '100vw';
   canvas.style.height = '100vh';
   canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '9999';
+  canvas.style.zIndex = '20';
   document.body.appendChild(canvas);
 
   let width = window.innerWidth;
@@ -679,13 +679,43 @@
   let scrollVelocity = 0;
   let lastScrollY = window.scrollY;
 
-  const aspect = width / height;
-  const vHeight = 2 * Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
-  const vWidth = vHeight * aspect;
+  let aspect = width / height;
+  let vHeight = 2 * Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
+  let vWidth = vHeight * aspect;
 
-  const currentPos = new THREE.Vector3(vWidth * 0.32, vHeight * 0.22, 0);
-  const targetPos = new THREE.Vector3(vWidth * 0.32, vHeight * 0.22, 0);
-  const currentRot = new THREE.Euler(0, -Math.PI / 6, 0);
+  // 6B. DYNAMIC "PURE LIQUID GOLD" PERCH TARGET TRACKER
+  function getPureLiquidGoldTarget3D() {
+    const el = document.getElementById('tshHeroPureLiquidGold');
+    if (!el) {
+      return new THREE.Vector3(-vWidth * 0.16, vHeight * 0.1, 1.8);
+    }
+    const rect = el.getBoundingClientRect();
+    // Sitting gracefully near the 'gold' / middle-right edge of cursive text
+    const screenX = rect.left + rect.width * 0.68;
+    const screenY = rect.top + rect.height * 0.26;
+
+    // Convert from pixel space to Normalized Device Coordinates (-1 to 1)
+    const ndcX = (screenX / window.innerWidth) * 2 - 1;
+    const ndcY = -(screenY / window.innerHeight) * 2 + 1;
+
+    // Unproject to 3D world space at target plane z = 1.8
+    const targetZ = 1.8;
+    const dist = camera.position.z - targetZ;
+    const fovRad = (camera.fov * Math.PI) / 360;
+    const worldY = ndcY * Math.tan(fovRad) * dist;
+    const worldX = ndcX * Math.tan(fovRad) * dist * (window.innerWidth / window.innerHeight);
+
+    return new THREE.Vector3(worldX, worldY, targetZ);
+  }
+
+  // Starts 100% sitting peacefully on "pure liquid gold"
+  let perchFactor = 1.0;
+  let targetPerchFactor = 1.0;
+
+  const initialPerch = getPureLiquidGoldTarget3D();
+  const currentPos = initialPerch.clone();
+  const targetPos = initialPerch.clone();
+  const currentRot = new THREE.Euler(0.24, 0.42, -0.08);
 
   const mouse = { x: 0, y: 0, targetX: 0, targetY: 0, active: false };
   window.addEventListener('mousemove', (e) => {
@@ -696,9 +726,10 @@
 
   function getFlightPathForScroll(ratio) {
     const t = ratio * Math.PI * 4;
-    const x = Math.sin(t * 0.75) * (vWidth * 0.38) + Math.cos(t * 0.35) * (vWidth * 0.1);
-    const y = Math.cos(t * 0.6) * (vHeight * 0.35) - (ratio - 0.5) * (vHeight * 0.25);
-    const z = Math.sin(t * 1.1) * 3.5;
+    // Keep flight corridor well within visible screen bounds so all parts of the bee remain fully on-screen
+    const x = Math.sin(t * 0.75) * (vWidth * 0.22) + Math.cos(t * 0.35) * (vWidth * 0.05);
+    const y = Math.cos(t * 0.6) * (vHeight * 0.22) - (ratio - 0.5) * (vHeight * 0.16);
+    const z = Math.sin(t * 1.1) * 1.6;
     return { x, y, z };
   }
 
@@ -810,10 +841,14 @@
     }
 
     if (flightGain) {
-      const targetVol = Math.min(0.014 + speed * 0.045, 0.045);
+      // Full flight = lively buzz; Peaceful perch = quietude
+      const activeVol = Math.min(0.014 + speed * 0.045, 0.045);
+      const peacefulVol = 0.0001;
+      const targetVol = THREE.MathUtils.lerp(activeVol, peacefulVol, Math.pow(perchFactor, 1.5));
       flightGain.gain.setTargetAtTime(targetVol, audioCtx.currentTime, 0.05);
       if (flightOsc) {
-        flightOsc.frequency.setTargetAtTime(140 + speed * 85, audioCtx.currentTime, 0.05);
+        const targetFreq = THREE.MathUtils.lerp(140 + speed * 85, 95, perchFactor);
+        flightOsc.frequency.setTargetAtTime(targetFreq, audioCtx.currentTime, 0.05);
       }
     }
 
@@ -938,21 +973,40 @@
     scrollVelocity += (rawVel - scrollVelocity) * 0.12;
     lastScrollY = currentScrollY;
 
+    // Perch dynamics: Sit peacefully on "pure liquid gold" in the hero section until scrolling past
+    let targetPerch = 0;
+    if (currentScrollY <= 80) {
+      // 100% resting peacefully on pure liquid gold
+      targetPerch = 1.0;
+    } else if (currentScrollY < 260) {
+      // Smooth takeoff curve as user scrolls down past the hero content
+      targetPerch = Math.max(0, 1.0 - (currentScrollY - 80) / 180);
+      targetPerch = Math.pow(targetPerch, 1.4);
+    } else {
+      targetPerch = 0;
+    }
+    perchFactor += (targetPerch - perchFactor) * 0.08;
+
+    const perchedPos = getPureLiquidGoldTarget3D();
     const pathPoint = getFlightPathForScroll(currentScrollRatio);
 
     mouse.x += (mouse.targetX - mouse.x) * 0.05;
     mouse.y += (mouse.targetY - mouse.y) * 0.05;
-    const mouseNudgeX = mouse.x * (vWidth * 0.12);
-    const mouseNudgeY = mouse.y * (vHeight * 0.12);
+    const mouseNudgeX = mouse.x * (vWidth * 0.12) * (1 - perchFactor);
+    const mouseNudgeY = mouse.y * (vHeight * 0.12) * (1 - perchFactor);
 
-    targetPos.x = pathPoint.x + mouseNudgeX * 0.35;
-    targetPos.y = pathPoint.y + mouseNudgeY * 0.35;
-    targetPos.z = pathPoint.z;
+    // Dynamic liftoff arc as bee takes flight from pure liquid gold
+    const takeoffArc = Math.sin(perchFactor * Math.PI) * 1.6;
 
+    targetPos.x = THREE.MathUtils.lerp(pathPoint.x + mouseNudgeX * 0.35, perchedPos.x, perchFactor);
+    targetPos.y = THREE.MathUtils.lerp(pathPoint.y + mouseNudgeY * 0.35, perchedPos.y, perchFactor) + takeoffArc;
+    targetPos.z = THREE.MathUtils.lerp(pathPoint.z, perchedPos.z, perchFactor);
+
+    // Hover wobble: vigorous in flight, peaceful breathing micro-shifts when perched
     const hoverTime = elapsedTime * 2.2;
-    const hoverX = Math.sin(hoverTime) * 0.35;
-    const hoverY = Math.sin(hoverTime * 2.0) * 0.28;
-    const hoverZ = Math.cos(hoverTime * 1.5) * 0.2;
+    const hoverX = Math.sin(hoverTime) * 0.35 * (1 - perchFactor) + Math.cos(elapsedTime * 1.6) * 0.02 * perchFactor;
+    const hoverY = Math.sin(hoverTime * 2.0) * 0.28 * (1 - perchFactor) + Math.sin(elapsedTime * 2.2) * 0.03 * perchFactor;
+    const hoverZ = Math.cos(hoverTime * 1.5) * 0.2 * (1 - perchFactor);
 
     const destX = targetPos.x + hoverX;
     const destY = targetPos.y + hoverY;
@@ -962,22 +1016,48 @@
     const vy = destY - currentPos.y;
     const vz = destZ - currentPos.z;
 
-    const lerpRate = 0.055 + Math.min(scrollVelocity * 0.002, 0.08);
+    const lerpRate = THREE.MathUtils.lerp(0.055 + Math.min(scrollVelocity * 0.002, 0.08), 0.12, perchFactor);
     currentPos.x += vx * lerpRate;
     currentPos.y += vy * lerpRate;
     currentPos.z += vz * lerpRate;
 
+    // Viewport containment bounding clamp: Ensure the bee NEVER disappears off the screen edges
+    const camDist = Math.max(camera.position.z - currentPos.z, 2.0);
+    const frustumHalfH = camDist * Math.tan((camera.fov * Math.PI) / 360);
+    const frustumHalfW = frustumHalfH * (width / height);
+
+    // Margin ensures wings, antennae and full body remain 100% visible
+    const safeMarginX = Math.min(2.4, frustumHalfW * 0.35);
+    const safeMarginY = Math.min(2.0, frustumHalfH * 0.35);
+
+    const minX = -frustumHalfW + safeMarginX;
+    const maxX = frustumHalfW - safeMarginX;
+    const minY = -frustumHalfH + safeMarginY;
+    const maxY = frustumHalfH - safeMarginY;
+
+    // Strict containment clamp so the bee never floats off-screen
+    if (perchFactor < 0.6) {
+      currentPos.x = THREE.MathUtils.clamp(currentPos.x, minX, maxX);
+      currentPos.y = THREE.MathUtils.clamp(currentPos.y, minY, maxY);
+    }
+
     mainBee.root.position.copy(currentPos);
 
     const speed = Math.hypot(vx, vy, vz);
-    let targetYaw = Math.atan2(vx, vz + 0.01);
-    let targetPitch = -Math.atan2(vy, Math.hypot(vx, vz) + 0.1) * 0.75;
-    let targetRoll = -vx * 0.45;
+    let flightYaw = Math.atan2(vx, vz + 0.01) + Math.sin(elapsedTime * 1.4) * 0.2;
+    let flightPitch = -Math.atan2(vy, Math.hypot(vx, vz) + 0.1) * 0.75 + Math.sin(elapsedTime * 2.0) * 0.1;
+    let flightRoll = -vx * 0.45;
 
-    targetYaw += Math.sin(elapsedTime * 1.4) * 0.2;
-    targetPitch += Math.sin(elapsedTime * 2.0) * 0.1;
+    // Peaceful resting posture on top of the text
+    const perchedYaw = 0.42;
+    const perchedPitch = 0.22;
+    const perchedRoll = -0.08;
 
-    if (isRolling) {
+    let targetYaw = THREE.MathUtils.lerp(flightYaw, perchedYaw, perchFactor);
+    let targetPitch = THREE.MathUtils.lerp(flightPitch, perchedPitch, perchFactor);
+    let targetRoll = THREE.MathUtils.lerp(flightRoll, perchedRoll, perchFactor);
+
+    if (isRolling && perchFactor < 0.1) {
       barrelRollProgress += delta * 4.5;
       targetRoll += barrelRollProgress * Math.PI * 2;
       targetPitch += Math.sin(barrelRollProgress * Math.PI * 2) * 0.6;
@@ -987,34 +1067,65 @@
       }
     }
 
-    currentRot.y += (targetYaw - currentRot.y) * 0.08;
-    currentRot.x += (targetPitch - currentRot.x) * 0.08;
-    currentRot.z += (targetRoll - currentRot.z) * 0.08;
+    currentRot.y += (targetYaw - currentRot.y) * 0.09;
+    currentRot.x += (targetPitch - currentRot.x) * 0.09;
+    currentRot.z += (targetRoll - currentRot.z) * 0.09;
 
     mainBee.root.rotation.set(currentRot.x, currentRot.y, currentRot.z);
 
-    // Hyper-realistic wing stroke plane (flapping + pitching flutter)
-    const mainFlapFreq = 52 + Math.min(speed * 32 + scrollVelocity * 0.2, 48);
-    mainFlapTime += delta * mainFlapFreq;
-    const mainFlapAngle = Math.sin(mainFlapTime) * 0.72;
-    const mainWingTwist = Math.cos(mainFlapTime) * 0.28;
+    // Hyper-realistic wing stroke plane (folded when perched, flapping + flutter in flight)
+    if (perchFactor > 0.01) {
+      const flapFreq = THREE.MathUtils.lerp(52 + Math.min(speed * 32 + scrollVelocity * 0.2, 48), 6, perchFactor);
+      mainFlapTime += delta * flapFreq;
 
-    mainBee.leftWingPivot.rotation.z = mainFlapAngle;
-    mainBee.leftWingPivot.rotation.y = -0.3 + mainWingTwist;
-    mainBee.rightWingPivot.rotation.z = -mainFlapAngle;
-    mainBee.rightWingPivot.rotation.y = 0.3 - mainWingTwist;
-    mainBee.leftHindPivot.rotation.z = mainFlapAngle * 0.88 + 0.1;
-    mainBee.rightHindPivot.rotation.z = -mainFlapAngle * 0.88 - 0.1;
+      const flightWingZ = Math.sin(mainFlapTime) * 0.72;
+      const flightWingY_L = -0.3 + Math.cos(mainFlapTime) * 0.28;
+      const flightWingY_R = 0.3 - Math.cos(mainFlapTime) * 0.28;
 
-    // Abdominal respiration & antenna micro-twitching
-    const breath = 1.0 + Math.sin(elapsedTime * 4.5) * 0.038;
-    mainBee.abdomenGroup.scale.set(breath, breath, 1.0 + Math.sin(elapsedTime * 4.5) * 0.022);
-    mainBee.leftAntennaPivot.rotation.x = Math.sin(elapsedTime * 7.5) * 0.14;
-    mainBee.rightAntennaPivot.rotation.x = Math.sin(elapsedTime * 8.2 + 0.4) * 0.14;
+      // Folded peaceful posture back over abdomen with subtle resting twitch
+      const idleFlick = (Math.sin(elapsedTime * 1.6) > 0.93) ? Math.sin(elapsedTime * 30) * 0.18 : 0;
+      const foldedWingZ_L = -0.14 + idleFlick;
+      const foldedWingZ_R = 0.14 - idleFlick;
+      const foldedWingY_L = 1.25;
+      const foldedWingY_R = -1.25;
 
-    const legSway = Math.sin(elapsedTime * 6.0) * 0.06 - speed * 0.16;
-    mainBee.legHL.rotation.x = -0.55 + legSway;
-    mainBee.legHR.rotation.x = -0.55 + legSway;
+      mainBee.leftWingPivot.rotation.z = THREE.MathUtils.lerp(flightWingZ, foldedWingZ_L, perchFactor);
+      mainBee.leftWingPivot.rotation.y = THREE.MathUtils.lerp(flightWingY_L, foldedWingY_L, perchFactor);
+      mainBee.rightWingPivot.rotation.z = THREE.MathUtils.lerp(-flightWingZ, foldedWingZ_R, perchFactor);
+      mainBee.rightWingPivot.rotation.y = THREE.MathUtils.lerp(flightWingY_R, foldedWingY_R, perchFactor);
+
+      mainBee.leftHindPivot.rotation.z = THREE.MathUtils.lerp(flightWingZ * 0.88 + 0.1, foldedWingZ_L * 0.8, perchFactor);
+      mainBee.rightHindPivot.rotation.z = THREE.MathUtils.lerp(-flightWingZ * 0.88 - 0.1, foldedWingZ_R * 0.8, perchFactor);
+    } else {
+      const mainFlapFreq = 52 + Math.min(speed * 32 + scrollVelocity * 0.2, 48);
+      mainFlapTime += delta * mainFlapFreq;
+      const mainFlapAngle = Math.sin(mainFlapTime) * 0.72;
+      const mainWingTwist = Math.cos(mainFlapTime) * 0.28;
+
+      mainBee.leftWingPivot.rotation.z = mainFlapAngle;
+      mainBee.leftWingPivot.rotation.y = -0.3 + mainWingTwist;
+      mainBee.rightWingPivot.rotation.z = -mainFlapAngle;
+      mainBee.rightWingPivot.rotation.y = 0.3 - mainWingTwist;
+      mainBee.leftHindPivot.rotation.z = mainFlapAngle * 0.88 + 0.1;
+      mainBee.rightHindPivot.rotation.z = -mainFlapAngle * 0.88 - 0.1;
+    }
+
+    // Abdominal respiration (slow calm breath when perched)
+    const breathRate = THREE.MathUtils.lerp(4.5, 2.4, perchFactor);
+    const breathAmp = THREE.MathUtils.lerp(0.038, 0.024, perchFactor);
+    const breath = 1.0 + Math.sin(elapsedTime * breathRate) * breathAmp;
+    mainBee.abdomenGroup.scale.set(breath, breath, 1.0 + Math.sin(elapsedTime * breathRate) * 0.016);
+
+    // Antenna micro-twitching
+    const antRate = THREE.MathUtils.lerp(7.5, 3.2, perchFactor);
+    mainBee.leftAntennaPivot.rotation.x = Math.sin(elapsedTime * antRate) * 0.12;
+    mainBee.rightAntennaPivot.rotation.x = Math.sin(elapsedTime * (antRate + 0.4) + 0.4) * 0.12;
+
+    // Legs: spread onto the surface when perched, tucked back during flight
+    const flightLegSway = Math.sin(elapsedTime * 6.0) * 0.06 - speed * 0.16;
+    const perchedLegX = 0.24;
+    mainBee.legHL.rotation.x = THREE.MathUtils.lerp(-0.55 + flightLegSway, perchedLegX, perchFactor);
+    mainBee.legHR.rotation.x = THREE.MathUtils.lerp(-0.55 + flightLegSway, perchedLegX, perchFactor);
 
     // ==========================================
     // B. TWO GIANT BEES FLYBY SYSTEM (Every ~20s)
@@ -1067,7 +1178,7 @@
     // C. POLLEN PARTICLES EMISSION & UPDATE
     // ==========================================
     particleSpawnTimer += delta;
-    if (particleSpawnTimer > 0.045 && (speed > 0.05 || Math.random() < 0.25)) {
+    if (particleSpawnTimer > 0.045 && perchFactor < 0.8 && (speed > 0.05 || Math.random() < 0.25)) {
       spawnPollenParticle(currentPos.x, currentPos.y, currentPos.z, 1.0);
       particleSpawnTimer = 0;
     }
@@ -1103,6 +1214,8 @@
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
+    vHeight = 2 * Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
+    vWidth = vHeight * camera.aspect;
   });
 
   animate();

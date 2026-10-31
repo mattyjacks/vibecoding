@@ -367,3 +367,36 @@ button, input, select, textarea {
   font-family: var(--tsh-font-readable) !important;
   letter-spacing: 0.01em;
 }
+
+/* 3D Depth Layering System: Bee flies in front of text/backgrounds, but behind key featured cards */
+#tshBeeCanvas {
+  z-index: 20 !important;
+}
+
+.tsh-hero-content {
+  position: relative;
+  z-index: 10 !important;
+}
+
+.tsh-pure-liquid-gold-target {
+  transition: text-shadow 0.4s ease;
+}
+
+.tsh-pure-liquid-gold-target:hover {
+  text-shadow: 0 0 16px rgba(245, 176, 56, 0.8);
+}
+
+/* Featured elements the 3D bee dynamically swoops behind while user scrolls */
+.tsh-hero-media,
+.tsh-stage-section,
+.tsh-tests-container,
+.tsh-logistics-card,
+.tsh-form-card,
+.tsh-modal-overlay {
+  position: relative;
+  z-index: 25 !important;
+}
+
+.tsh-header {
+  z-index: 1000 !important;
+}
