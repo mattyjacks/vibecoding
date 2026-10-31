@@ -469,6 +469,125 @@ select.tsh-form-control option {
   box-shadow: 0 14px 35px rgba(245, 176, 56, 0.65);
 }
 
+/* Founder Executive Memo with Interactive Re-triggerable Text Reveal */
+.tsh-ceo-memo {
+  position: relative;
+  background: linear-gradient(135deg, rgba(245, 176, 56, 0.09) 0%, rgba(14, 18, 28, 0.75) 100%);
+  border: 1px solid rgba(245, 176, 56, 0.35);
+  border-left: 4px solid var(--tsh-gold-400);
+  border-radius: var(--tsh-radius-md);
+  padding: 1.6rem 1.85rem;
+  margin-top: 2rem;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.65), inset 0 0 24px rgba(245, 176, 56, 0.05);
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tsh-ceo-memo:hover {
+  border-color: rgba(245, 176, 56, 0.6);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 30px rgba(245, 176, 56, 0.15);
+}
+
+.tsh-memo-badge {
+  font-size: 1.35rem;
+  color: var(--tsh-gold-300);
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+.tsh-ceo-quote {
+  font-size: 2.15rem;
+  line-height: 1.38;
+  color: #fffaf0;
+  margin-bottom: 0.85rem;
+  min-height: 5rem;
+  display: block;
+  text-shadow: 0 0 22px rgba(245, 176, 56, 0.25);
+  word-wrap: break-word;
+}
+
+/* Glowing Amber Liquid Cursor */
+.tsh-ceo-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.75rem;
+  vertical-align: -0.22rem;
+  background: var(--tsh-gold-400);
+  margin-left: 3px;
+  box-shadow: 0 0 10px var(--tsh-gold-400), 0 0 22px var(--tsh-gold-500);
+  animation: tshCursorBlink 0.75s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+.tsh-ceo-cursor.is-hidden {
+  display: none !important;
+}
+
+@keyframes tshCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Character reveal animation with soft golden luminescence */
+.tsh-char-reveal {
+  display: inline;
+  opacity: 0;
+  animation: tshCharFadeIn 0.12s ease-out forwards;
+}
+
+@keyframes tshCharFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    text-shadow: 0 0 14px rgba(245, 176, 56, 0.95);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    text-shadow: 0 0 2px rgba(245, 176, 56, 0.35);
+  }
+}
+
+/* Executive Signature with Calligraphy Underline */
+.tsh-ceo-signature-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.tsh-ceo-signature {
+  font-size: 1.65rem;
+  color: var(--tsh-gold-400);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: inline-block;
+}
+
+.tsh-ceo-signature.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tsh-ceo-signature-line {
+  height: 2px;
+  background: linear-gradient(90deg, var(--tsh-gold-400), rgba(245, 176, 56, 0));
+  width: 0;
+  transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(245, 176, 56, 0.55);
+}
+
+.tsh-ceo-signature-line.is-drawn {
+  width: 95px;
+}
+
 @media (max-width: 992px) {
   .tsh-logistics-card {
     grid-template-columns: 1fr;

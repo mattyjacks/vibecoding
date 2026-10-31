@@ -1235,13 +1235,25 @@
             </div>
           </div>
 
-          <!-- Founder Executive Memo -->
-          <div style="background: rgba(245, 176, 56, 0.05); border: 1px dashed rgba(245, 176, 56, 0.35); border-radius: var(--tsh-radius-sm); padding: 1.25rem 1.45rem; margin-top: 1.85rem;">
-            <div class="font-handrawn" style="font-size: 1.35rem; color: var(--tsh-gold-300); margin-bottom: 0.35rem;">Direct From The Desk of the Founder</div>
-            <p class="font-zeyada" style="font-size: 1.95rem; line-height: 1.3; color: #fdf0d2; margin-bottom: 0.65rem;">
+          <!-- Founder Executive Memo with Interactive Re-triggerable Text Reveal -->
+          <div class="tsh-ceo-memo" id="tshCeoMemoCard">
+            <div class="font-handrawn tsh-memo-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--tsh-gold-400); flex-shrink: 0;">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Direct From The Desk of the Founder
+            </div>
+            <p class="font-zeyada tsh-ceo-quote" id="tshCeoQuoteText" data-quote="&ldquo;Call my personal line anytime at (856) 86 HONEY and press 0. I take honey purity and your wholesale savings personally.&rdquo;">
               &ldquo;Call my personal line anytime at (856) 86 HONEY and press 0. I take honey purity and your wholesale savings personally.&rdquo;
             </p>
-            <div class="font-lobster" style="font-size: 1.45rem; color: var(--tsh-gold-400);">Ashley Dutta, CEO</div>
+            <div class="tsh-ceo-signature-wrap">
+              <div class="font-lobster tsh-ceo-signature" id="tshCeoSignText">Ashley Dutta, CEO</div>
+              <div class="tsh-ceo-signature-line" id="tshCeoSignLine"></div>
+            </div>
           </div>
         </div>
 

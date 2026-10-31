@@ -1,5 +1,6 @@
 /**
- * Tri State Honey - Enterprise Sample Request & Inbound Inquiry Handler
+ * Tri State Honey - Sample Request & Inbound Inquiry Handler
+ * Provides safe client-side validation and simulated dispatch
  */
 (function () {
   'use strict';
@@ -15,47 +16,155 @@
 
       const name = form.querySelector('[name="fullName"]').value.trim();
       const email = form.querySelector('[name="email"]').value.trim();
-      const company = form.querySelector('[name="company"]') ? form.querySelector('[name="company"]').value.trim() : '';
-      const phone = form.querySelector('[name="phone"]') ? form.querySelector('[name="phone"]').value.trim() : '';
+      const company = form.querySelector('[name="company"]').value.trim();
       const product = form.querySelector('[name="product"]').value;
       const message = form.querySelector('[name="message"]').value.trim();
 
       if (!name || !email) {
-        showStatus('Please provide both your full name and corporate email address.', 'error');
+        showStatus('Please provide both your name and business email.', 'error');
         return;
       }
 
-      // Basic email validation regex
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        showStatus('Please enter a valid work email address.', 'error');
-        return;
-      }
-
+      // Simulate instantaneous enterprise inquiry logging
       const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
+      const originalText = submitBtn.textContent;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Processing Sample Request...';
+      submitBtn.textContent = 'Submitting Request...';
 
-      // Send or simulate inquiry logging
       setTimeout(() => {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        showStatus(
-          `<strong>Thank you, ${name}!</strong> Your free sample request for <em>${product}</em> has been securely routed directly to CEO Ashley Dutta & our wholesale logistics team. We will review your application and email you at <strong>${email}</strong> with sample tracking details within 24 business hours!`,
-          'success'
-        );
+        submitBtn.textContent = originalText;
+        showStatus(`Thank you, ${name}! Your inquiry for ${product || 'Tri State Honey products'} has been routed to Ashley Dutta & our sales team. We will contact you at ${email} shortly.`, 'success');
         form.reset();
-      }, 750);
+      }, 700);
     });
 
-    function showStatus(htmlMsg, type) {
+    function showStatus(msg, type) {
       if (!statusBox) return;
-      statusBox.innerHTML = htmlMsg;
+      statusBox.textContent = msg;
       statusBox.className = `tsh-status-alert ${type}`;
-      statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
 
-  document.addEventListener('DOMContentLoaded', initForm);
+  /**
+   * Executive CEO Memo Re-triggerable Text Reveal
+   * Re-animates with a luminous golden typewriter stream every time it enters the viewport
+   */
+  function initCeoQuoteReveal() {
+    const memo = document.getElementById('tshCeoMemoCard');
+    const quoteEl = document.getElementById('tshCeoQuoteText');
+    const signEl = document.getElementById('tshCeoSignText');
+    const signLine = document.getElementById('tshCeoSignLine');
+    if (!memo || !quoteEl) return;
+
+    const rawQuote = '“Call my personal line anytime at (856) 86 HONEY and press 0. I take honey purity and your wholesale savings personally.”';
+    
+    let timer = null;
+    let isRevealing = false;
+    let hasFinished = false;
+
+    function resetAnimation() {
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+      isRevealing = false;
+      hasFinished = false;
+      quoteEl.innerHTML = '<span class="tsh-ceo-cursor" id="tshCeoCursor"></span>';
+      if (signEl) signEl.classList.remove('is-visible');
+      if (signLine) signLine.classList.remove('is-drawn');
+    }
+
+    function runAnimation() {
+      if (isRevealing || hasFinished) return;
+      isRevealing = true;
+      quoteEl.innerHTML = '<span class="tsh-ceo-cursor" id="tshCeoCursor"></span>';
+      if (signEl) signEl.classList.remove('is-visible');
+      if (signLine) signLine.classList.remove('is-drawn');
+
+      const chars = Array.from(rawQuote);
+      let idx = 0;
+
+      function typeChar() {
+        if (!isRevealing) return;
+
+        if (idx < chars.length) {
+          const char = chars[idx];
+          const span = document.createElement('span');
+          span.className = 'tsh-char-reveal';
+          span.textContent = char;
+
+          const cursor = document.getElementById('tshCeoCursor');
+          if (cursor) {
+            quoteEl.insertBefore(span, cursor);
+          } else {
+            quoteEl.appendChild(span);
+          }
+
+          idx++;
+
+          // Natural cadence with slight micro-pauses at punctuation
+          let delay = 22;
+          if (char === '.' || char === '!' || char === '?') {
+            delay = 240;
+          } else if (char === ',' || char === ';') {
+            delay = 120;
+          } else if (char === ' ') {
+            delay = 28;
+          }
+
+          timer = setTimeout(typeChar, delay);
+        } else {
+          isRevealing = false;
+          hasFinished = true;
+
+          const cursor = document.getElementById('tshCeoCursor');
+          if (cursor) {
+            setTimeout(() => {
+              cursor.classList.add('is-hidden');
+            }, 500);
+          }
+
+          // Flourish signature after quote typing is complete
+          setTimeout(() => {
+            if (signEl) signEl.classList.add('is-visible');
+            if (signLine) signLine.classList.add('is-drawn');
+          }, 220);
+        }
+      }
+
+      // Brief delay upon entering view before typing begins
+      timer = setTimeout(typeChar, 200);
+    }
+
+    // Initialize with cursor
+    resetAnimation();
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            runAnimation();
+          } else {
+            // When user scrolls away from this element, reset so it replays upon next scroll!
+            resetAnimation();
+          }
+        });
+      }, {
+        threshold: 0.25,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      observer.observe(memo);
+    } else {
+      quoteEl.textContent = rawQuote;
+      if (signEl) signEl.classList.add('is-visible');
+      if (signLine) signLine.classList.add('is-drawn');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initForm();
+    initCeoQuoteReveal();
+  });
 })();
