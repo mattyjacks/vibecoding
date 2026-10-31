@@ -355,33 +355,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  padding: 0;
   background: var(--tsh-gold-metallic);
   color: #06080d;
-  padding: 0.55rem 1.25rem;
-  min-width: 175px;
-  height: 40px;
   box-sizing: border-box;
-  border-radius: var(--tsh-radius-full);
-  font-family: var(--tsh-font-bungee);
-  font-size: 0.68rem;
-  letter-spacing: 0.05em;
+  border-radius: 50%;
   box-shadow: 0 4px 18px rgba(245, 176, 56, 0.35);
   border: 1px solid rgba(255, 217, 120, 0.6);
   transition: all 0.3s var(--tsh-ease-out);
-  white-space: nowrap;
   flex-shrink: 0;
-  overflow: visible;
+  text-decoration: none;
 }
 
 .tsh-btn-phone svg {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
 
 .tsh-btn-phone:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 26px rgba(245, 176, 56, 0.55);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 6px 26px rgba(245, 176, 56, 0.65);
   color: #06080d;
+}
+
+.tsh-btn-phone:hover svg {
+  transform: rotate(14deg);
 }
 
 /* Mobile Toggle Hamburger */
@@ -404,12 +407,6 @@
   background: rgba(245, 176, 56, 0.15);
   border-color: var(--tsh-gold-400);
   color: var(--tsh-gold-300);
-}
-
-@media (max-width: 1260px) {
-  .tsh-btn-phone {
-    display: none;
-  }
 }
 
 @media (max-width: 1080px) {

@@ -20,6 +20,12 @@
       setTimeout(() => {
         ov.style.display = 'none';
       }, 700);
+      try {
+        window.dispatchEvent(new CustomEvent('tsh-site-revealed'));
+        if (typeof window.startBeeAudio === 'function') {
+          window.startBeeAudio();
+        }
+      } catch (e) {}
     }
   }
 
@@ -341,6 +347,13 @@
       isComplete = true;
 
       overlay.classList.add('is-loaded');
+      try {
+        window.dispatchEvent(new CustomEvent('tsh-site-revealed'));
+        if (typeof window.startBeeAudio === 'function') {
+          window.startBeeAudio();
+        }
+      } catch (e) {}
+
       setTimeout(() => {
         overlay.style.display = 'none';
         renderer.dispose();

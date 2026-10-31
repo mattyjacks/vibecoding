@@ -830,13 +830,33 @@
     }
   }
 
-  // Eagerly unlock & initialize sound on immediate page load and any subtle action
+  function startBeeAudio() {
+    initFlightAudio();
+    if (!audioCtx) return;
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume().catch(() => {});
+    }
+    const isMuted = document.body.classList.contains('tsh-sound-muted');
+    if (!isMuted && flightGain) {
+      flightGain.gain.cancelScheduledValues(audioCtx.currentTime);
+      flightGain.gain.setValueAtTime(0.024, audioCtx.currentTime);
+      if (flightOsc) {
+        flightOsc.frequency.setValueAtTime(155, audioCtx.currentTime);
+      }
+    }
+  }
+  window.startBeeAudio = startBeeAudio;
+
+  // Trigger bee flight acoustics the exact instant the site reveals
+  window.addEventListener('tsh-site-revealed', startBeeAudio);
+
+  // Eagerly unlock & initialize sound on site reveal and user interactions
   window.addEventListener('load', initFlightAudio);
-  window.addEventListener('pointerdown', initFlightAudio);
-  window.addEventListener('scroll', initFlightAudio, { passive: true });
-  window.addEventListener('mousemove', initFlightAudio, { once: true });
-  window.addEventListener('touchstart', initFlightAudio, { once: true });
-  window.addEventListener('keydown', initFlightAudio, { once: true });
+  window.addEventListener('pointerdown', startBeeAudio);
+  window.addEventListener('scroll', startBeeAudio, { passive: true });
+  window.addEventListener('mousemove', startBeeAudio, { once: true });
+  window.addEventListener('touchstart', startBeeAudio, { once: true });
+  window.addEventListener('keydown', startBeeAudio, { once: true });
 
   // 8. TWO GIANT BEES PERIODIC FLYBY SCHEDULER (Every ~20 seconds)
   let activeGiant = null;
