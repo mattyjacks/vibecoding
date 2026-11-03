@@ -193,7 +193,7 @@
 
     const featsList = document.getElementById('modalFeatures');
     if (featsList) {
-      featsList.innerHTML = product.features.map(f => `<li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:#10b981; font-weight:800;">✔</span> ${f}</li>`).join('');
+      featsList.innerHTML = product.features.map(f => `<li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:#10b981; font-weight:800;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 7 12 13 4"></polyline></svg></span> ${f}</li>`).join('');
     }
 
     const specsTable = document.getElementById('modalSpecs');

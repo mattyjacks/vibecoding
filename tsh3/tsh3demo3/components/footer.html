@@ -1,58 +1,66 @@
-<!-- Tri State Honey Footer Component -->
+<!-- Modern Multi-Column Trade Footer Component -->
 <footer class="tsh-footer">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem;">
+    <div class="tsh-footer-grid">
+
       <div>
-        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-          <img src="assets/images/logo.png" alt="Tri State Honey" style="height: 44px; width: auto;">
-          <span style="font-family: var(--tsh-font-heading); font-size: 1.25rem; font-weight: 800; color: #ffffff;">Tri State Honey</span>
+        <div style="display: flex; align-items: center; gap: 0.95rem; margin-bottom: 1.5rem;">
+          <img src="assets/images/logo-realistic.svg" alt="Tri State Honey Logo - Pure Honey Bee" style="height: 52px; width: auto; filter: drop-shadow(0 4px 12px rgba(245, 176, 56, 0.4));">
+          <span style="font-family: var(--tsh-font-heading); font-size: 1.45rem; font-weight: 800; color: #ffffff;">Tri State Honey</span>
         </div>
-        <p style="font-size: 0.88rem; line-height: 1.6; color: #94a3b8;">
-          Headquartered in New Jersey, Tri State Honey LLC is a direct importer of the world's best honey, spices, bottles, and food ingredients.
+        <p style="font-size: 0.92rem; line-height: 1.8; color: #94a3b8; margin-bottom: 1.35rem; font-weight: 300;">
+          Headquartered in Piscataway, New Jersey, Tri State Honey LLC is a direct wholesale importer of the world's finest honey, bulk spices, custom packaging, and food ingredients.
         </p>
+        <div style="font-family: var(--tsh-font-mono); font-size: 0.8rem; color: var(--tsh-gold-300); font-weight: 600; letter-spacing: 0.04em;">
+          Direct Foreign Reserves &bull; Est. 2009
+        </div>
       </div>
 
       <div>
-        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1rem;">Packaging Sizes</h4>
-        <ul style="list-style: none; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
-          <li><a href="#products">1 lb Honey Bear</a></li>
-          <li><a href="#products">2 lb Squeeze Dispenser</a></li>
-          <li><a href="#products">60 lb Bulk Bucket (NJ Stock)</a></li>
-          <li><a href="#products">660 lb Industrial Drum</a></li>
-          <li><a href="#products">3,000 lb Pallet Tote</a></li>
+        <h4 class="tsh-footer-title">Packaging Tiers</h4>
+        <ul class="tsh-footer-links">
+          <li><a href="#products" onclick="triggerFilterAndModal('tsh-1lb-bear')">1 lb Honey Bear Bottle</a></li>
+          <li><a href="#products" onclick="triggerFilterAndModal('tsh-2lb-bottle')">2 lb Squeeze Dispenser</a></li>
+          <li><a href="#products" onclick="triggerFilterAndModal('tsh-60lb-bucket')">60 lb Bulk Bucket (NJ Stock)</a></li>
+          <li><a href="#products" onclick="triggerFilterAndModal('tsh-660lb-drum')">660 lb Industrial Drum</a></li>
+          <li><a href="#products" onclick="triggerFilterAndModal('tsh-3000lb-tote')">3,000 lb Pallet Tote</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1rem;">Quality Standards</h4>
-        <ul style="list-style: none; font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
-          <li><a href="#standards">C3/C4 Sugar Analysis</a></li>
-          <li><a href="#standards">HRMS & NMR Purity</a></li>
-          <li><a href="#standards">Kosher & Halal Certified</a></li>
-          <li><a href="#standards">True Source Certified®</a></li>
-          <li><a href="#standards">FDA Compliant Facilities</a></li>
+        <h4 class="tsh-footer-title">Spectral Lab</h4>
+        <ul class="tsh-footer-links">
+          <li><a href="#standards">C3 / C4 Sugar Analysis</a></li>
+          <li><a href="#standards">HRMS Mass Spectrometry</a></li>
+          <li><a href="#standards">NMR Molecular Testing</a></li>
+          <li><a href="#standards">Kosher &amp; Halal Certified</a></li>
+          <li><a href="#standards">True Source Certified&reg;</a></li>
+          <li><a href="#standards">FDA Registered Facilities</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 1rem;">Get In Touch</h4>
-        <p style="font-size: 0.88rem; margin-bottom: 0.5rem;">📞 <a href="tel:18568646639" style="color: #fbbf24;">(856) 86 HONEY</a></p>
-        <p style="font-size: 0.88rem; margin-bottom: 0.5rem;">✉️ <a href="mailto:Team@TriStateHoney.com" style="color: #fbbf24;">Team@TriStateHoney.com</a></p>
-        <p style="font-size: 0.88rem; color: #94a3b8;">🏢 2 Lake View Ave, Suite 314D, Piscataway, NJ 08854 USA</p>
+        <h4 class="tsh-footer-title">Trade Desk</h4>
+        <ul class="tsh-footer-links">
+          <li><a href="tel:18568646639" style="color: var(--tsh-gold-300); font-weight: 700;">(856) 86 HONEY</a></li>
+          <li><a href="tel:18568646639">(856) 864-6639 (Press 0 for CEO)</a></li>
+          <li><a href="mailto:Team@TriStateHoney.com">Team@TriStateHoney.com</a></li>
+          <li><a href="mailto:Info@TriStateHoney.com">Info@TriStateHoney.com (Ashley Dutta)</a></li>
+          <li style="color: #94a3b8; font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.55; font-weight: 300;">
+            2 Lake View Ave, Suite 314D<br>Piscataway, NJ 08854 USA
+          </li>
+        </ul>
       </div>
+
     </div>
 
     <div class="tsh-footer-bottom">
       <div>
-        Copyright &copy; 2026 Tri State Honey LLC. All rights reserved.
+        Copyright &copy; 2026 <strong>Tri State Honey LLC</strong>. All rights reserved. Direct Honey Importers.
       </div>
       <div>
-        The sweetest deal in the flower field! &bull; In business since 2009.
+        Kosher &bull; Halal &bull; HACCP &bull; Non-GMO &bull; In business since 2009.
       </div>
     </div>
   </div>
 </footer>
-
-<button class="tsh-back-to-top" aria-label="Back to top" title="Scroll to top">
-  ▲
-</button>
