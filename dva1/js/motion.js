@@ -1,0 +1,1 @@
+window.DVA.initMotion=()=>{const button=document.querySelector('.motion-toggle');if(!button)return;button.addEventListener('click',()=>{const paused=document.documentElement.classList.toggle('motion-paused');button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'Resume motion':'Pause motion'})};

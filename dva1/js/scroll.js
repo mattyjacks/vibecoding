@@ -1,0 +1,1 @@
+window.DVA.initScroll=()=>{const button=document.querySelector('.to-top');if(!button)return;const update=()=>button.classList.toggle('visible',scrollY>600);window.addEventListener('scroll',update,{passive:true});update();button.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}))};
