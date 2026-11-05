@@ -1,0 +1,1 @@
+document.querySelectorAll('.photo img').forEach(img=>{const fallback=()=>{img.classList.add('failed');img.alt='Architectural illustration of a multifamily residential building'};img.addEventListener('error',fallback);if(img.complete&&!img.naturalWidth)fallback()});
