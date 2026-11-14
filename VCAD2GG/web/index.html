@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GiveGigs Valley CAD 2 — GPT 6 Luna Light</title>
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <!-- Top Header -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-logo">G2</div>
+        <div class="brand-text">
+          <h1>GiveGigs Valley CAD 2</h1>
+          <span class="badge badge-accent">GPT 6 Luna Light</span>
+          <span class="badge badge-subtle">ldraw-nova + ldraw-mecha</span>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="btn-undo" class="btn btn-ghost" title="Undo">↩ Undo</button>
+        <button id="btn-redo" class="btn btn-ghost" title="Redo">↪ Redo</button>
+        <div class="divider-v"></div>
+        <button id="btn-settings" class="btn btn-ghost" title="Configure GPT 6 Luna Light API">
+          ⚙️ Model Config
+        </button>
+        <div class="divider-v"></div>
+        <button id="btn-export-mpd" class="btn btn-secondary">Export .MPD</button>
+        <button id="btn-export-stl" class="btn btn-secondary">Export .STL</button>
+        <button id="btn-export-json" class="btn btn-ghost">Export JSON</button>
+      </div>
+    </header>
+
+    <!-- Main 3-Pane Workbench -->
+    <main class="workbench">
+      <!-- Left Sidebar: Prompt, Presets & Submodel Tree -->
+      <aside class="panel panel-left">
+        <section class="panel-section">
+          <div class="section-header">
+            <h2>Agentic CAD Prompt</h2>
+            <span id="mode-indicator" class="status-pill status-demo">Demo Mode</span>
+          </div>
+          <textarea
+            id="prompt-input"
+            class="prompt-box"
+            rows="3"
+            placeholder="Describe a mechanical CAD model... e.g. '4-wheel rover with steering and gear drive' or 'articulated robotic arm'"
+          ></textarea>
+          <div class="prompt-actions">
+            <button id="btn-generate" class="btn btn-primary full-width">
+              ✨ Generate &amp; Rig (Luna Light)
+            </button>
+          </div>
+          <div class="preset-row">
+            <span class="label-muted">Quick Presets:</span>
+            <button class="chip" data-preset="rover">4-Wheel Rover</button>
+            <button class="chip" data-preset="arm">Robotic Arm</button>
+            <button class="chip" data-preset="gearbox">Gearbox</button>
+          </div>
+        </section>
+
+        <section class="panel-section flex-grow">
+          <div class="section-header">
+            <h2>Assembly Tree</h2>
+            <span id="part-count" class="badge badge-subtle">0 parts</span>
+          </div>
+          <div id="assembly-tree" class="tree-list"></div>
+        </section>
+      </aside>
+
+      <!-- Center: 3D Viewport & Controls -->
+      <section class="viewport-container">
+        <div id="viewport-canvas" class="viewport-canvas"></div>
+
+        <!-- Floating Viewport Controls -->
+        <div class="viewport-hud-top">
+          <div class="hud-group">
+            <button class="btn btn-hud" data-cam="iso">3/4 Iso</button>
+            <button class="btn btn-hud" data-cam="front">Front</button>
+            <button class="btn btn-hud" data-cam="side">Side</button>
+            <button class="btn btn-hud" data-cam="top">Top</button>
+          </div>
+          <div class="hud-group">
+            <button id="btn-wireframe" class="btn btn-hud">🕸 Wireframe</button>
+            <button id="btn-critique" class="btn btn-hud">🔍 Run Critique</button>
+            <button id="btn-rig" class="btn btn-hud">⚙️ Auto-Rig Mecha</button>
+          </div>
+        </div>
+
+        <div class="viewport-hud-bottom">
+          <div class="control-item">
+            <label for="slider-explode">Explode</label>
+            <input id="slider-explode" type="range" min="0" max="100" value="0" />
+          </div>
+          <div class="divider-v"></div>
+          <div class="control-item">
+            <button id="btn-play-anim" class="btn btn-primary btn-sm">▶ Play Mecha</button>
+            <label for="slider-speed">Speed</label>
+            <input id="slider-speed" type="range" min="1" max="30" value="10" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Sidebar: Pipeline Log, Critique & Code -->
+      <aside class="panel panel-right">
+        <div class="tabs">
+          <button class="tab active" data-tab="log">Agent Pipeline</button>
+          <button class="tab" data-tab="mecha">Mecha Rig</button>
+          <button class="tab" data-tab="code">Script / .MPD</button>
+        </div>
+
+        <div id="tab-log" class="tab-content active">
+          <div id="pipeline-steps" class="pipeline-steps">
+            <span class="step-pill" data-step="PLAN">1. PLAN</span>
+            <span class="step-pill" data-step="SCRIPT">2. SCRIPT</span>
+            <span class="step-pill" data-step="CRITIQUE">3. CRITIQUE</span>
+            <span class="step-pill" data-step="RIG">4. RIG</span>
+          </div>
+          <div id="agent-log" class="log-feed"></div>
+        </div>
+
+        <div id="tab-mecha" class="tab-content">
+          <div id="mecha-list" class="mecha-list">
+            <p class="empty-state">Generate or rig a model to inspect detected gears, axles, hinges, and linkages.</p>
+          </div>
+        </div>
+
+        <div id="tab-code" class="tab-content">
+          <div class="preset-row">
+            <button id="btn-view-mpd" class="chip">LDraw .MPD</button>
+            <button id="btn-view-blender" class="chip">Blender rig_and_animate.py</button>
+          </div>
+          <pre id="code-preview" class="code-block">// Generated placement script &amp; LDraw .MPD will appear here...</pre>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- Production Auth Gate Overlay -->
+  <div id="auth-gate" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🔒 GiveGigs Valley CAD 2 — Production</h3>
+      </div>
+      <div class="modal-body">
+        <p class="label-muted">Enter the production password configured in <code>VCAD2_PRODUCTION_PASSWORD</code>.</p>
+        <input id="auth-password-input" class="input-text" type="password" placeholder="Production password..." />
+        <span id="auth-error" style="color: var(--danger); font-size: 11px;"></span>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-auth-unlock" class="btn btn-primary full-width">Unlock Workbench</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="modal-settings" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>OpenRouter AI Configuration</h3>
+        <button id="btn-close-settings" class="btn btn-ghost">✕</button>
+      </div>
+      <div class="modal-body">
+        <label class="field-label">OpenRouter Endpoint</label>
+        <input id="input-endpoint" class="input-text" type="text" value="https://openrouter.ai/api/v1/chat/completions" />
+        <label class="field-label">Model ID (Cost per 1M Tokens: Input / Output)</label>
+        <input id="input-model" class="input-text" type="text" list="openrouter-models" value="google/gemini-2.5-flash" />
+        <datalist id="openrouter-models">
+          <option value="openrouter/free">Free — $0.00 / $0.00 per 1M</option>
+          <option value="deepseek/deepseek-v4.1-flash">DeepSeek V4.1 Flash — $0.02 / $0.40 per 1M</option>
+          <option value="mistralai/mistral-nemo">Mistral Nemo — $0.03 / $0.05 per 1M</option>
+          <option value="google/gemini-2.5-flash">Gemini 2.5 Flash — $0.15 / $0.60 per 1M</option>
+          <option value="google/gemini-3.8-flash:low">Gemini 3.8 Flash (Low Reasoning)</option>
+          <option value="google/gemini-3.8-flash:medium">Gemini 3.8 Flash (Medium Reasoning)</option>
+          <option value="google/gemini-3.8-flash:high">Gemini 3.8 Flash (High Reasoning)</option>
+          <option value="openai/gpt-6.1-sol">GPT-6.1 Sol — $2.00 / $10.00 per 1M</option>
+          <option value="moonshotai/kimi-k3.1-pro">Kimi K3.1 Pro — $2.00 / $10.00 per 1M</option>
+          <option value="anthropic/claude-opus-5.5">Claude Opus 5.5 — $4.00 / $20.00 per 1M</option>
+          <option value="anthropic/claude-opus-5">Claude Opus 5 — $5.00 / $25.00 per 1M</option>
+          <option value="openai/gpt-6-astra">GPT-6 Astra — $10.00 / $50.00 per 1M</option>
+          <option value="anthropic/claude-fable-5">Claude Fable 5 — $10.00 / $50.00 per 1M</option>
+        </datalist>
+        <label class="field-label">OpenRouter API Key (leave blank for Demo Mode)</label>
+        <input id="input-apikey" class="input-text" type="password" placeholder="sk-or-v1-..." />
+      </div>
+      <div class="modal-footer">
+        <button id="btn-save-settings" class="btn btn-primary">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modular Scripts (works via file:// and http://) -->
+  <script src="js/core/state.js"></script>
+  <script src="js/core/auth-gate.js"></script>
+  <script src="js/core/luna-light-client.js"></script>
+  <script src="js/cad/part-catalog.js"></script>
+  <script src="js/cad/nova-planner.js"></script>
+  <script src="js/cad/critique-loop.js"></script>
+  <script src="js/mecha/mecha-analyzer.js"></script>
+  <script src="js/mecha/mecha-rigger.js"></script>
+  <script src="js/export/ldraw-exporter.js"></script>
+  <script src="js/export/mesh-exporter.js"></script>
+  <script src="js/export/blender-exporter.js"></script>
+  <script src="js/ui/viewport3d.js"></script>
+  <script src="js/ui/workbench.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
