@@ -1,0 +1,100 @@
+finflow-header, finflow-footer { display: block; }
+.site-location { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; }
+.site-location > span[aria-hidden] { color: var(--muted); }
+.site-home { color: var(--ink); text-decoration: none; font-weight: 750; }
+.header-tools { gap: 0.5rem; flex-wrap: wrap; }
+.header-search { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+.header-search kbd {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.72rem;
+  font-family: inherit;
+  color: var(--muted);
+}
+.ai-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 650;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--muted);
+}
+.ai-pill.ready { background: #dcf4e6; color: #125135; border-color: #a9dec0; }
+:root[data-theme="dark"] .ai-pill.ready { background: #143d2d; color: #7de3b5; border-color: #245c45; }
+.ai-pill-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+.global-deal-query { width: 100%; margin-block: 0.5rem 0.75rem; }
+#global-deal-results { max-height: 52vh; overflow: auto; margin-bottom: 1rem; }
+#global-deal-results .finding { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; padding: 8px 10px; border-radius: 8px; }
+#global-deal-results .finding.selected, #global-deal-results .finding:hover { background: var(--mint); }
+#global-deal-results .finding p { margin: 0; }
+#global-deal-results .muted { font-size: 0.82rem; }
+.palette-section { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 10px 4px 4px; }
+
+.site-footer {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+}
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.site-footer a { color: var(--green); text-underline-offset: 0.2em; }
+.site-footer [aria-current] { font-weight: 750; }
+.site-home:focus-visible, .site-footer a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.terms-copy { max-width: 72ch; }
+@media (max-width: 870px) { .site-footer { padding-inline: 1rem; } }
+
+.rail-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 6px; }
+.rail-foot { flex-shrink: 0; }
+.workspace-toggle { display: none; }
+.skip-link {
+  position: fixed;
+  z-index: 55;
+  top: 0.5rem;
+  left: 0.5rem;
+  transform: translateY(-160%);
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+}
+.skip-link:focus { transform: none; }
+
+@media (max-width: 720px) {
+  .workspace-toggle {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #72a797;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.45rem 0.75rem;
+  }
+  .rail[data-menu-open="false"] nav { display: none; }
+  .rail[data-menu-open="true"] nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 0.5rem; }
+  .rail[data-menu-open="true"] nav a { padding: 0.55rem 0.65rem; }
+}
+
+@media print {
+  body[data-page="packet"] { display: block; background: white; color: black; }
+  body[data-page="packet"] finflow-sidebar,
+  body[data-page="packet"] finflow-header,
+  body[data-page="packet"] finflow-footer,
+  body[data-page="packet"] .packet-controls { display: none; }
+  body[data-page="packet"] #app { padding: 0; max-width: none; }
+  .committee-packet h1 { font-size: 24pt; }
+  .committee-packet .panel { border: 0; border-top: 1px solid #aaa; border-radius: 0; padding: 0.65rem 0; margin: 0; box-shadow: none; }
+  .committee-packet h2, .committee-packet h3 { break-after: avoid; }
+  .committee-packet .finding, .committee-packet svg { break-inside: avoid; }
+}

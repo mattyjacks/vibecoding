@@ -1,0 +1,5 @@
+dist/server/
+.env
+.env.*
+/.sites-source/
+!.env.example

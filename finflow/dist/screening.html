@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FinFlow is an independent, Finrow-inspired private equity deal evaluation demo."><title>FinFlow | Deal screening</title><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./layout.css"><script src="./layout.js" defer></script><script src="./charts.js" defer></script><script src="./domain.js" defer></script><script src="./app.js" defer></script>
+</head>
+<body data-page="screening">
+<finflow-sidebar class="rail" role="complementary" aria-label="FinFlow workspace"></finflow-sidebar>
+<main id="main-content" tabindex="-1">
+  <finflow-header data-label="Deal screening"></finflow-header>
+  <div id="app"></div>
+  <finflow-footer></finflow-footer>
+</main>
+<template id="openai-assessment">
+  <section class="panel" aria-labelledby="openai-heading">
+    <h2 id="openai-heading">OpenAI assessment</h2>
+    <p class="muted">Evaluate this fictional deal against your current buy box and its bundled evidence.</p>
+    <p id="screening-status" class="muted" role="status">Checking OpenAI screening serviceâ€¦</p>
+    <form id="openai-form">
+      <div class="actions">
+        <label for="demo-password">Demo password
+          <input id="demo-password" type="password" name="password" required disabled maxlength="50" autocomplete="off">
+        </label>
+        <button class="button primary" type="submit" disabled>Run OpenAI assessment</button>
+      </div>
+    </form>
+    <p id="openai-result" role="status" aria-live="polite"></p>
+    <div id="saved-assessment" aria-label="Latest saved OpenAI assessment"></div>
+  </section>
+</template>
+<dialog id="source" aria-labelledby="source-title"><div id="source-body"></div><form method="dialog"><button class="button">Close source</button></form></dialog>
+<div id="notice" role="status"></div>
+</body></html>

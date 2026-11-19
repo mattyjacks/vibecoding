@@ -1,0 +1,71 @@
+finflow-header, finflow-footer { display: block; }
+.site-location { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.site-location > span[aria-hidden] { color: var(--muted); }
+.site-home { color: var(--ink); text-decoration: none; font-weight: 750; }
+.site-footer {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+}
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.site-footer a { color: var(--green); text-underline-offset: 0.2em; }
+.site-footer [aria-current] { font-weight: 750; }
+.site-home:focus-visible, .site-footer a:focus-visible { outline: 3px solid #539d80; outline-offset: 3px; }
+.terms-copy { max-width: 72ch; }
+@media (max-width: 870px) { .site-footer { padding-inline: 1rem; } }
+
+.rail-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.rail nav { overflow-y: auto; }
+.rail-foot { flex-shrink: 0; }
+.workspace-toggle { display: none; }
+.skip-link {
+  position: fixed;
+  z-index: 5;
+  top: 0.5rem;
+  left: 0.5rem;
+  transform: translateY(-150%);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+}
+.skip-link:focus { transform: none; }
+@media (max-width: 600px) {
+  .workspace-toggle {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #72a797;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.5rem 0.75rem;
+  }
+  .rail[data-menu-open="false"] nav { display: none; }
+  .rail[data-menu-open="true"] nav { display: grid; grid-template-columns: repeat(auto-fit,minmax(145px,1fr)); margin-top: 0.5rem; }
+  .rail[data-menu-open="true"] nav a { padding: 0.55rem 0.65rem; }
+}
+
+@media print {
+  body[data-page="packet"] { display:block; background:white; color:black; }
+  body[data-page="packet"] finflow-sidebar,
+  body[data-page="packet"] finflow-header,
+  body[data-page="packet"] finflow-footer,
+  body[data-page="packet"] .packet-controls { display:none; }
+  body[data-page="packet"] #app { padding:0; max-width:none; }
+  .committee-packet h1 { font-size:26pt; }
+  .committee-packet .panel { border:0; border-top:1px solid #aaa; border-radius:0; padding:0.65rem 0; margin:0; }
+  .committee-packet h2, .committee-packet h3 { break-after:avoid; }
+  .committee-packet .finding { break-inside:avoid; }
+}
+
+.header-tools { justify-content:flex-end; }
+.header-search kbd { color:var(--muted); font-size:.75rem; margin-inline-start:.35rem; }
+#deal-search-dialog { width:min(35rem,92vw); }
+.global-deal-query { width:100%; margin:.35rem 0 .75rem; }
+.global-deal-list { list-style:none; margin:0 0 .75rem; padding:0; max-height:48vh; overflow:auto; }
+@media (max-width:600px) { .header-search kbd { display:none; } }
