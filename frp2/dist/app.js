@@ -258,9 +258,11 @@ function intakePage() {
 }
 function globalDealResults(value) {
   const query = value.trim().toLowerCase();
-  const matches = deals.filter(deal =>
-    [deal.name,deal.sector,deal.region,dealLead(deal)].join(' ').toLowerCase().includes(query)
-  ).sort((left,right) => {
+  const terms = query.split(/\s+/).filter(Boolean);
+  const matches = deals.filter(deal => {
+    const searchable = [deal.name,deal.sector,deal.region,dealLead(deal)].join(' ').toLowerCase();
+    return terms.every(term => searchable.includes(term));
+  }).sort((left,right) => {
     const priority = deal => deal.name.toLowerCase().startsWith(query) ? 0 :
       deal.name.toLowerCase().includes(query) ? 1 : 2;
     return priority(left) - priority(right) || left.name.localeCompare(right.name);
@@ -1310,7 +1312,14 @@ document.addEventListener('keydown', event => {
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
     event.preventDefault();
     openGlobalDealSearch();
+    return;
   }
+  if (event.target?.id !== 'global-deal-query' || event.isComposing || !['Enter','ArrowDown'].includes(event.key)) return;
+  const first = document.querySelector('#global-deal-results a');
+  if (!first) return;
+  event.preventDefault();
+  if (event.key === 'Enter') first.click();
+  else first.focus();
 });
 document.addEventListener('input', event => {
   if (event.target.id === 'global-deal-query') {
